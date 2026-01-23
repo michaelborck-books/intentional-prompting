@@ -1,4 +1,4 @@
-# Intentional Prompting: Mastering the Human-AI Development Process
+# Conversation, Not Delegation: Mastering Human-AI Development
 
 A book about effective programming techniques in the age of AI assistants.
 
@@ -20,15 +20,15 @@ The book is organized into the following sections:
 This book is part of a comprehensive series for mastering modern software development in the AI era:
 
 ### Foundational Methodology
-- **[Intentional Prompting](https://michaelborck-books.github.io/intentional-prompting)** (this book): Mastering the Human-AI Development Process
+- **[Conversation, Not Delegation](https://michaelborck-books.github.io/intentional-prompting)** (this book): Mastering Human-AI Development
 
 ### Python Track
-- **[Python Step by Step with AI](https://michaelborck-books.github.io/python-step-by-step-ai)**: Perfect for absolute beginners learning computational thinking
-- **[Python Foundations](https://michaelborck-books.github.io/python-foundations)**: Coding Fundamentals for the AI Era
-- **[Python Development Pipelines](https://michaelborck-books.github.io/python-development-pipelines)**: Tools and Workflows for Professional Python
+- **[Think Python, Direct AI](https://michaelborck-books.github.io/python-step-by-step-ai)**: Computational Thinking for Beginners
+- **[Code Python, Consult AI](https://michaelborck-books.github.io/python-foundations)**: Python Fundamentals for the AI Era
+- **[Ship It: Python in Production](https://michaelborck-books.github.io/python-development-pipelines)**: Professional Tools and Workflows
 
 ### Web Track
-- **[Web Development Step by Step](https://michaelborck-books.github.io/web-dev-step-by-step-ai)**: Building Business Solutions with AI
+- **[Build Web, Guide AI](https://michaelborck-books.github.io/web-dev-step-by-step-ai)**: Business Web Development with AI
 
 ## Development
 
