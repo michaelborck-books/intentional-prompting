@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.43">
+<meta name="generator" content="quarto-1.8.26">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Intentional Prompting: Mastering the Human-AI Development Process – 7&nbsp; Pseudocode (Step 4)</title>
+<title>8&nbsp; Pseudocode (Step 4) – Conversation, Not Delegation: Mastering Human-AI Development</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,8 +21,9 @@ ul.task-list li input[type="checkbox"] {
   vertical-align: middle;
 }
 /* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -33,7 +34,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -66,15 +67,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <meta name="quarto:offset" content="../">
 <link href="../chapters/08-convert-to-code.html" rel="next">
 <link href="../chapters/06-work-by-hand.html" rel="prev">
-<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-597958c53c93a607afca12fd375c57ed.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-ea07c801963e0f738b5ea27386c64fa2.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -107,7 +110,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link rel="stylesheet" href="../styles.css">
 </head>
 
-<body class="nav-sidebar floating">
+<body class="nav-sidebar floating quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -116,7 +119,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/04-six-step-methodology.html">Methodology</a></li><li class="breadcrumb-item"><a href="../chapters/07-pseudocode.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Pseudocode (Step 4)</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/04-six-step-methodology.html">Methodology</a></li><li class="breadcrumb-item"><a href="../chapters/07-pseudocode.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Pseudocode (Step 4)</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -131,20 +134,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="../">Intentional Prompting: Mastering the Human-AI Development Process</a> 
+      <a href="../">Conversation, Not Delegation: Mastering Human-AI Development</a> 
         <div class="sidebar-tools-main">
     <a href="https://github.com/michael-borck/python-dev-book" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
     <div class="dropdown">
       <a href="" title="Download" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label="Download"><i class="bi bi-download"></i></a>
       <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
           <li>
-            <a class="dropdown-item sidebar-tools-main-item" href="../Intentional-Prompting--Mastering-the-Human-AI-Development-Process.pdf">
+            <a class="dropdown-item sidebar-tools-main-item" href="../Conversation,-Not-Delegation--Mastering-Human-AI-Development.pdf">
               <i class="bi bi-file-pdf pe-1"></i>
             Download PDF
             </a>
           </li>
           <li>
-            <a class="dropdown-item sidebar-tools-main-item" href="../Intentional-Prompting--Mastering-the-Human-AI-Development-Process.epub">
+            <a class="dropdown-item sidebar-tools-main-item" href="../Conversation,-Not-Delegation--Mastering-Human-AI-Development.epub">
               <i class="bi bi-journal pe-1"></i>
             Download ePub
             </a>
@@ -170,7 +173,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
- <span class="menu-text">Foundations</span></a>
+ <span class="menu-text">The Philosophy</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -178,20 +181,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapters/01-introduction.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../chapters/02-ai-revolution.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">The AI Revolution in Programming</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../chapters/03-intentional-prompting-principles.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Principles of Intentional Prompting</span></span></a>
+  <a href="../chapters/00-philosophy.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Conversation, Not Delegation</span></span></a>
   </div>
 </li>
       </ul>
@@ -199,7 +190,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
- <span class="menu-text">Methodology</span></a>
+ <span class="menu-text">Foundations</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -207,38 +198,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapters/04-six-step-methodology.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">The Six-Step Programming Methodology</span></span></a>
+  <a href="../chapters/01-introduction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapters/05-restate-and-identify.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Restate and Identify (Steps 1-2)</span></span></a>
+  <a href="../chapters/02-ai-revolution.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">The AI Revolution in Programming</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapters/06-work-by-hand.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Work by Hand (Step 3)</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../chapters/07-pseudocode.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Pseudocode (Step 4)</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../chapters/08-convert-to-code.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Convert to Code (Step 5)</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../chapters/09-test-with-data.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Test with Data (Step 6)</span></span></a>
+  <a href="../chapters/03-intentional-prompting-principles.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Principles of Intentional Prompting</span></span></a>
   </div>
 </li>
       </ul>
@@ -246,7 +219,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
- <span class="menu-text">Patterns &amp; Practices</span></a>
+ <span class="menu-text">Methodology</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -254,26 +227,38 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapters/10-intentional-prompting-patterns.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Intentional Prompting Patterns</span></span></a>
+  <a href="../chapters/04-six-step-methodology.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">The Six-Step Programming Methodology</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapters/11-debugging-with-ai.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Debugging with AI</span></span></a>
+  <a href="../chapters/05-restate-and-identify.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Restate and Identify (Steps 1-2)</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapters/12-refactoring-strategies.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Refactoring Strategies</span></span></a>
+  <a href="../chapters/06-work-by-hand.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Work by Hand (Step 3)</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapters/13-case-studies.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Case Studies</span></span></a>
+  <a href="../chapters/07-pseudocode.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Pseudocode (Step 4)</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/08-convert-to-code.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Convert to Code (Step 5)</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/09-test-with-data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Test with Data (Step 6)</span></span></a>
   </div>
 </li>
       </ul>
@@ -281,7 +266,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
- <span class="menu-text">Advanced Topics</span></a>
+ <span class="menu-text">Patterns &amp; Practices</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -289,20 +274,55 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../chapters/10-intentional-prompting-patterns.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Intentional Prompting Patterns</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/11-debugging-with-ai.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Debugging with AI</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/12-refactoring-strategies.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Refactoring Strategies</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/13-case-studies.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Case Studies</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+ <span class="menu-text">Advanced Topics</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../chapters/14-scaling-complexity.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Scaling to Complex Projects</span></span></a>
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Scaling to Complex Projects</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/15-teaching-learning.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Teaching and Learning</span></span></a>
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Teaching and Learning</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/16-future-directions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Future Directions</span></span></a>
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Future Directions</span></span></a>
   </div>
 </li>
       </ul>
@@ -315,13 +335,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true">
  <span class="menu-text">Appendices</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../appendices/prompt-templates.html" class="sidebar-item-text sidebar-link">
@@ -358,48 +378,48 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#writing-effective-pseudocode" id="toc-writing-effective-pseudocode" class="nav-link active" data-scroll-target="#writing-effective-pseudocode"><span class="header-section-number">7.1</span> Writing Effective Pseudocode</a>
+  <li><a href="#writing-effective-pseudocode" id="toc-writing-effective-pseudocode" class="nav-link active" data-scroll-target="#writing-effective-pseudocode"><span class="header-section-number">8.1</span> Writing Effective Pseudocode</a>
   <ul class="collapse">
-  <li><a href="#what-makes-good-pseudocode" id="toc-what-makes-good-pseudocode" class="nav-link" data-scroll-target="#what-makes-good-pseudocode"><span class="header-section-number">7.1.1</span> What Makes Good Pseudocode?</a></li>
-  <li><a href="#common-pseudocode-conventions" id="toc-common-pseudocode-conventions" class="nav-link" data-scroll-target="#common-pseudocode-conventions"><span class="header-section-number">7.1.2</span> Common Pseudocode Conventions</a></li>
+  <li><a href="#what-makes-good-pseudocode" id="toc-what-makes-good-pseudocode" class="nav-link" data-scroll-target="#what-makes-good-pseudocode"><span class="header-section-number">8.1.1</span> What Makes Good Pseudocode?</a></li>
+  <li><a href="#common-pseudocode-conventions" id="toc-common-pseudocode-conventions" class="nav-link" data-scroll-target="#common-pseudocode-conventions"><span class="header-section-number">8.1.2</span> Common Pseudocode Conventions</a></li>
   </ul></li>
-  <li><a href="#pseudocode-and-llms-a-natural-partnership" id="toc-pseudocode-and-llms-a-natural-partnership" class="nav-link" data-scroll-target="#pseudocode-and-llms-a-natural-partnership"><span class="header-section-number">7.2</span> Pseudocode and LLMs: A Natural Partnership</a>
+  <li><a href="#pseudocode-and-llms-a-natural-partnership" id="toc-pseudocode-and-llms-a-natural-partnership" class="nav-link" data-scroll-target="#pseudocode-and-llms-a-natural-partnership"><span class="header-section-number">8.2</span> Pseudocode and LLMs: A Natural Partnership</a>
   <ul class="collapse">
-  <li><a href="#why-pseudocode-works-well-with-llms" id="toc-why-pseudocode-works-well-with-llms" class="nav-link" data-scroll-target="#why-pseudocode-works-well-with-llms"><span class="header-section-number">7.2.1</span> Why Pseudocode Works Well with LLMs</a></li>
-  <li><a href="#pseudocode-as-disambiguation-tool" id="toc-pseudocode-as-disambiguation-tool" class="nav-link" data-scroll-target="#pseudocode-as-disambiguation-tool"><span class="header-section-number">7.2.2</span> Pseudocode as Disambiguation Tool</a></li>
-  <li><a href="#sudolang-pseudocode-optimized-for-llms" id="toc-sudolang-pseudocode-optimized-for-llms" class="nav-link" data-scroll-target="#sudolang-pseudocode-optimized-for-llms"><span class="header-section-number">7.2.3</span> SudoLang: Pseudocode Optimized for LLMs</a></li>
-  <li><a href="#llms-as-pseudocode-interpreters" id="toc-llms-as-pseudocode-interpreters" class="nav-link" data-scroll-target="#llms-as-pseudocode-interpreters"><span class="header-section-number">7.2.4</span> LLMs as Pseudocode Interpreters</a></li>
-  <li><a href="#pseudocode-vs.-comments" id="toc-pseudocode-vs.-comments" class="nav-link" data-scroll-target="#pseudocode-vs.-comments"><span class="header-section-number">7.2.5</span> Pseudocode vs.&nbsp;Comments</a></li>
+  <li><a href="#why-pseudocode-works-well-with-llms" id="toc-why-pseudocode-works-well-with-llms" class="nav-link" data-scroll-target="#why-pseudocode-works-well-with-llms"><span class="header-section-number">8.2.1</span> Why Pseudocode Works Well with LLMs</a></li>
+  <li><a href="#pseudocode-as-disambiguation-tool" id="toc-pseudocode-as-disambiguation-tool" class="nav-link" data-scroll-target="#pseudocode-as-disambiguation-tool"><span class="header-section-number">8.2.2</span> Pseudocode as Disambiguation Tool</a></li>
+  <li><a href="#sudolang-pseudocode-optimized-for-llms" id="toc-sudolang-pseudocode-optimized-for-llms" class="nav-link" data-scroll-target="#sudolang-pseudocode-optimized-for-llms"><span class="header-section-number">8.2.3</span> SudoLang: Pseudocode Optimized for LLMs</a></li>
+  <li><a href="#llms-as-pseudocode-interpreters" id="toc-llms-as-pseudocode-interpreters" class="nav-link" data-scroll-target="#llms-as-pseudocode-interpreters"><span class="header-section-number">8.2.4</span> LLMs as Pseudocode Interpreters</a></li>
+  <li><a href="#pseudocode-vs.-comments" id="toc-pseudocode-vs.-comments" class="nav-link" data-scroll-target="#pseudocode-vs.-comments"><span class="header-section-number">8.2.5</span> Pseudocode vs.&nbsp;Comments</a></li>
   </ul></li>
-  <li><a href="#ai-assisted-algorithm-design" id="toc-ai-assisted-algorithm-design" class="nav-link" data-scroll-target="#ai-assisted-algorithm-design"><span class="header-section-number">7.3</span> AI-Assisted Algorithm Design</a>
+  <li><a href="#ai-assisted-algorithm-design" id="toc-ai-assisted-algorithm-design" class="nav-link" data-scroll-target="#ai-assisted-algorithm-design"><span class="header-section-number">8.3</span> AI-Assisted Algorithm Design</a>
   <ul class="collapse">
-  <li><a href="#generating-initial-pseudocode" id="toc-generating-initial-pseudocode" class="nav-link" data-scroll-target="#generating-initial-pseudocode"><span class="header-section-number">7.3.1</span> Generating Initial Pseudocode</a></li>
-  <li><a href="#refining-pseudocode" id="toc-refining-pseudocode" class="nav-link" data-scroll-target="#refining-pseudocode"><span class="header-section-number">7.3.2</span> Refining Pseudocode</a></li>
-  <li><a href="#comparing-alternative-approaches" id="toc-comparing-alternative-approaches" class="nav-link" data-scroll-target="#comparing-alternative-approaches"><span class="header-section-number">7.3.3</span> Comparing Alternative Approaches</a></li>
+  <li><a href="#generating-initial-pseudocode" id="toc-generating-initial-pseudocode" class="nav-link" data-scroll-target="#generating-initial-pseudocode"><span class="header-section-number">8.3.1</span> Generating Initial Pseudocode</a></li>
+  <li><a href="#refining-pseudocode" id="toc-refining-pseudocode" class="nav-link" data-scroll-target="#refining-pseudocode"><span class="header-section-number">8.3.2</span> Refining Pseudocode</a></li>
+  <li><a href="#comparing-alternative-approaches" id="toc-comparing-alternative-approaches" class="nav-link" data-scroll-target="#comparing-alternative-approaches"><span class="header-section-number">8.3.3</span> Comparing Alternative Approaches</a></li>
   </ul></li>
-  <li><a href="#from-pseudocode-to-implementation-plan" id="toc-from-pseudocode-to-implementation-plan" class="nav-link" data-scroll-target="#from-pseudocode-to-implementation-plan"><span class="header-section-number">7.4</span> From Pseudocode to Implementation Plan</a>
+  <li><a href="#from-pseudocode-to-implementation-plan" id="toc-from-pseudocode-to-implementation-plan" class="nav-link" data-scroll-target="#from-pseudocode-to-implementation-plan"><span class="header-section-number">8.4</span> From Pseudocode to Implementation Plan</a>
   <ul class="collapse">
-  <li><a href="#adding-implementation-details" id="toc-adding-implementation-details" class="nav-link" data-scroll-target="#adding-implementation-details"><span class="header-section-number">7.4.1</span> Adding Implementation Details</a></li>
-  <li><a href="#creating-function-signatures" id="toc-creating-function-signatures" class="nav-link" data-scroll-target="#creating-function-signatures"><span class="header-section-number">7.4.2</span> Creating Function Signatures</a></li>
-  <li><a href="#planning-test-coverage" id="toc-planning-test-coverage" class="nav-link" data-scroll-target="#planning-test-coverage"><span class="header-section-number">7.4.3</span> Planning Test Coverage</a></li>
+  <li><a href="#adding-implementation-details" id="toc-adding-implementation-details" class="nav-link" data-scroll-target="#adding-implementation-details"><span class="header-section-number">8.4.1</span> Adding Implementation Details</a></li>
+  <li><a href="#creating-function-signatures" id="toc-creating-function-signatures" class="nav-link" data-scroll-target="#creating-function-signatures"><span class="header-section-number">8.4.2</span> Creating Function Signatures</a></li>
+  <li><a href="#planning-test-coverage" id="toc-planning-test-coverage" class="nav-link" data-scroll-target="#planning-test-coverage"><span class="header-section-number">8.4.3</span> Planning Test Coverage</a></li>
   </ul></li>
-  <li><a href="#comparing-alternative-approaches-1" id="toc-comparing-alternative-approaches-1" class="nav-link" data-scroll-target="#comparing-alternative-approaches-1"><span class="header-section-number">7.5</span> Comparing Alternative Approaches</a>
+  <li><a href="#comparing-alternative-approaches-1" id="toc-comparing-alternative-approaches-1" class="nav-link" data-scroll-target="#comparing-alternative-approaches-1"><span class="header-section-number">8.5</span> Comparing Alternative Approaches</a>
   <ul class="collapse">
-  <li><a href="#evaluation-criteria" id="toc-evaluation-criteria" class="nav-link" data-scroll-target="#evaluation-criteria"><span class="header-section-number">7.5.1</span> Evaluation Criteria</a></li>
-  <li><a href="#structured-comparison" id="toc-structured-comparison" class="nav-link" data-scroll-target="#structured-comparison"><span class="header-section-number">7.5.2</span> Structured Comparison</a></li>
-  <li><a href="#making-an-informed-decision" id="toc-making-an-informed-decision" class="nav-link" data-scroll-target="#making-an-informed-decision"><span class="header-section-number">7.5.3</span> Making an Informed Decision</a></li>
+  <li><a href="#evaluation-criteria" id="toc-evaluation-criteria" class="nav-link" data-scroll-target="#evaluation-criteria"><span class="header-section-number">8.5.1</span> Evaluation Criteria</a></li>
+  <li><a href="#structured-comparison" id="toc-structured-comparison" class="nav-link" data-scroll-target="#structured-comparison"><span class="header-section-number">8.5.2</span> Structured Comparison</a></li>
+  <li><a href="#making-an-informed-decision" id="toc-making-an-informed-decision" class="nav-link" data-scroll-target="#making-an-informed-decision"><span class="header-section-number">8.5.3</span> Making an Informed Decision</a></li>
   </ul></li>
-  <li><a href="#key-takeaways" id="toc-key-takeaways" class="nav-link" data-scroll-target="#key-takeaways"><span class="header-section-number">7.6</span> Key Takeaways</a></li>
-  <li><a href="#moving-forward" id="toc-moving-forward" class="nav-link" data-scroll-target="#moving-forward"><span class="header-section-number">7.7</span> Moving Forward</a></li>
+  <li><a href="#key-takeaways" id="toc-key-takeaways" class="nav-link" data-scroll-target="#key-takeaways"><span class="header-section-number">8.6</span> Key Takeaways</a></li>
+  <li><a href="#moving-forward" id="toc-moving-forward" class="nav-link" data-scroll-target="#moving-forward"><span class="header-section-number">8.7</span> Moving Forward</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/michael-borck/python-dev-book/edit/main/chapters/07-pseudocode.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/michael-borck/python-dev-book/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/04-six-step-methodology.html">Methodology</a></li><li class="breadcrumb-item"><a href="../chapters/07-pseudocode.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Pseudocode (Step 4)</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/04-six-step-methodology.html">Methodology</a></li><li class="breadcrumb-item"><a href="../chapters/07-pseudocode.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Pseudocode (Step 4)</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Pseudocode (Step 4)</span></h1>
+<h1 class="title"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Pseudocode (Step 4)</span></h1>
 </div>
 
 
@@ -417,10 +437,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <p>The fourth step in our methodology—writing pseudocode—bridges the conceptual understanding developed in earlier steps to the concrete implementation that follows. Pseudocode provides a language-agnostic blueprint for your solution, focusing on logic and algorithms rather than syntax.</p>
-<section id="writing-effective-pseudocode" class="level2" data-number="7.1">
-<h2 data-number="7.1" class="anchored" data-anchor-id="writing-effective-pseudocode"><span class="header-section-number">7.1</span> Writing Effective Pseudocode</h2>
-<section id="what-makes-good-pseudocode" class="level3" data-number="7.1.1">
-<h3 data-number="7.1.1" class="anchored" data-anchor-id="what-makes-good-pseudocode"><span class="header-section-number">7.1.1</span> What Makes Good Pseudocode?</h3>
+<section id="writing-effective-pseudocode" class="level2" data-number="8.1">
+<h2 data-number="8.1" class="anchored" data-anchor-id="writing-effective-pseudocode"><span class="header-section-number">8.1</span> Writing Effective Pseudocode</h2>
+<section id="what-makes-good-pseudocode" class="level3" data-number="8.1.1">
+<h3 data-number="8.1.1" class="anchored" data-anchor-id="what-makes-good-pseudocode"><span class="header-section-number">8.1.1</span> What Makes Good Pseudocode?</h3>
 <p>Effective pseudocode strikes a balance between abstraction and detail:</p>
 <ul>
 <li><strong>Clear and readable</strong> - understandable by both humans and AI</li>
@@ -432,11 +452,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 <p>The goal is to create a plan concrete enough to guide implementation but abstract enough to focus on the solution’s logic rather than syntactic details.</p>
 </section>
-<section id="common-pseudocode-conventions" class="level3" data-number="7.1.2">
-<h3 data-number="7.1.2" class="anchored" data-anchor-id="common-pseudocode-conventions"><span class="header-section-number">7.1.2</span> Common Pseudocode Conventions</h3>
+<section id="common-pseudocode-conventions" class="level3" data-number="8.1.2">
+<h3 data-number="8.1.2" class="anchored" data-anchor-id="common-pseudocode-conventions"><span class="header-section-number">8.1.2</span> Common Pseudocode Conventions</h3>
 <p>While pseudocode isn’t standardized, these conventions enhance clarity:</p>
-<section id="control-structures" class="level4" data-number="7.1.2.1">
-<h4 data-number="7.1.2.1" class="anchored" data-anchor-id="control-structures"><span class="header-section-number">7.1.2.1</span> Control Structures</h4>
+<section id="control-structures" class="level4" data-number="8.1.2.1">
+<h4 data-number="8.1.2.1" class="anchored" data-anchor-id="control-structures"><span class="header-section-number">8.1.2.1</span> Control Structures</h4>
 <pre><code>IF condition THEN
     action1
 ELSE
@@ -451,32 +471,32 @@ WHILE condition
     action
 END WHILE</code></pre>
 </section>
-<section id="function-definitions" class="level4" data-number="7.1.2.2">
-<h4 data-number="7.1.2.2" class="anchored" data-anchor-id="function-definitions"><span class="header-section-number">7.1.2.2</span> Function Definitions</h4>
+<section id="function-definitions" class="level4" data-number="8.1.2.2">
+<h4 data-number="8.1.2.2" class="anchored" data-anchor-id="function-definitions"><span class="header-section-number">8.1.2.2</span> Function Definitions</h4>
 <pre><code>FUNCTION name(parameters)
     actions
     RETURN value
 END FUNCTION</code></pre>
 </section>
-<section id="variable-operations" class="level4" data-number="7.1.2.3">
-<h4 data-number="7.1.2.3" class="anchored" data-anchor-id="variable-operations"><span class="header-section-number">7.1.2.3</span> Variable Operations</h4>
+<section id="variable-operations" class="level4" data-number="8.1.2.3">
+<h4 data-number="8.1.2.3" class="anchored" data-anchor-id="variable-operations"><span class="header-section-number">8.1.2.3</span> Variable Operations</h4>
 <pre><code>SET variable TO value
 INCREMENT counter
 ADD item TO collection</code></pre>
 </section>
-<section id="inputoutput" class="level4" data-number="7.1.2.4">
-<h4 data-number="7.1.2.4" class="anchored" data-anchor-id="inputoutput"><span class="header-section-number">7.1.2.4</span> Input/Output</h4>
+<section id="inputoutput" class="level4" data-number="8.1.2.4">
+<h4 data-number="8.1.2.4" class="anchored" data-anchor-id="inputoutput"><span class="header-section-number">8.1.2.4</span> Input/Output</h4>
 <pre><code>READ input FROM user
 DISPLAY message
 WRITE data TO file</code></pre>
 </section>
 </section>
 </section>
-<section id="pseudocode-and-llms-a-natural-partnership" class="level2" data-number="7.2">
-<h2 data-number="7.2" class="anchored" data-anchor-id="pseudocode-and-llms-a-natural-partnership"><span class="header-section-number">7.2</span> Pseudocode and LLMs: A Natural Partnership</h2>
+<section id="pseudocode-and-llms-a-natural-partnership" class="level2" data-number="8.2">
+<h2 data-number="8.2" class="anchored" data-anchor-id="pseudocode-and-llms-a-natural-partnership"><span class="header-section-number">8.2</span> Pseudocode and LLMs: A Natural Partnership</h2>
 <p>Pseudocode plays a particularly important role when working with Large Language Models. It serves as a bridge between natural language ambiguity and the precision of formal programming languages, creating an ideal medium for human-AI collaboration.</p>
-<section id="why-pseudocode-works-well-with-llms" class="level3" data-number="7.2.1">
-<h3 data-number="7.2.1" class="anchored" data-anchor-id="why-pseudocode-works-well-with-llms"><span class="header-section-number">7.2.1</span> Why Pseudocode Works Well with LLMs</h3>
+<section id="why-pseudocode-works-well-with-llms" class="level3" data-number="8.2.1">
+<h3 data-number="8.2.1" class="anchored" data-anchor-id="why-pseudocode-works-well-with-llms"><span class="header-section-number">8.2.1</span> Why Pseudocode Works Well with LLMs</h3>
 <p>Several factors make pseudocode especially effective for LLM interactions:</p>
 <ol type="1">
 <li><p><strong>Structural alignment with training data</strong> - LLMs have been trained on vast amounts of programming content, including discussions of algorithms that frequently use pseudocode. This training means they have strong internal representations of pseudocode conventions.</p></li>
@@ -486,8 +506,8 @@ WRITE data TO file</code></pre>
 <li><p><strong>Medium of iterative refinement</strong> - Pseudocode serves as an excellent medium for progressive disambiguation - the process of gradually transforming ambiguous natural language into precise formal code through multiple rounds of interaction.</p></li>
 </ol>
 </section>
-<section id="pseudocode-as-disambiguation-tool" class="level3" data-number="7.2.2">
-<h3 data-number="7.2.2" class="anchored" data-anchor-id="pseudocode-as-disambiguation-tool"><span class="header-section-number">7.2.2</span> Pseudocode as Disambiguation Tool</h3>
+<section id="pseudocode-as-disambiguation-tool" class="level3" data-number="8.2.2">
+<h3 data-number="8.2.2" class="anchored" data-anchor-id="pseudocode-as-disambiguation-tool"><span class="header-section-number">8.2.2</span> Pseudocode as Disambiguation Tool</h3>
 <p>One of the most significant challenges when working with LLMs is the inherent ambiguity of natural language. Pseudocode helps address this challenge by:</p>
 <ul>
 <li>Providing clear structure that reduces misinterpretation</li>
@@ -497,8 +517,8 @@ WRITE data TO file</code></pre>
 </ul>
 <p>As Dijkstra noted decades ago, “The virtue of formal texts is that their manipulations, in order to be legitimate, need to satisfy only a few simple rules; they are… an amazingly effective tool for ruling out all sorts of nonsense that, when we use our native tongues, are almost impossible to avoid.” While pseudocode isn’t fully formal, it moves us considerably in that direction.</p>
 </section>
-<section id="sudolang-pseudocode-optimized-for-llms" class="level3" data-number="7.2.3">
-<h3 data-number="7.2.3" class="anchored" data-anchor-id="sudolang-pseudocode-optimized-for-llms"><span class="header-section-number">7.2.3</span> SudoLang: Pseudocode Optimized for LLMs</h3>
+<section id="sudolang-pseudocode-optimized-for-llms" class="level3" data-number="8.2.3">
+<h3 data-number="8.2.3" class="anchored" data-anchor-id="sudolang-pseudocode-optimized-for-llms"><span class="header-section-number">8.2.3</span> SudoLang: Pseudocode Optimized for LLMs</h3>
 <p>SudoLang represents an evolution of pseudocode specifically designed for LLM interaction. Created by Eric Elliott, it provides a structured syntax that bridges the gap between natural language and formal programming languages, optimized for human-AI collaboration.</p>
 <p>Key features of SudoLang include:</p>
 <ul>
@@ -514,8 +534,8 @@ WRITE data TO file</code></pre>
 }</code></pre>
 <p>When working with AI assistants on complex programming tasks, SudoLang can help create more precise, intentional prompts that result in higher-quality code generation. It’s especially valuable when you need to communicate algorithmic intent clearly without getting lost in language-specific syntax details.</p>
 </section>
-<section id="llms-as-pseudocode-interpreters" class="level3" data-number="7.2.4">
-<h3 data-number="7.2.4" class="anchored" data-anchor-id="llms-as-pseudocode-interpreters"><span class="header-section-number">7.2.4</span> LLMs as Pseudocode Interpreters</h3>
+<section id="llms-as-pseudocode-interpreters" class="level3" data-number="8.2.4">
+<h3 data-number="8.2.4" class="anchored" data-anchor-id="llms-as-pseudocode-interpreters"><span class="header-section-number">8.2.4</span> LLMs as Pseudocode Interpreters</h3>
 <p>An intriguing aspect of LLMs is their ability to act as “interpreters” for pseudocode. Unlike traditional pseudocode that serves purely as documentation, LLMs can actually process and “execute” pseudocode to generate outputs, transforming it from a planning tool into a functional programming interface.</p>
 <p>This capability enables new workflows where:</p>
 <ol type="1">
@@ -526,8 +546,8 @@ WRITE data TO file</code></pre>
 <p>This process leverages the complementary strengths of both humans and AI: human strategic thinking and algorithm design paired with AI’s ability to handle implementation details across various programming languages.</p>
 <p>For complex algorithmic challenges, this partnership often produces better results than either pure natural language prompting (too ambiguous) or direct code requests (too focused on immediate implementation rather than understanding).</p>
 </section>
-<section id="pseudocode-vs.-comments" class="level3" data-number="7.2.5">
-<h3 data-number="7.2.5" class="anchored" data-anchor-id="pseudocode-vs.-comments"><span class="header-section-number">7.2.5</span> Pseudocode vs.&nbsp;Comments</h3>
+<section id="pseudocode-vs.-comments" class="level3" data-number="8.2.5">
+<h3 data-number="8.2.5" class="anchored" data-anchor-id="pseudocode-vs.-comments"><span class="header-section-number">8.2.5</span> Pseudocode vs.&nbsp;Comments</h3>
 <p>Pseudocode differs from code comments in several important ways:</p>
 <table class="caption-top table">
 <thead>
@@ -562,11 +582,11 @@ WRITE data TO file</code></pre>
 <p>The best implementation often involves transforming pseudocode into commented code, preserving the planning insights in the final implementation.</p>
 </section>
 </section>
-<section id="ai-assisted-algorithm-design" class="level2" data-number="7.3">
-<h2 data-number="7.3" class="anchored" data-anchor-id="ai-assisted-algorithm-design"><span class="header-section-number">7.3</span> AI-Assisted Algorithm Design</h2>
+<section id="ai-assisted-algorithm-design" class="level2" data-number="8.3">
+<h2 data-number="8.3" class="anchored" data-anchor-id="ai-assisted-algorithm-design"><span class="header-section-number">8.3</span> AI-Assisted Algorithm Design</h2>
 <p>AI assistants can be valuable partners in developing pseudocode, offering different approaches and identifying potential issues.</p>
-<section id="generating-initial-pseudocode" class="level3" data-number="7.3.1">
-<h3 data-number="7.3.1" class="anchored" data-anchor-id="generating-initial-pseudocode"><span class="header-section-number">7.3.1</span> Generating Initial Pseudocode</h3>
+<section id="generating-initial-pseudocode" class="level3" data-number="8.3.1">
+<h3 data-number="8.3.1" class="anchored" data-anchor-id="generating-initial-pseudocode"><span class="header-section-number">8.3.1</span> Generating Initial Pseudocode</h3>
 <p>AI can help draft initial pseudocode based on your problem statement:</p>
 <p><strong>Human prompt:</strong></p>
 <pre><code>Based on my manual approach to finding the longest palindromic substring, could you help me develop pseudocode for an algorithm that:
@@ -575,8 +595,8 @@ WRITE data TO file</code></pre>
 3. Tracks the longest palindrome found</code></pre>
 <p><strong>AI response:</strong> &gt; Here’s pseudocode for finding the longest palindromic substring: &gt; &gt; <code>&gt; FUNCTION findLongestPalindromicSubstring(string) &gt;     IF string is empty THEN &gt;         RETURN empty string &gt;     END IF &gt;      &gt;     SET startIndex = 0 &gt;     SET maxLength = 1 &gt;      &gt;     FUNCTION expandAroundCenter(left, right) &gt;         WHILE left &gt;= 0 AND right &lt; length of string AND string[left] = string[right] &gt;             currentLength = right - left + 1 &gt;             IF currentLength &gt; maxLength THEN &gt;                 SET maxLength = currentLength &gt;                 SET startIndex = left &gt;             END IF &gt;             DECREMENT left &gt;             INCREMENT right &gt;         END WHILE &gt;     END FUNCTION &gt;      &gt;     FOR i = 0 TO length of string - 1 &gt;         // Check odd length palindromes (single character center) &gt;         expandAroundCenter(i, i) &gt;          &gt;         // Check even length palindromes (between character center) &gt;         expandAroundCenter(i, i + 1) &gt;     END FOR &gt;      &gt;     RETURN substring of string from startIndex to startIndex + maxLength - 1 &gt; END FUNCTION &gt;</code> &gt; &gt; This pseudocode implements the approach we discussed, checking both odd and even length palindromes by expanding around potential centers and tracking the longest palindrome found.</p>
 </section>
-<section id="refining-pseudocode" class="level3" data-number="7.3.2">
-<h3 data-number="7.3.2" class="anchored" data-anchor-id="refining-pseudocode"><span class="header-section-number">7.3.2</span> Refining Pseudocode</h3>
+<section id="refining-pseudocode" class="level3" data-number="8.3.2">
+<h3 data-number="8.3.2" class="anchored" data-anchor-id="refining-pseudocode"><span class="header-section-number">8.3.2</span> Refining Pseudocode</h3>
 <p>Once you have initial pseudocode, use AI to help refine it by asking targeted questions:</p>
 <p><strong>Human prompt:</strong></p>
 <pre><code>This pseudocode looks good. Two questions:
@@ -597,8 +617,8 @@ WRITE data TO file</code></pre>
 &gt; <code>&gt;    FOR i = 0 TO length of string - 1 &gt;        // Only check centers with enough characters on both sides to beat maxLength &gt;        remainingChars = MIN(i, length of string - i - 1) &gt;        IF remainingChars * 2 + 1 &gt; maxLength THEN &gt;            // Odd length &gt;            expandAroundCenter(i, i) &gt;        END IF &gt;         &gt;        IF i &lt; length of string - 1 AND MIN(i, length of string - i - 2) * 2 + 2 &gt; maxLength THEN &gt;            // Even length &gt;            expandAroundCenter(i, i + 1) &gt;        END IF &gt;    END FOR &gt;</code> &gt;<br>
 &gt; However, these optimizations add complexity. For most practical cases, the original pseudocode is clear and efficient enough.</p>
 </section>
-<section id="comparing-alternative-approaches" class="level3" data-number="7.3.3">
-<h3 data-number="7.3.3" class="anchored" data-anchor-id="comparing-alternative-approaches"><span class="header-section-number">7.3.3</span> Comparing Alternative Approaches</h3>
+<section id="comparing-alternative-approaches" class="level3" data-number="8.3.3">
+<h3 data-number="8.3.3" class="anchored" data-anchor-id="comparing-alternative-approaches"><span class="header-section-number">8.3.3</span> Comparing Alternative Approaches</h3>
 <p>AI can help explore different algorithmic approaches to the same problem:</p>
 <p><strong>Human prompt:</strong></p>
 <pre><code>Are there fundamentally different approaches to finding the longest palindromic substring besides the center-expansion method we've been discussing?</code></pre>
@@ -613,11 +633,11 @@ WRITE data TO file</code></pre>
 &gt; This is even more complex to implement but can be useful when solving multiple related string problems. &gt; &gt; The center expansion approach remains the most intuitive and offers a good balance of simplicity and efficiency for most practical applications.</p>
 </section>
 </section>
-<section id="from-pseudocode-to-implementation-plan" class="level2" data-number="7.4">
-<h2 data-number="7.4" class="anchored" data-anchor-id="from-pseudocode-to-implementation-plan"><span class="header-section-number">7.4</span> From Pseudocode to Implementation Plan</h2>
+<section id="from-pseudocode-to-implementation-plan" class="level2" data-number="8.4">
+<h2 data-number="8.4" class="anchored" data-anchor-id="from-pseudocode-to-implementation-plan"><span class="header-section-number">8.4</span> From Pseudocode to Implementation Plan</h2>
 <p>Pseudocode should eventually lead to a concrete implementation plan, outlining how to translate the logical structure into actual code.</p>
-<section id="adding-implementation-details" class="level3" data-number="7.4.1">
-<h3 data-number="7.4.1" class="anchored" data-anchor-id="adding-implementation-details"><span class="header-section-number">7.4.1</span> Adding Implementation Details</h3>
+<section id="adding-implementation-details" class="level3" data-number="8.4.1">
+<h3 data-number="8.4.1" class="anchored" data-anchor-id="adding-implementation-details"><span class="header-section-number">8.4.1</span> Adding Implementation Details</h3>
 <p>Once the core logic is established in pseudocode, gradually add implementation-specific details:</p>
 <pre><code>// Initial pseudocode
 FOR each character in string
@@ -643,10 +663,10 @@ FOR i = 0 TO length - 1
     END IF
 END FOR</code></pre>
 </section>
-<section id="creating-function-signatures" class="level3" data-number="7.4.2">
-<h3 data-number="7.4.2" class="anchored" data-anchor-id="creating-function-signatures"><span class="header-section-number">7.4.2</span> Creating Function Signatures</h3>
+<section id="creating-function-signatures" class="level3" data-number="8.4.2">
+<h3 data-number="8.4.2" class="anchored" data-anchor-id="creating-function-signatures"><span class="header-section-number">8.4.2</span> Creating Function Signatures</h3>
 <p>Based on the pseudocode, define the function signatures that will be needed:</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> find_longest_palindrome(s: <span class="bu">str</span>) <span class="op">-&gt;</span> <span class="bu">str</span>:</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> find_longest_palindrome(s: <span class="bu">str</span>) <span class="op">-&gt;</span> <span class="bu">str</span>:</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="co">    Find the longest palindromic substring in the given string.</span></span>
 <span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="co">    </span></span>
@@ -672,10 +692,10 @@ END FOR</code></pre>
 <span id="cb10-24"><a href="#cb10-24" aria-hidden="true" tabindex="-1"></a><span class="co">    Returns:</span></span>
 <span id="cb10-25"><a href="#cb10-25" aria-hidden="true" tabindex="-1"></a><span class="co">        Tuple of (start_index, length) of palindrome</span></span>
 <span id="cb10-26"><a href="#cb10-26" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
-<span id="cb10-27"><a href="#cb10-27" aria-hidden="true" tabindex="-1"></a>    <span class="cf">pass</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb10-27"><a href="#cb10-27" aria-hidden="true" tabindex="-1"></a>    <span class="cf">pass</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="planning-test-coverage" class="level3" data-number="7.4.3">
-<h3 data-number="7.4.3" class="anchored" data-anchor-id="planning-test-coverage"><span class="header-section-number">7.4.3</span> Planning Test Coverage</h3>
+<section id="planning-test-coverage" class="level3" data-number="8.4.3">
+<h3 data-number="8.4.3" class="anchored" data-anchor-id="planning-test-coverage"><span class="header-section-number">8.4.3</span> Planning Test Coverage</h3>
 <p>Use pseudocode to identify the test cases needed for comprehensive coverage:</p>
 <pre><code>TEST CASES:
 1. Empty string -&gt; should return empty string
@@ -688,11 +708,11 @@ END FOR</code></pre>
 8. Entire string is a palindrome -&gt; should return entire string</code></pre>
 </section>
 </section>
-<section id="comparing-alternative-approaches-1" class="level2" data-number="7.5">
-<h2 data-number="7.5" class="anchored" data-anchor-id="comparing-alternative-approaches-1"><span class="header-section-number">7.5</span> Comparing Alternative Approaches</h2>
+<section id="comparing-alternative-approaches-1" class="level2" data-number="8.5">
+<h2 data-number="8.5" class="anchored" data-anchor-id="comparing-alternative-approaches-1"><span class="header-section-number">8.5</span> Comparing Alternative Approaches</h2>
 <p>When faced with multiple valid algorithmic approaches, pseudocode provides a concise way to compare them before committing to implementation.</p>
-<section id="evaluation-criteria" class="level3" data-number="7.5.1">
-<h3 data-number="7.5.1" class="anchored" data-anchor-id="evaluation-criteria"><span class="header-section-number">7.5.1</span> Evaluation Criteria</h3>
+<section id="evaluation-criteria" class="level3" data-number="8.5.1">
+<h3 data-number="8.5.1" class="anchored" data-anchor-id="evaluation-criteria"><span class="header-section-number">8.5.1</span> Evaluation Criteria</h3>
 <p>Evaluate pseudocode approaches based on:</p>
 <ol type="1">
 <li><strong>Time complexity</strong> - theoretical performance as input size grows</li>
@@ -703,8 +723,8 @@ END FOR</code></pre>
 <li><strong>Scalability</strong> - ability to handle very large inputs or to be extended</li>
 </ol>
 </section>
-<section id="structured-comparison" class="level3" data-number="7.5.2">
-<h3 data-number="7.5.2" class="anchored" data-anchor-id="structured-comparison"><span class="header-section-number">7.5.2</span> Structured Comparison</h3>
+<section id="structured-comparison" class="level3" data-number="8.5.2">
+<h3 data-number="8.5.2" class="anchored" data-anchor-id="structured-comparison"><span class="header-section-number">8.5.2</span> Structured Comparison</h3>
 <p>Create a comparison table to evaluate different approaches:</p>
 <table class="caption-top table">
 <colgroup>
@@ -753,8 +773,8 @@ END FOR</code></pre>
 </tbody>
 </table>
 </section>
-<section id="making-an-informed-decision" class="level3" data-number="7.5.3">
-<h3 data-number="7.5.3" class="anchored" data-anchor-id="making-an-informed-decision"><span class="header-section-number">7.5.3</span> Making an Informed Decision</h3>
+<section id="making-an-informed-decision" class="level3" data-number="8.5.3">
+<h3 data-number="8.5.3" class="anchored" data-anchor-id="making-an-informed-decision"><span class="header-section-number">8.5.3</span> Making an Informed Decision</h3>
 <p>Consider the context of your application:</p>
 <ul>
 <li>For educational purposes or moderate string lengths, the center expansion approach is ideal due to its simplicity and efficiency</li>
@@ -764,8 +784,8 @@ END FOR</code></pre>
 </ul>
 </section>
 </section>
-<section id="key-takeaways" class="level2" data-number="7.6">
-<h2 data-number="7.6" class="anchored" data-anchor-id="key-takeaways"><span class="header-section-number">7.6</span> Key Takeaways</h2>
+<section id="key-takeaways" class="level2" data-number="8.6">
+<h2 data-number="8.6" class="anchored" data-anchor-id="key-takeaways"><span class="header-section-number">8.6</span> Key Takeaways</h2>
 <ul>
 <li>Pseudocode provides a language-agnostic blueprint focusing on logic rather than syntax</li>
 <li>Good pseudocode strikes a balance between abstraction and detail</li>
@@ -775,8 +795,8 @@ END FOR</code></pre>
 <li>Pseudocode forms the basis for function signatures and test plans</li>
 </ul>
 </section>
-<section id="moving-forward" class="level2" data-number="7.7">
-<h2 data-number="7.7" class="anchored" data-anchor-id="moving-forward"><span class="header-section-number">7.7</span> Moving Forward</h2>
+<section id="moving-forward" class="level2" data-number="8.7">
+<h2 data-number="8.7" class="anchored" data-anchor-id="moving-forward"><span class="header-section-number">8.7</span> Moving Forward</h2>
 <p>With well-developed pseudocode in hand, we’re now ready to move to Step 5: Converting our logical blueprint into working code. In the next chapter, we’ll explore strategies for implementing our pseudocode efficiently, leveraging AI assistance while maintaining human understanding and control.</p>
 
 
@@ -784,239 +804,243 @@ END FOR</code></pre>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
-window.document.addEventListener("DOMContentLoaded", function (event) {
-  const toggleBodyColorMode = (bsSheetEl) => {
-    const mode = bsSheetEl.getAttribute("data-mode");
-    const bodyEl = window.document.querySelector("body");
-    if (mode === "dark") {
-      bodyEl.classList.add("quarto-dark");
-      bodyEl.classList.remove("quarto-light");
-    } else {
-      bodyEl.classList.add("quarto-light");
-      bodyEl.classList.remove("quarto-dark");
-    }
-  }
-  const toggleBodyColorPrimary = () => {
-    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
-    if (bsSheetEl) {
-      toggleBodyColorMode(bsSheetEl);
-    }
-  }
-  toggleBodyColorPrimary();  
-  const icon = "";
-  const anchorJS = new window.AnchorJS();
-  anchorJS.options = {
-    placement: 'right',
-    icon: icon
-  };
-  anchorJS.add('.anchored');
-  const isCodeAnnotation = (el) => {
-    for (const clz of el.classList) {
-      if (clz.startsWith('code-annotation-')) {                     
-        return true;
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
       }
+      return false;
     }
-    return false;
-  }
-  const onCopySuccess = function(e) {
-    // button target
-    const button = e.trigger;
-    // don't keep focus
-    button.blur();
-    // flash "checked"
-    button.classList.add('code-copy-button-checked');
-    var currentTitle = button.getAttribute("title");
-    button.setAttribute("title", "Copied!");
-    let tooltip;
-    if (window.bootstrap) {
-      button.setAttribute("data-bs-toggle", "tooltip");
-      button.setAttribute("data-bs-placement", "left");
-      button.setAttribute("data-bs-title", "Copied!");
-      tooltip = new bootstrap.Tooltip(button, 
-        { trigger: "manual", 
-          customClass: "code-copy-button-tooltip",
-          offset: [0, -8]});
-      tooltip.show();    
-    }
-    setTimeout(function() {
-      if (tooltip) {
-        tooltip.hide();
-        button.removeAttribute("data-bs-title");
-        button.removeAttribute("data-bs-toggle");
-        button.removeAttribute("data-bs-placement");
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
       }
-      button.setAttribute("title", currentTitle);
-      button.classList.remove('code-copy-button-checked');
-    }, 1000);
-    // clear code selection
-    e.clearSelection();
-  }
-  const getTextToCopy = function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
       for (const childEl of codeEl.children) {
         if (isCodeAnnotation(childEl)) {
           childEl.remove();
         }
       }
       return codeEl.innerText;
-  }
-  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-    text: getTextToCopy
-  });
-  clipboard.on('success', onCopySuccess);
-  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
-    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-      text: getTextToCopy,
-      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
     });
-    clipboardModal.on('success', onCopySuccess);
-  }
-    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-    var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp('/' + window.location.host + '/');
-    var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
     }
-    // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
-    for (var i=0; i<links.length; i++) {
-      const link = links[i];
-      if (!isInternal(link.href)) {
-        // undo the damage that might have been done by quarto-nav.js in the case of
-        // links that we want to consider external
-        if (link.dataset.originalHref !== undefined) {
-          link.href = link.dataset.originalHref;
-        }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
-    }
-  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
-    const config = {
-      allowHTML: true,
-      maxWidth: 500,
-      delay: 100,
-      arrow: false,
-      appendTo: function(el) {
-          return el.parentElement;
-      },
-      interactive: true,
-      interactiveBorder: 10,
-      theme: 'quarto',
-      placement: 'bottom-start',
-    };
-    if (contentFn) {
-      config.content = contentFn;
-    }
-    if (onTriggerFn) {
-      config.onTrigger = onTriggerFn;
-    }
-    if (onUntriggerFn) {
-      config.onUntrigger = onUntriggerFn;
-    }
-    window.tippy(el, config); 
-  }
-  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
-  for (var i=0; i<noterefs.length; i++) {
-    const ref = noterefs[i];
-    tippyHover(ref, function() {
-      // use id or data attribute instead here
-      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
-      try { href = new URL(href).hash; } catch {}
-      const id = href.replace(/^#\/?/, "");
-      const note = window.document.getElementById(id);
-      if (note) {
-        return note.innerHTML;
-      } else {
-        return "";
-      }
-    });
-  }
-  const xrefs = window.document.querySelectorAll('a.quarto-xref');
-  const processXRef = (id, note) => {
-    // Strip column container classes
-    const stripColumnClz = (el) => {
-      el.classList.remove("page-full", "page-columns");
-      if (el.children) {
-        for (const child of el.children) {
-          stripColumnClz(child);
-        }
-      }
-    }
-    stripColumnClz(note)
-    if (id === null || id.startsWith('sec-')) {
-      // Special case sections, only their first couple elements
-      const container = document.createElement("div");
-      if (note.children && note.children.length > 2) {
-        container.appendChild(note.children[0].cloneNode(true));
-        for (let i = 1; i < note.children.length; i++) {
-          const child = note.children[i];
-          if (child.tagName === "P" && child.innerText === "") {
-            continue;
-          } else {
-            container.appendChild(child.cloneNode(true));
-            break;
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
           }
         }
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(container);
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
         }
-        return container.innerHTML
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
       } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
         if (window.Quarto?.typesetMath) {
           window.Quarto.typesetMath(note);
         }
-        return note.innerHTML;
-      }
-    } else {
-      // Remove any anchor links if they are present
-      const anchorLink = note.querySelector('a.anchorjs-link');
-      if (anchorLink) {
-        anchorLink.remove();
-      }
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(note);
-      }
-      // TODO in 1.5, we should make sure this works without a callout special case
-      if (note.classList.contains("callout")) {
-        return note.outerHTML;
-      } else {
-        return note.innerHTML;
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
       }
     }
-  }
-  for (var i=0; i<xrefs.length; i++) {
-    const xref = xrefs[i];
-    tippyHover(xref, undefined, function(instance) {
-      instance.disable();
-      let url = xref.getAttribute('href');
-      let hash = undefined; 
-      if (url.startsWith('#')) {
-        hash = url;
-      } else {
-        try { hash = new URL(url).hash; } catch {}
-      }
-      if (hash) {
-        const id = hash.replace(/^#\/?/, "");
-        const note = window.document.getElementById(id);
-        if (note !== null) {
-          try {
-            const html = processXRef(id, note.cloneNode(true));
-            instance.setContent(html);
-          } finally {
-            instance.enable();
-            instance.show();
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
           }
         } else {
-          // See if we can fetch this
-          fetch(url.split('#')[0])
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
           .then(res => res.text())
           .then(html => {
             const parser = new DOMParser();
             const htmlDoc = parser.parseFromString(html, "text/html");
-            const note = htmlDoc.getElementById(id);
+            const note = htmlDoc.querySelector('main.content');
             if (note !== null) {
-              const html = processXRef(id, note);
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
               instance.setContent(html);
             } 
           }).finally(() => {
@@ -1024,194 +1048,170 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             instance.show();
           });
         }
-      } else {
-        // See if we can fetch a full url (with no hash to target)
-        // This is a special case and we should probably do some content thinning / targeting
-        fetch(url)
-        .then(res => res.text())
-        .then(html => {
-          const parser = new DOMParser();
-          const htmlDoc = parser.parseFromString(html, "text/html");
-          const note = htmlDoc.querySelector('main.content');
-          if (note !== null) {
-            // This should only happen for chapter cross references
-            // (since there is no id in the URL)
-            // remove the first header
-            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
-              note.children[0].remove();
-            }
-            const html = processXRef(null, note);
-            instance.setContent(html);
-          } 
-        }).finally(() => {
-          instance.enable();
-          instance.show();
-        });
-      }
-    }, function(instance) {
-    });
-  }
-      let selectedAnnoteEl;
-      const selectorForAnnotation = ( cell, annotation) => {
-        let cellAttr = 'data-code-cell="' + cell + '"';
-        let lineAttr = 'data-code-annotation="' +  annotation + '"';
-        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
-        return selector;
-      }
-      const selectCodeLines = (annoteEl) => {
-        const doc = window.document;
-        const targetCell = annoteEl.getAttribute("data-target-cell");
-        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
-        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
-        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
-        const lineIds = lines.map((line) => {
-          return targetCell + "-" + line;
-        })
-        let top = null;
-        let height = null;
-        let parent = null;
-        if (lineIds.length > 0) {
-            //compute the position of the single el (top and bottom and make a div)
-            const el = window.document.getElementById(lineIds[0]);
-            top = el.offsetTop;
-            height = el.offsetHeight;
-            parent = el.parentElement.parentElement;
-          if (lineIds.length > 1) {
-            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-            height = bottom - top;
-          }
-          if (top !== null && height !== null && parent !== null) {
-            // cook up a div (if necessary) and position it 
-            let div = window.document.getElementById("code-annotation-line-highlight");
-            if (div === null) {
-              div = window.document.createElement("div");
-              div.setAttribute("id", "code-annotation-line-highlight");
-              div.style.position = 'absolute';
-              parent.appendChild(div);
-            }
-            div.style.top = top - 2 + "px";
-            div.style.height = height + 4 + "px";
-            div.style.left = 0;
-            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-            if (gutterDiv === null) {
-              gutterDiv = window.document.createElement("div");
-              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-              gutterDiv.style.position = 'absolute';
-              const codeCell = window.document.getElementById(targetCell);
-              const gutter = codeCell.querySelector('.code-annotation-gutter');
-              gutter.appendChild(gutterDiv);
-            }
-            gutterDiv.style.top = top - 2 + "px";
-            gutterDiv.style.height = height + 4 + "px";
-          }
-          selectedAnnoteEl = annoteEl;
-        }
-      };
-      const unselectCodeLines = () => {
-        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
-        elementsIds.forEach((elId) => {
-          const div = window.document.getElementById(elId);
-          if (div) {
-            div.remove();
-          }
-        });
-        selectedAnnoteEl = undefined;
-      };
-        // Handle positioning of the toggle
-    window.addEventListener(
-      "resize",
-      throttle(() => {
-        elRect = undefined;
-        if (selectedAnnoteEl) {
-          selectCodeLines(selectedAnnoteEl);
-        }
-      }, 10)
-    );
-    function throttle(fn, ms) {
-    let throttle = false;
-    let timer;
-      return (...args) => {
-        if(!throttle) { // first call gets through
-            fn.apply(this, args);
-            throttle = true;
-        } else { // all the others get throttled
-            if(timer) clearTimeout(timer); // cancel #2
-            timer = setTimeout(() => {
-              fn.apply(this, args);
-              timer = throttle = false;
-            }, ms);
-        }
-      };
-    }
-      // Attach click handler to the DT
-      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
-      for (const annoteDlNode of annoteDls) {
-        annoteDlNode.addEventListener('click', (event) => {
-          const clickedEl = event.target;
-          if (clickedEl !== selectedAnnoteEl) {
-            unselectCodeLines();
-            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
-            if (activeEl) {
-              activeEl.classList.remove('code-annotation-active');
-            }
-            selectCodeLines(clickedEl);
-            clickedEl.classList.add('code-annotation-active');
-          } else {
-            // Unselect the line
-            unselectCodeLines();
-            clickedEl.classList.remove('code-annotation-active');
-          }
-        });
-      }
-  const findCites = (el) => {
-    const parentEl = el.parentElement;
-    if (parentEl) {
-      const cites = parentEl.dataset.cites;
-      if (cites) {
-        return {
-          el,
-          cites: cites.split(' ')
-        };
-      } else {
-        return findCites(el.parentElement)
-      }
-    } else {
-      return undefined;
-    }
-  };
-  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-  for (var i=0; i<bibliorefs.length; i++) {
-    const ref = bibliorefs[i];
-    const citeInfo = findCites(ref);
-    if (citeInfo) {
-      tippyHover(citeInfo.el, function() {
-        var popup = window.document.createElement('div');
-        citeInfo.cites.forEach(function(cite) {
-          var citeDiv = window.document.createElement('div');
-          citeDiv.classList.add('hanging-indent');
-          citeDiv.classList.add('csl-entry');
-          var biblioDiv = window.document.getElementById('ref-' + cite);
-          if (biblioDiv) {
-            citeDiv.innerHTML = biblioDiv.innerHTML;
-          }
-          popup.appendChild(citeDiv);
-        });
-        return popup.innerHTML;
+      }, function(instance) {
       });
     }
-  }
-});
-</script>
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="../chapters/06-work-by-hand.html" class="pagination-link" aria-label="Work by Hand (Step 3)">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Work by Hand (Step 3)</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Work by Hand (Step 3)</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="../chapters/08-convert-to-code.html" class="pagination-link" aria-label="Convert to Code (Step 5)">
-        <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Convert to Code (Step 5)</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Convert to Code (Step 5)</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

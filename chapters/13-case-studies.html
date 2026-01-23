@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.43">
+<meta name="generator" content="quarto-1.8.26">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Intentional Prompting: Mastering the Human-AI Development Process – 13&nbsp; Case Studies</title>
+<title>14&nbsp; Case Studies – Conversation, Not Delegation: Mastering Human-AI Development</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,8 +21,9 @@ ul.task-list li input[type="checkbox"] {
   vertical-align: middle;
 }
 /* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -33,7 +34,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -66,15 +67,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <meta name="quarto:offset" content="../">
 <link href="../chapters/14-scaling-complexity.html" rel="next">
 <link href="../chapters/12-refactoring-strategies.html" rel="prev">
-<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-597958c53c93a607afca12fd375c57ed.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-ea07c801963e0f738b5ea27386c64fa2.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -107,7 +110,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link rel="stylesheet" href="../styles.css">
 </head>
 
-<body class="nav-sidebar floating">
+<body class="nav-sidebar floating quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -116,7 +119,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/10-intentional-prompting-patterns.html">Patterns &amp; Practices</a></li><li class="breadcrumb-item"><a href="../chapters/13-case-studies.html"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Case Studies</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/10-intentional-prompting-patterns.html">Patterns &amp; Practices</a></li><li class="breadcrumb-item"><a href="../chapters/13-case-studies.html"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Case Studies</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -131,20 +134,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="../">Intentional Prompting: Mastering the Human-AI Development Process</a> 
+      <a href="../">Conversation, Not Delegation: Mastering Human-AI Development</a> 
         <div class="sidebar-tools-main">
     <a href="https://github.com/michael-borck/python-dev-book" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
     <div class="dropdown">
       <a href="" title="Download" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label="Download"><i class="bi bi-download"></i></a>
       <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
           <li>
-            <a class="dropdown-item sidebar-tools-main-item" href="../Intentional-Prompting--Mastering-the-Human-AI-Development-Process.pdf">
+            <a class="dropdown-item sidebar-tools-main-item" href="../Conversation,-Not-Delegation--Mastering-Human-AI-Development.pdf">
               <i class="bi bi-file-pdf pe-1"></i>
             Download PDF
             </a>
           </li>
           <li>
-            <a class="dropdown-item sidebar-tools-main-item" href="../Intentional-Prompting--Mastering-the-Human-AI-Development-Process.epub">
+            <a class="dropdown-item sidebar-tools-main-item" href="../Conversation,-Not-Delegation--Mastering-Human-AI-Development.epub">
               <i class="bi bi-journal pe-1"></i>
             Download ePub
             </a>
@@ -170,7 +173,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
- <span class="menu-text">Foundations</span></a>
+ <span class="menu-text">The Philosophy</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -178,20 +181,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapters/01-introduction.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../chapters/02-ai-revolution.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">The AI Revolution in Programming</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../chapters/03-intentional-prompting-principles.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Principles of Intentional Prompting</span></span></a>
+  <a href="../chapters/00-philosophy.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Conversation, Not Delegation</span></span></a>
   </div>
 </li>
       </ul>
@@ -199,7 +190,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
- <span class="menu-text">Methodology</span></a>
+ <span class="menu-text">Foundations</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -207,38 +198,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapters/04-six-step-methodology.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">The Six-Step Programming Methodology</span></span></a>
+  <a href="../chapters/01-introduction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapters/05-restate-and-identify.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Restate and Identify (Steps 1-2)</span></span></a>
+  <a href="../chapters/02-ai-revolution.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">The AI Revolution in Programming</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapters/06-work-by-hand.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Work by Hand (Step 3)</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../chapters/07-pseudocode.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Pseudocode (Step 4)</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../chapters/08-convert-to-code.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Convert to Code (Step 5)</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../chapters/09-test-with-data.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Test with Data (Step 6)</span></span></a>
+  <a href="../chapters/03-intentional-prompting-principles.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Principles of Intentional Prompting</span></span></a>
   </div>
 </li>
       </ul>
@@ -246,7 +219,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
- <span class="menu-text">Patterns &amp; Practices</span></a>
+ <span class="menu-text">Methodology</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -254,26 +227,38 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapters/10-intentional-prompting-patterns.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Intentional Prompting Patterns</span></span></a>
+  <a href="../chapters/04-six-step-methodology.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">The Six-Step Programming Methodology</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapters/11-debugging-with-ai.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Debugging with AI</span></span></a>
+  <a href="../chapters/05-restate-and-identify.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Restate and Identify (Steps 1-2)</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapters/12-refactoring-strategies.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Refactoring Strategies</span></span></a>
+  <a href="../chapters/06-work-by-hand.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Work by Hand (Step 3)</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapters/13-case-studies.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Case Studies</span></span></a>
+  <a href="../chapters/07-pseudocode.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Pseudocode (Step 4)</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/08-convert-to-code.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Convert to Code (Step 5)</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/09-test-with-data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Test with Data (Step 6)</span></span></a>
   </div>
 </li>
       </ul>
@@ -281,7 +266,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
- <span class="menu-text">Advanced Topics</span></a>
+ <span class="menu-text">Patterns &amp; Practices</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -289,20 +274,55 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../chapters/10-intentional-prompting-patterns.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Intentional Prompting Patterns</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/11-debugging-with-ai.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Debugging with AI</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/12-refactoring-strategies.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Refactoring Strategies</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/13-case-studies.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Case Studies</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+ <span class="menu-text">Advanced Topics</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../chapters/14-scaling-complexity.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Scaling to Complex Projects</span></span></a>
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Scaling to Complex Projects</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/15-teaching-learning.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Teaching and Learning</span></span></a>
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Teaching and Learning</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/16-future-directions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Future Directions</span></span></a>
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Future Directions</span></span></a>
   </div>
 </li>
       </ul>
@@ -315,13 +335,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true">
  <span class="menu-text">Appendices</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../appendices/prompt-templates.html" class="sidebar-item-text sidebar-link">
@@ -358,29 +378,29 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#case-study-1-building-a-data-analysis-pipeline" id="toc-case-study-1-building-a-data-analysis-pipeline" class="nav-link active" data-scroll-target="#case-study-1-building-a-data-analysis-pipeline"><span class="header-section-number">13.1</span> Case Study 1: Building a Data Analysis Pipeline</a>
+  <li><a href="#case-study-1-building-a-data-analysis-pipeline" id="toc-case-study-1-building-a-data-analysis-pipeline" class="nav-link active" data-scroll-target="#case-study-1-building-a-data-analysis-pipeline"><span class="header-section-number">14.1</span> Case Study 1: Building a Data Analysis Pipeline</a>
   <ul class="collapse">
-  <li><a href="#the-problem" id="toc-the-problem" class="nav-link" data-scroll-target="#the-problem"><span class="header-section-number">13.1.1</span> The Problem</a></li>
-  <li><a href="#the-intentional-prompting-approach" id="toc-the-intentional-prompting-approach" class="nav-link" data-scroll-target="#the-intentional-prompting-approach"><span class="header-section-number">13.1.2</span> The Intentional Prompting Approach</a></li>
-  <li><a href="#before-and-after-example-improving-a-key-function" id="toc-before-and-after-example-improving-a-key-function" class="nav-link" data-scroll-target="#before-and-after-example-improving-a-key-function"><span class="header-section-number">13.1.3</span> Before and After Example: Improving a Key Function</a></li>
-  <li><a href="#lessons-learned" id="toc-lessons-learned" class="nav-link" data-scroll-target="#lessons-learned"><span class="header-section-number">13.1.4</span> Lessons Learned</a></li>
+  <li><a href="#the-problem" id="toc-the-problem" class="nav-link" data-scroll-target="#the-problem"><span class="header-section-number">14.1.1</span> The Problem</a></li>
+  <li><a href="#the-intentional-prompting-approach" id="toc-the-intentional-prompting-approach" class="nav-link" data-scroll-target="#the-intentional-prompting-approach"><span class="header-section-number">14.1.2</span> The Intentional Prompting Approach</a></li>
+  <li><a href="#before-and-after-example-improving-a-key-function" id="toc-before-and-after-example-improving-a-key-function" class="nav-link" data-scroll-target="#before-and-after-example-improving-a-key-function"><span class="header-section-number">14.1.3</span> Before and After Example: Improving a Key Function</a></li>
+  <li><a href="#lessons-learned" id="toc-lessons-learned" class="nav-link" data-scroll-target="#lessons-learned"><span class="header-section-number">14.1.4</span> Lessons Learned</a></li>
   </ul></li>
-  <li><a href="#case-study-3-debugging-a-complex-bug" id="toc-case-study-3-debugging-a-complex-bug" class="nav-link" data-scroll-target="#case-study-3-debugging-a-complex-bug"><span class="header-section-number">13.2</span> Case Study 3: Debugging a Complex Bug</a>
+  <li><a href="#case-study-3-debugging-a-complex-bug" id="toc-case-study-3-debugging-a-complex-bug" class="nav-link" data-scroll-target="#case-study-3-debugging-a-complex-bug"><span class="header-section-number">14.2</span> Case Study 3: Debugging a Complex Bug</a>
   <ul class="collapse">
-  <li><a href="#the-problem-1" id="toc-the-problem-1" class="nav-link" data-scroll-target="#the-problem-1"><span class="header-section-number">13.2.1</span> The Problem</a></li>
-  <li><a href="#the-intentional-prompting-approach-1" id="toc-the-intentional-prompting-approach-1" class="nav-link" data-scroll-target="#the-intentional-prompting-approach-1"><span class="header-section-number">13.2.2</span> The Intentional Prompting Approach</a></li>
+  <li><a href="#the-problem-1" id="toc-the-problem-1" class="nav-link" data-scroll-target="#the-problem-1"><span class="header-section-number">14.2.1</span> The Problem</a></li>
+  <li><a href="#the-intentional-prompting-approach-1" id="toc-the-intentional-prompting-approach-1" class="nav-link" data-scroll-target="#the-intentional-prompting-approach-1"><span class="header-section-number">14.2.2</span> The Intentional Prompting Approach</a></li>
   </ul></li>
-  <li><a href="#key-takeaways" id="toc-key-takeaways" class="nav-link" data-scroll-target="#key-takeaways"><span class="header-section-number">13.3</span> Key Takeaways</a></li>
-  <li><a href="#moving-forward" id="toc-moving-forward" class="nav-link" data-scroll-target="#moving-forward"><span class="header-section-number">13.4</span> Moving Forward</a></li>
+  <li><a href="#key-takeaways" id="toc-key-takeaways" class="nav-link" data-scroll-target="#key-takeaways"><span class="header-section-number">14.3</span> Key Takeaways</a></li>
+  <li><a href="#moving-forward" id="toc-moving-forward" class="nav-link" data-scroll-target="#moving-forward"><span class="header-section-number">14.4</span> Moving Forward</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/michael-borck/python-dev-book/edit/main/chapters/13-case-studies.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/michael-borck/python-dev-book/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/10-intentional-prompting-patterns.html">Patterns &amp; Practices</a></li><li class="breadcrumb-item"><a href="../chapters/13-case-studies.html"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Case Studies</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/10-intentional-prompting-patterns.html">Patterns &amp; Practices</a></li><li class="breadcrumb-item"><a href="../chapters/13-case-studies.html"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Case Studies</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Case Studies</span></h1>
+<h1 class="title"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Case Studies</span></h1>
 </div>
 
 
@@ -404,10 +424,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <figcaption>Before and After Case Study</figcaption>
 </figure>
 </div>
-<section id="case-study-1-building-a-data-analysis-pipeline" class="level2" data-number="13.1">
-<h2 data-number="13.1" class="anchored" data-anchor-id="case-study-1-building-a-data-analysis-pipeline"><span class="header-section-number">13.1</span> Case Study 1: Building a Data Analysis Pipeline</h2>
-<section id="the-problem" class="level3" data-number="13.1.1">
-<h3 data-number="13.1.1" class="anchored" data-anchor-id="the-problem"><span class="header-section-number">13.1.1</span> The Problem</h3>
+<section id="case-study-1-building-a-data-analysis-pipeline" class="level2" data-number="14.1">
+<h2 data-number="14.1" class="anchored" data-anchor-id="case-study-1-building-a-data-analysis-pipeline"><span class="header-section-number">14.1</span> Case Study 1: Building a Data Analysis Pipeline</h2>
+<section id="the-problem" class="level3" data-number="14.1.1">
+<h3 data-number="14.1.1" class="anchored" data-anchor-id="the-problem"><span class="header-section-number">14.1.1</span> The Problem</h3>
 <p>A research team needs to analyze a large dataset of customer transactions to identify purchasing patterns. They have a CSV file with millions of records containing transaction data including:</p>
 <ul>
 <li>Transaction ID</li>
@@ -420,10 +440,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 <p>The team needs to: 1. Clean and preprocess the data 2. Identify the most frequently purchased product combinations 3. Analyze how purchasing patterns change over time 4. Visualize the results</p>
 </section>
-<section id="the-intentional-prompting-approach" class="level3" data-number="13.1.2">
-<h3 data-number="13.1.2" class="anchored" data-anchor-id="the-intentional-prompting-approach"><span class="header-section-number">13.1.2</span> The Intentional Prompting Approach</h3>
-<section id="step-1-restate-the-problem" class="level4" data-number="13.1.2.1">
-<h4 data-number="13.1.2.1" class="anchored" data-anchor-id="step-1-restate-the-problem"><span class="header-section-number">13.1.2.1</span> Step 1: Restate the Problem</h4>
+<section id="the-intentional-prompting-approach" class="level3" data-number="14.1.2">
+<h3 data-number="14.1.2" class="anchored" data-anchor-id="the-intentional-prompting-approach"><span class="header-section-number">14.1.2</span> The Intentional Prompting Approach</h3>
+<section id="step-1-restate-the-problem" class="level4" data-number="14.1.2.1">
+<h4 data-number="14.1.2.1" class="anchored" data-anchor-id="step-1-restate-the-problem"><span class="header-section-number">14.1.2.1</span> Step 1: Restate the Problem</h4>
 <p><strong>Human prompt:</strong></p>
 <pre><code>I need to build a data analysis pipeline to process customer transaction data. Let me restate the problem:
 
@@ -438,8 +458,8 @@ We need to:
 Is this understanding correct, and are there any important aspects I've missed?</code></pre>
 <p><strong>AI response:</strong> &gt; Your understanding is correct! Your restatement captures the main requirements of building a data analysis pipeline for transaction data. Here are a few additional considerations that might be important: &gt; &gt; 1. <strong>Data volume handling</strong>: With millions of rows, you’ll need efficient processing techniques that can handle large datasets. This might involve streaming processing, chunking the data, or using distributed computing frameworks. &gt; &gt; 2. <strong>Performance considerations</strong>: Some operations like finding product combinations might be computationally expensive. You might need optimization strategies. &gt; &gt; 3. <strong>Data privacy</strong>: Transaction data may contain sensitive information. You might need to anonymize or handle the data according to relevant privacy regulations. &gt; &gt; 4. <strong>Output format</strong>: It’s worth considering what format the final results should be in (static reports, interactive dashboards, raw data for further analysis, etc.). &gt; &gt; 5. <strong>Repeatability</strong>: Will this be a one-time analysis or something that needs to be run regularly? If it’s the latter, the pipeline should be designed for automation and reproducibility. &gt; &gt; 6. <strong>Data quality assessment</strong>: Beyond basic cleaning, you might want to include statistical analysis to identify outliers or anomalies that could skew the results. &gt; &gt; With these considerations in mind, your restatement effectively captures the core of the problem.</p>
 </section>
-<section id="step-2-identify-input-and-output" class="level4" data-number="13.1.2.2">
-<h4 data-number="13.1.2.2" class="anchored" data-anchor-id="step-2-identify-input-and-output"><span class="header-section-number">13.1.2.2</span> Step 2: Identify Input and Output</h4>
+<section id="step-2-identify-input-and-output" class="level4" data-number="14.1.2.2">
+<h4 data-number="14.1.2.2" class="anchored" data-anchor-id="step-2-identify-input-and-output"><span class="header-section-number">14.1.2.2</span> Step 2: Identify Input and Output</h4>
 <p><strong>Human prompt:</strong></p>
 <pre><code>Let me define the specific inputs and outputs for this pipeline:
 
@@ -465,8 +485,8 @@ OUTPUTS:
 Do these specifications adequately cover what's needed for the pipeline?</code></pre>
 <p><strong>AI response:</strong> &gt; Your input and output specifications provide a clear framework for the pipeline. They’re comprehensive and specific, which is excellent for guiding the implementation. Here are a few additional points to consider: &gt; &gt; <strong>For inputs:</strong> &gt; &gt; 1. <strong>File format details</strong>: You might want to specify if there are any header rows, quoting patterns, or delimiter specifications for the CSV. &gt; &gt; 2. <strong>Expected data sizes</strong>: Approximate size of the file (GB) and typical row count can help plan for resource requirements. &gt; &gt; 3. <strong>Data quality expectations</strong>: Are there known issues with the data? (e.g., are missing values expected in certain columns, are there known inconsistencies in formatting) &gt; &gt; <strong>For outputs:</strong> &gt; &gt; 1. <strong>Definition of “product combinations”</strong>: Clarify whether this means products purchased together in a single transaction, or products frequently purchased by the same customer across different transactions. &gt; &gt; 2. <strong>Granularity of time analysis</strong>: You specified monthly trends, but you might also want daily or weekly analysis depending on the business needs. &gt; &gt; 3. <strong>Additional metrics</strong>: Consider adding: &gt; - Average basket size (number of items and monetary value) &gt; - Payment method distribution &gt; - Store location performance comparison &gt; &gt; 4. <strong>Output file specifications</strong>: For the CSV outputs, specify whether headers should be included and what the column structure should be. &gt; &gt; 5. <strong>Visualization formats</strong>: Specify the file formats for visualizations (PNG, PDF, interactive HTML, etc.) &gt; &gt; Overall, your specifications are solid and provide a good foundation for the implementation. These additional considerations can help make the requirements even more precise.</p>
 </section>
-<section id="step-3-work-by-hand" class="level4" data-number="13.1.2.3">
-<h4 data-number="13.1.2.3" class="anchored" data-anchor-id="step-3-work-by-hand"><span class="header-section-number">13.1.2.3</span> Step 3: Work by Hand</h4>
+<section id="step-3-work-by-hand" class="level4" data-number="14.1.2.3">
+<h4 data-number="14.1.2.3" class="anchored" data-anchor-id="step-3-work-by-hand"><span class="header-section-number">14.1.2.3</span> Step 3: Work by Hand</h4>
 <p>In this step, we’d manually process a small sample of the data to understand the analysis process. For brevity, we’ll focus on a simple example of finding product combinations.</p>
 <p><strong>Human work:</strong></p>
 <p>Sample data (5 transactions):</p>
@@ -496,8 +516,8 @@ From this manual process, I can see that we need to:
 This approach works for pairs, but for larger combinations, we might need association rule mining algorithms like Apriori. Does this manual approach seem correct, and are there any important considerations I'm missing?</code></pre>
 <p><strong>AI response:</strong> &gt; Your manual approach for finding product combinations is sound! You’ve correctly identified the key steps for analyzing product pairs. Here are some important considerations and extensions: &gt; &gt; <strong>Validations and extensions:</strong> &gt; &gt; 1. <strong>Multiple levels of combinations</strong>: As you noted, beyond pairs, you might want to find triplets or larger combinations. Apriori or FP-Growth algorithms would indeed be appropriate for this. &gt; &gt; 2. <strong>Association metrics</strong>: Beyond just frequency count, consider calculating: &gt; - Support (frequency of the combination relative to total transactions) &gt; - Confidence (likelihood of Y when X is purchased) &gt; - Lift (how much more likely Y is purchased when X is purchased, compared to normal) &gt; &gt; 3. <strong>Performance for large datasets</strong>: The naive approach of generating all combinations can be computationally expensive for transactions with many items. For the full dataset: &gt; - Consider using optimized libraries like MLxtend or efficient implementations of Apriori &gt; - You might need to set a minimum support threshold to filter out rare combinations early &gt; &gt; 4. <strong>Handling duplicates</strong>: If a customer buys multiple items in the same category in one transaction (e.g., two electronics items), your current approach correctly treats “electronics” as appearing once in that transaction. &gt; &gt; 5. <strong>Time-based analysis</strong>: You might want to see if popular combinations change over time (seasonal patterns, etc.) &gt; &gt; Your manual process demonstrates a good understanding of the approach. For implementation at scale, you’ll want to leverage existing libraries rather than building the combination generator from scratch, especially as you move beyond pairs to larger combinations.</p>
 </section>
-<section id="step-4-write-pseudocode" class="level4" data-number="13.1.2.4">
-<h4 data-number="13.1.2.4" class="anchored" data-anchor-id="step-4-write-pseudocode"><span class="header-section-number">13.1.2.4</span> Step 4: Write Pseudocode</h4>
+<section id="step-4-write-pseudocode" class="level4" data-number="14.1.2.4">
+<h4 data-number="14.1.2.4" class="anchored" data-anchor-id="step-4-write-pseudocode"><span class="header-section-number">14.1.2.4</span> Step 4: Write Pseudocode</h4>
 <p>Based on the manual exploration, we can now outline the solution in pseudocode.</p>
 <p><strong>Human prompt:</strong></p>
 <pre><code>Based on my manual exploration, let me write pseudocode for the data analysis pipeline:
@@ -571,8 +591,8 @@ SAVE_PNG(heatmap, output_dir + "/hourly_patterns.png")</code></pre>
 Does this pseudocode cover all the necessary steps for our data analysis pipeline? Are there any inefficiencies or improvements you would suggest?</code></pre>
 <p><strong>AI response:</strong> &gt; Your pseudocode provides a good framework for the data analysis pipeline! It covers the main steps and follows a logical flow. Here are some suggestions for improvements and considerations: &gt; &gt; <strong>Efficiency improvements:</strong> &gt; &gt; 1. <strong>Chunked processing</strong>: For millions of rows, you might want to process the data in chunks to avoid memory issues: &gt; <code>&gt; FUNCTION clean_data(input_file): &gt;     initialize empty dataframe for cleaned_data &gt;     FOR each chunk IN READ_CSV_IN_CHUNKS(input_file, chunk_size=100000): &gt;         # Apply cleaning operations to chunk &gt;         cleaned_chunk = CLEAN_CHUNK(chunk) &gt;         APPEND(cleaned_data, cleaned_chunk) &gt;     RETURN cleaned_data &gt;</code> &gt; &gt; 2. <strong>Optimized product combination generation</strong>: The current approach might be inefficient for transactions with many products: &gt; <code>&gt; # Add a maximum combination size parameter &gt; FUNCTION find_product_combinations(data, min_support=0.001, max_combination_size=2): &gt;     # Use an efficient algorithm like Apriori instead of manual combination generation &gt;     frequent_itemsets = APRIORI_ALGORITHM( &gt;         data.product_categories,  &gt;         min_support=min_support, &gt;         max_length=max_combination_size &gt;     ) &gt;     RETURN frequent_itemsets &gt;</code> &gt; &gt; <strong>Additional considerations:</strong> &gt; &gt; 1. <strong>Data validation</strong>: Add checks for data quality: &gt; <code>&gt; FUNCTION clean_data(input_file): &gt;     # ...existing code... &gt;      &gt;     # Add data validation &gt;     LOG_STATS(COUNT_MISSING_VALUES(data)) &gt;     LOG_STATS(COUNT_UNIQUE_VALUES(data.product_categories)) &gt;     VALIDATE_NUMERIC_RANGE(data.amount, min=0) &gt;      &gt;     # ...rest of function... &gt;</code> &gt; &gt; 2. <strong>Error handling</strong>: Add error handling for robust processing: &gt; <code>&gt; FUNCTION main(input_file, output_dir): &gt;     TRY: &gt;         # ...existing code... &gt;     CATCH FileNotFoundError: &gt;         LOG_ERROR("Input file not found") &gt;     CATCH MemoryError: &gt;         LOG_ERROR("Insufficient memory, try reducing chunk size") &gt;     FINALLY: &gt;         CLEAN_UP_TEMP_FILES() &gt;</code> &gt; &gt; 3. <strong>Parallelization</strong>: For large datasets, consider parallel processing: &gt; <code>&gt; FUNCTION find_product_combinations(data, min_support=0.001): &gt;     # Split data into partitions &gt;     partitions = SPLIT_DATA(data, num_partitions=NUM_CORES) &gt;      &gt;     # Process partitions in parallel &gt;     partial_results = PARALLEL_MAP(PROCESS_PARTITION, partitions) &gt;      &gt;     # Combine results &gt;     combined_results = COMBINE_PARTIAL_RESULTS(partial_results) &gt;     RETURN combined_results &gt;</code> &gt; &gt; 4. <strong>Progress tracking</strong>: For long-running operations, add progress tracking: &gt; <code>&gt; FUNCTION clean_data(input_file): &gt;     total_chunks = ESTIMATE_TOTAL_CHUNKS(input_file, chunk_size) &gt;     FOR i, chunk IN ENUMERATE(READ_CSV_IN_CHUNKS(input_file)): &gt;         LOG_PROGRESS(f"Processing chunk {i}/{total_chunks}") &gt;         # ...process chunk... &gt;</code> &gt; &gt; These improvements would make your pipeline more robust, efficient, and suitable for large-scale data processing. Your current pseudocode is a great starting point, and these suggestions help address some common challenges in real-world data processing.</p>
 </section>
-<section id="step-5-convert-to-code" class="level4" data-number="13.1.2.5">
-<h4 data-number="13.1.2.5" class="anchored" data-anchor-id="step-5-convert-to-code"><span class="header-section-number">13.1.2.5</span> Step 5: Convert to Code</h4>
+<section id="step-5-convert-to-code" class="level4" data-number="14.1.2.5">
+<h4 data-number="14.1.2.5" class="anchored" data-anchor-id="step-5-convert-to-code"><span class="header-section-number">14.1.2.5</span> Step 5: Convert to Code</h4>
 <p>Now let’s implement the solution in Python, focusing on the product combination analysis.</p>
 <p><strong>Human prompt:</strong></p>
 <pre><code>Let's convert the pseudocode for finding product combinations into Python code using pandas and mlxtend for the Apriori algorithm:
@@ -774,7 +794,7 @@ For this step, we would test our implementation with real data, starting with a 
 
 **Human prompt:**</code></pre>
 <p>Let’s test our implementation with a small sample dataset first:</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> datetime <span class="im">import</span> datetime, timedelta</span>
 <span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a></span>
@@ -852,7 +872,7 @@ For this step, we would test our implementation with real data, starting with a 
 <span id="cb14-76"><a href="#cb14-76" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(cat_list)):</span>
 <span id="cb14-77"><a href="#cb14-77" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(i<span class="op">+</span><span class="dv">1</span>, <span class="bu">len</span>(cat_list)):</span>
 <span id="cb14-78"><a href="#cb14-78" aria-hidden="true" tabindex="-1"></a>            unique_combos.add(<span class="bu">tuple</span>(<span class="bu">sorted</span>([cat_list[i], cat_list[j]])))</span>
-<span id="cb14-79"><a href="#cb14-79" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Unique product pairs in data: </span><span class="sc">{</span><span class="bu">len</span>(unique_combos)<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb14-79"><a href="#cb14-79" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Unique product pairs in data: </span><span class="sc">{</span><span class="bu">len</span>(unique_combos)<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>What issues might we encounter when scaling to the full dataset, and how should we address them?</p>
 <pre><code>
 **AI response:**
@@ -1112,12 +1132,12 @@ function get_location_from_user():
 2. Weather service connection failures
 3. Handling missing data in the weather response</code></pre>
 </section>
-<section id="step-5-convert-to-python-code" class="level4" data-number="13.1.2.6">
-<h4 data-number="13.1.2.6" class="anchored" data-anchor-id="step-5-convert-to-python-code"><span class="header-section-number">13.1.2.6</span> Step 5: Convert to Python Code</h4>
+<section id="step-5-convert-to-python-code" class="level4" data-number="14.1.2.6">
+<h4 data-number="14.1.2.6" class="anchored" data-anchor-id="step-5-convert-to-python-code"><span class="header-section-number">14.1.2.6</span> Step 5: Convert to Python Code</h4>
 <p>The developer starts implementing the solution based on the pseudocode, focusing on modularity, error handling, and user experience.</p>
 </section>
-<section id="step-6-test-with-data" class="level4" data-number="13.1.2.7">
-<h4 data-number="13.1.2.7" class="anchored" data-anchor-id="step-6-test-with-data"><span class="header-section-number">13.1.2.7</span> Step 6: Test with Data</h4>
+<section id="step-6-test-with-data" class="level4" data-number="14.1.2.7">
+<h4 data-number="14.1.2.7" class="anchored" data-anchor-id="step-6-test-with-data"><span class="header-section-number">14.1.2.7</span> Step 6: Test with Data</h4>
 <p><strong>Human prompt:</strong></p>
 <pre><code>Now I want to test this code with some sample data. Can you provide a sample data structure that would be returned by:
 
@@ -1128,19 +1148,19 @@ Also, what test cases should I consider to ensure my dashboard handles all possi
 <p><strong>AI response:</strong> &gt; Here are sample data structures that might be returned by the weather API: &gt; &gt; <code>python &gt; # Sample current weather data &gt; sample_current = { &gt;     'location': 'New York', &gt;     'timestamp': '2023-09-15 14:30', &gt;     'temperature': 22, &gt;     'feels_like': 24, &gt;     'condition': 'Partly Cloudy', &gt;     'humidity': 65, &gt;     'wind_speed': 8, &gt;     'wind_direction': 'NE', &gt;     'pressure': 1012, &gt;     'visibility': 10, &gt;     'uv_index': 5, &gt;     'units': 'metric' &gt; } &gt; &gt; # Sample forecast data (list of days) &gt; sample_forecast = [ &gt;     { &gt;         'date': '2023-09-15', &gt;         'day_of_week': 'Friday', &gt;         'high': 24, &gt;         'low': 18, &gt;         'condition': 'Partly Cloudy', &gt;         'precipitation_chance': 20, &gt;         'humidity': 65, &gt;         'wind_speed': 8, &gt;         'wind_direction': 'NE', &gt;         'units': 'metric' &gt;     }, &gt;     # Additional days would follow... &gt; ] &gt;</code> &gt; &gt; Test cases to consider: &gt; &gt; 1. <strong>Happy path</strong>: &gt; - Valid location with complete weather data &gt; - Multiple days of forecast &gt; &gt; 2. <strong>Data issues</strong>: &gt; - Missing fields in current weather &gt; - Partial forecast data available &gt; - Empty forecast list &gt; &gt; 3. <strong>Connection issues</strong>: &gt; - API timeout &gt; - Service unavailable &gt; &gt; 4. <strong>User input scenarios</strong>: &gt; - Invalid location name &gt; - Empty input &gt; - Special characters in location name</p>
 </section>
 </section>
-<section id="before-and-after-example-improving-a-key-function" class="level3" data-number="13.1.3">
-<h3 data-number="13.1.3" class="anchored" data-anchor-id="before-and-after-example-improving-a-key-function"><span class="header-section-number">13.1.3</span> Before and After Example: Improving a Key Function</h3>
+<section id="before-and-after-example-improving-a-key-function" class="level3" data-number="14.1.3">
+<h3 data-number="14.1.3" class="anchored" data-anchor-id="before-and-after-example-improving-a-key-function"><span class="header-section-number">14.1.3</span> Before and After Example: Improving a Key Function</h3>
 <p>One of the critical functions in the application is the data retrieval function. Let’s examine how intentional prompting improved this function:</p>
-<section id="before-initial-data-retrieval-function" class="level4" data-number="13.1.3.1">
-<h4 data-number="13.1.3.1" class="anchored" data-anchor-id="before-initial-data-retrieval-function"><span class="header-section-number">13.1.3.1</span> Before: Initial Data Retrieval Function</h4>
-<div class="sourceCode" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> fetch_weather_data(location, units):</span>
+<section id="before-initial-data-retrieval-function" class="level4" data-number="14.1.3.1">
+<h4 data-number="14.1.3.1" class="anchored" data-anchor-id="before-initial-data-retrieval-function"><span class="header-section-number">14.1.3.1</span> Before: Initial Data Retrieval Function</h4>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> fetch_weather_data(location, units):</span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Fetch weather data from API."""</span></span>
 <span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>    current_weather <span class="op">=</span> weather_api.get_current(location, units)</span>
 <span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>    forecast <span class="op">=</span> weather_api.get_forecast(location, units, days<span class="op">=</span><span class="dv">5</span>)</span>
-<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> {<span class="st">"current"</span>: current_weather, <span class="st">"forecast"</span>: forecast}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> {<span class="st">"current"</span>: current_weather, <span class="st">"forecast"</span>: forecast}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="refinement-process-prompt" class="level4" data-number="13.1.3.2">
-<h4 data-number="13.1.3.2" class="anchored" data-anchor-id="refinement-process-prompt"><span class="header-section-number">13.1.3.2</span> Refinement Process Prompt</h4>
+<section id="refinement-process-prompt" class="level4" data-number="14.1.3.2">
+<h4 data-number="14.1.3.2" class="anchored" data-anchor-id="refinement-process-prompt"><span class="header-section-number">14.1.3.2</span> Refinement Process Prompt</h4>
 <pre><code>The fetch_weather_data() function needs improvement. It doesn't handle errors or validate the data. How can I make it more robust to:
 
 1. Handle connection errors
@@ -1148,9 +1168,9 @@ Also, what test cases should I consider to ensure my dashboard handles all possi
 3. Handle missing or incomplete data
 4. Provide meaningful error messages to the user</code></pre>
 </section>
-<section id="after-improved-data-retrieval-function" class="level4" data-number="13.1.3.3">
-<h4 data-number="13.1.3.3" class="anchored" data-anchor-id="after-improved-data-retrieval-function"><span class="header-section-number">13.1.3.3</span> After: Improved Data Retrieval Function</h4>
-<div class="sourceCode" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> fetch_weather_data(location, units):</span>
+<section id="after-improved-data-retrieval-function" class="level4" data-number="14.1.3.3">
+<h4 data-number="14.1.3.3" class="anchored" data-anchor-id="after-improved-data-retrieval-function"><span class="header-section-number">14.1.3.3</span> After: Improved Data Retrieval Function</h4>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> fetch_weather_data(location, units):</span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
 <span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="co">    Fetch weather data from API with comprehensive error handling.</span></span>
 <span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a><span class="co">    </span></span>
@@ -1216,11 +1236,11 @@ Also, what test cases should I consider to ensure my dashboard handles all possi
 <span id="cb25-64"><a href="#cb25-64" aria-hidden="true" tabindex="-1"></a>        <span class="cf">raise</span> <span class="pp">ValueError</span>(<span class="ss">f"Invalid location: </span><span class="sc">{</span>location<span class="sc">}</span><span class="ss">. Please check spelling and try again."</span>)</span>
 <span id="cb25-65"><a href="#cb25-65" aria-hidden="true" tabindex="-1"></a>    <span class="cf">except</span> <span class="pp">Exception</span> <span class="im">as</span> e:</span>
 <span id="cb25-66"><a href="#cb25-66" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Convert any other exceptions from the API to something we can handle</span></span>
-<span id="cb25-67"><a href="#cb25-67" aria-hidden="true" tabindex="-1"></a>        <span class="cf">raise</span> <span class="pp">Exception</span>(<span class="ss">f"Error fetching weather data: </span><span class="sc">{</span><span class="bu">str</span>(e)<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb25-67"><a href="#cb25-67" aria-hidden="true" tabindex="-1"></a>        <span class="cf">raise</span> <span class="pp">Exception</span>(<span class="ss">f"Error fetching weather data: </span><span class="sc">{</span><span class="bu">str</span>(e)<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 </section>
-<section id="lessons-learned" class="level3" data-number="13.1.4">
-<h3 data-number="13.1.4" class="anchored" data-anchor-id="lessons-learned"><span class="header-section-number">13.1.4</span> Lessons Learned</h3>
+<section id="lessons-learned" class="level3" data-number="14.1.4">
+<h3 data-number="14.1.4" class="anchored" data-anchor-id="lessons-learned"><span class="header-section-number">14.1.4</span> Lessons Learned</h3>
 <p>This case study demonstrates several key aspects of intentional prompting:</p>
 <ol type="1">
 <li><strong>Thorough problem exploration</strong> - The developer took time to understand requirements and data structures before coding</li>
@@ -1232,17 +1252,17 @@ Also, what test cases should I consider to ensure my dashboard handles all possi
 <p>The intentional approach resulted in a robust, maintainable application that properly handles edge cases and provides a good user experience, even when dealing with external data sources that may be unreliable.</p>
 </section>
 </section>
-<section id="case-study-3-debugging-a-complex-bug" class="level2" data-number="13.2">
-<h2 data-number="13.2" class="anchored" data-anchor-id="case-study-3-debugging-a-complex-bug"><span class="header-section-number">13.2</span> Case Study 3: Debugging a Complex Bug</h2>
+<section id="case-study-3-debugging-a-complex-bug" class="level2" data-number="14.2">
+<h2 data-number="14.2" class="anchored" data-anchor-id="case-study-3-debugging-a-complex-bug"><span class="header-section-number">14.2</span> Case Study 3: Debugging a Complex Bug</h2>
 <p>For our final case study, we’ll look at a debugging scenario where intentional prompting techniques help solve a challenging issue.</p>
-<section id="the-problem-1" class="level3" data-number="13.2.1">
-<h3 data-number="13.2.1" class="anchored" data-anchor-id="the-problem-1"><span class="header-section-number">13.2.1</span> The Problem</h3>
+<section id="the-problem-1" class="level3" data-number="14.2.1">
+<h3 data-number="14.2.1" class="anchored" data-anchor-id="the-problem-1"><span class="header-section-number">14.2.1</span> The Problem</h3>
 <p>A team is experiencing intermittent failures in their e-commerce checkout system. The checkout process occasionally fails with a generic error message, but only for certain users and at seemingly random times.</p>
 </section>
-<section id="the-intentional-prompting-approach-1" class="level3" data-number="13.2.2">
-<h3 data-number="13.2.2" class="anchored" data-anchor-id="the-intentional-prompting-approach-1"><span class="header-section-number">13.2.2</span> The Intentional Prompting Approach</h3>
-<section id="step-1-restate-the-problem-1" class="level4" data-number="13.2.2.1">
-<h4 data-number="13.2.2.1" class="anchored" data-anchor-id="step-1-restate-the-problem-1"><span class="header-section-number">13.2.2.1</span> Step 1: Restate the Problem</h4>
+<section id="the-intentional-prompting-approach-1" class="level3" data-number="14.2.2">
+<h3 data-number="14.2.2" class="anchored" data-anchor-id="the-intentional-prompting-approach-1"><span class="header-section-number">14.2.2</span> The Intentional Prompting Approach</h3>
+<section id="step-1-restate-the-problem-1" class="level4" data-number="14.2.2.1">
+<h4 data-number="14.2.2.1" class="anchored" data-anchor-id="step-1-restate-the-problem-1"><span class="header-section-number">14.2.2.1</span> Step 1: Restate the Problem</h4>
 <p><strong>Human prompt:</strong></p>
 <pre><code>We're experiencing intermittent failures in our checkout system. Let me restate the problem:
 
@@ -1257,8 +1277,8 @@ Our goal is to identify the root cause and implement a fix to eliminate these ch
 
 Is this an appropriate restatement of the debugging challenge?</code></pre>
 </section>
-<section id="step-2-identify-information-needed" class="level4" data-number="13.2.2.2">
-<h4 data-number="13.2.2.2" class="anchored" data-anchor-id="step-2-identify-information-needed"><span class="header-section-number">13.2.2.2</span> Step 2: Identify Information Needed</h4>
+<section id="step-2-identify-information-needed" class="level4" data-number="14.2.2.2">
+<h4 data-number="14.2.2.2" class="anchored" data-anchor-id="step-2-identify-information-needed"><span class="header-section-number">14.2.2.2</span> Step 2: Identify Information Needed</h4>
 <p><strong>Human prompt:</strong></p>
 <pre><code>To debug this issue effectively, we need to gather specific information:
 
@@ -1281,8 +1301,8 @@ Are there other information sources or outputs we should consider to effectively
 </section>
 </section>
 </section>
-<section id="key-takeaways" class="level2" data-number="13.3">
-<h2 data-number="13.3" class="anchored" data-anchor-id="key-takeaways"><span class="header-section-number">13.3</span> Key Takeaways</h2>
+<section id="key-takeaways" class="level2" data-number="14.3">
+<h2 data-number="14.3" class="anchored" data-anchor-id="key-takeaways"><span class="header-section-number">14.3</span> Key Takeaways</h2>
 <p>From these case studies, we can extract several important lessons about intentional prompting:</p>
 <ol type="1">
 <li><strong>Structured methodology yields better results</strong>
@@ -1312,8 +1332,8 @@ Are there other information sources or outputs we should consider to effectively
 </ul></li>
 </ol>
 </section>
-<section id="moving-forward" class="level2" data-number="13.4">
-<h2 data-number="13.4" class="anchored" data-anchor-id="moving-forward"><span class="header-section-number">13.4</span> Moving Forward</h2>
+<section id="moving-forward" class="level2" data-number="14.4">
+<h2 data-number="14.4" class="anchored" data-anchor-id="moving-forward"><span class="header-section-number">14.4</span> Moving Forward</h2>
 <p>In the next chapter, we’ll explore how to scale intentional prompting to complex projects, moving beyond individual functions or modules to entire systems and codebases.</p>
 
 
@@ -1321,239 +1341,243 @@ Are there other information sources or outputs we should consider to effectively
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
-window.document.addEventListener("DOMContentLoaded", function (event) {
-  const toggleBodyColorMode = (bsSheetEl) => {
-    const mode = bsSheetEl.getAttribute("data-mode");
-    const bodyEl = window.document.querySelector("body");
-    if (mode === "dark") {
-      bodyEl.classList.add("quarto-dark");
-      bodyEl.classList.remove("quarto-light");
-    } else {
-      bodyEl.classList.add("quarto-light");
-      bodyEl.classList.remove("quarto-dark");
-    }
-  }
-  const toggleBodyColorPrimary = () => {
-    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
-    if (bsSheetEl) {
-      toggleBodyColorMode(bsSheetEl);
-    }
-  }
-  toggleBodyColorPrimary();  
-  const icon = "";
-  const anchorJS = new window.AnchorJS();
-  anchorJS.options = {
-    placement: 'right',
-    icon: icon
-  };
-  anchorJS.add('.anchored');
-  const isCodeAnnotation = (el) => {
-    for (const clz of el.classList) {
-      if (clz.startsWith('code-annotation-')) {                     
-        return true;
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
       }
+      return false;
     }
-    return false;
-  }
-  const onCopySuccess = function(e) {
-    // button target
-    const button = e.trigger;
-    // don't keep focus
-    button.blur();
-    // flash "checked"
-    button.classList.add('code-copy-button-checked');
-    var currentTitle = button.getAttribute("title");
-    button.setAttribute("title", "Copied!");
-    let tooltip;
-    if (window.bootstrap) {
-      button.setAttribute("data-bs-toggle", "tooltip");
-      button.setAttribute("data-bs-placement", "left");
-      button.setAttribute("data-bs-title", "Copied!");
-      tooltip = new bootstrap.Tooltip(button, 
-        { trigger: "manual", 
-          customClass: "code-copy-button-tooltip",
-          offset: [0, -8]});
-      tooltip.show();    
-    }
-    setTimeout(function() {
-      if (tooltip) {
-        tooltip.hide();
-        button.removeAttribute("data-bs-title");
-        button.removeAttribute("data-bs-toggle");
-        button.removeAttribute("data-bs-placement");
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
       }
-      button.setAttribute("title", currentTitle);
-      button.classList.remove('code-copy-button-checked');
-    }, 1000);
-    // clear code selection
-    e.clearSelection();
-  }
-  const getTextToCopy = function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
       for (const childEl of codeEl.children) {
         if (isCodeAnnotation(childEl)) {
           childEl.remove();
         }
       }
       return codeEl.innerText;
-  }
-  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-    text: getTextToCopy
-  });
-  clipboard.on('success', onCopySuccess);
-  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
-    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-      text: getTextToCopy,
-      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
     });
-    clipboardModal.on('success', onCopySuccess);
-  }
-    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-    var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp('/' + window.location.host + '/');
-    var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
     }
-    // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
-    for (var i=0; i<links.length; i++) {
-      const link = links[i];
-      if (!isInternal(link.href)) {
-        // undo the damage that might have been done by quarto-nav.js in the case of
-        // links that we want to consider external
-        if (link.dataset.originalHref !== undefined) {
-          link.href = link.dataset.originalHref;
-        }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
-    }
-  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
-    const config = {
-      allowHTML: true,
-      maxWidth: 500,
-      delay: 100,
-      arrow: false,
-      appendTo: function(el) {
-          return el.parentElement;
-      },
-      interactive: true,
-      interactiveBorder: 10,
-      theme: 'quarto',
-      placement: 'bottom-start',
-    };
-    if (contentFn) {
-      config.content = contentFn;
-    }
-    if (onTriggerFn) {
-      config.onTrigger = onTriggerFn;
-    }
-    if (onUntriggerFn) {
-      config.onUntrigger = onUntriggerFn;
-    }
-    window.tippy(el, config); 
-  }
-  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
-  for (var i=0; i<noterefs.length; i++) {
-    const ref = noterefs[i];
-    tippyHover(ref, function() {
-      // use id or data attribute instead here
-      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
-      try { href = new URL(href).hash; } catch {}
-      const id = href.replace(/^#\/?/, "");
-      const note = window.document.getElementById(id);
-      if (note) {
-        return note.innerHTML;
-      } else {
-        return "";
-      }
-    });
-  }
-  const xrefs = window.document.querySelectorAll('a.quarto-xref');
-  const processXRef = (id, note) => {
-    // Strip column container classes
-    const stripColumnClz = (el) => {
-      el.classList.remove("page-full", "page-columns");
-      if (el.children) {
-        for (const child of el.children) {
-          stripColumnClz(child);
-        }
-      }
-    }
-    stripColumnClz(note)
-    if (id === null || id.startsWith('sec-')) {
-      // Special case sections, only their first couple elements
-      const container = document.createElement("div");
-      if (note.children && note.children.length > 2) {
-        container.appendChild(note.children[0].cloneNode(true));
-        for (let i = 1; i < note.children.length; i++) {
-          const child = note.children[i];
-          if (child.tagName === "P" && child.innerText === "") {
-            continue;
-          } else {
-            container.appendChild(child.cloneNode(true));
-            break;
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
           }
         }
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(container);
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
         }
-        return container.innerHTML
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
       } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
         if (window.Quarto?.typesetMath) {
           window.Quarto.typesetMath(note);
         }
-        return note.innerHTML;
-      }
-    } else {
-      // Remove any anchor links if they are present
-      const anchorLink = note.querySelector('a.anchorjs-link');
-      if (anchorLink) {
-        anchorLink.remove();
-      }
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(note);
-      }
-      // TODO in 1.5, we should make sure this works without a callout special case
-      if (note.classList.contains("callout")) {
-        return note.outerHTML;
-      } else {
-        return note.innerHTML;
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
       }
     }
-  }
-  for (var i=0; i<xrefs.length; i++) {
-    const xref = xrefs[i];
-    tippyHover(xref, undefined, function(instance) {
-      instance.disable();
-      let url = xref.getAttribute('href');
-      let hash = undefined; 
-      if (url.startsWith('#')) {
-        hash = url;
-      } else {
-        try { hash = new URL(url).hash; } catch {}
-      }
-      if (hash) {
-        const id = hash.replace(/^#\/?/, "");
-        const note = window.document.getElementById(id);
-        if (note !== null) {
-          try {
-            const html = processXRef(id, note.cloneNode(true));
-            instance.setContent(html);
-          } finally {
-            instance.enable();
-            instance.show();
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
           }
         } else {
-          // See if we can fetch this
-          fetch(url.split('#')[0])
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
           .then(res => res.text())
           .then(html => {
             const parser = new DOMParser();
             const htmlDoc = parser.parseFromString(html, "text/html");
-            const note = htmlDoc.getElementById(id);
+            const note = htmlDoc.querySelector('main.content');
             if (note !== null) {
-              const html = processXRef(id, note);
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
               instance.setContent(html);
             } 
           }).finally(() => {
@@ -1561,194 +1585,170 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             instance.show();
           });
         }
-      } else {
-        // See if we can fetch a full url (with no hash to target)
-        // This is a special case and we should probably do some content thinning / targeting
-        fetch(url)
-        .then(res => res.text())
-        .then(html => {
-          const parser = new DOMParser();
-          const htmlDoc = parser.parseFromString(html, "text/html");
-          const note = htmlDoc.querySelector('main.content');
-          if (note !== null) {
-            // This should only happen for chapter cross references
-            // (since there is no id in the URL)
-            // remove the first header
-            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
-              note.children[0].remove();
-            }
-            const html = processXRef(null, note);
-            instance.setContent(html);
-          } 
-        }).finally(() => {
-          instance.enable();
-          instance.show();
-        });
-      }
-    }, function(instance) {
-    });
-  }
-      let selectedAnnoteEl;
-      const selectorForAnnotation = ( cell, annotation) => {
-        let cellAttr = 'data-code-cell="' + cell + '"';
-        let lineAttr = 'data-code-annotation="' +  annotation + '"';
-        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
-        return selector;
-      }
-      const selectCodeLines = (annoteEl) => {
-        const doc = window.document;
-        const targetCell = annoteEl.getAttribute("data-target-cell");
-        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
-        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
-        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
-        const lineIds = lines.map((line) => {
-          return targetCell + "-" + line;
-        })
-        let top = null;
-        let height = null;
-        let parent = null;
-        if (lineIds.length > 0) {
-            //compute the position of the single el (top and bottom and make a div)
-            const el = window.document.getElementById(lineIds[0]);
-            top = el.offsetTop;
-            height = el.offsetHeight;
-            parent = el.parentElement.parentElement;
-          if (lineIds.length > 1) {
-            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-            height = bottom - top;
-          }
-          if (top !== null && height !== null && parent !== null) {
-            // cook up a div (if necessary) and position it 
-            let div = window.document.getElementById("code-annotation-line-highlight");
-            if (div === null) {
-              div = window.document.createElement("div");
-              div.setAttribute("id", "code-annotation-line-highlight");
-              div.style.position = 'absolute';
-              parent.appendChild(div);
-            }
-            div.style.top = top - 2 + "px";
-            div.style.height = height + 4 + "px";
-            div.style.left = 0;
-            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-            if (gutterDiv === null) {
-              gutterDiv = window.document.createElement("div");
-              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-              gutterDiv.style.position = 'absolute';
-              const codeCell = window.document.getElementById(targetCell);
-              const gutter = codeCell.querySelector('.code-annotation-gutter');
-              gutter.appendChild(gutterDiv);
-            }
-            gutterDiv.style.top = top - 2 + "px";
-            gutterDiv.style.height = height + 4 + "px";
-          }
-          selectedAnnoteEl = annoteEl;
-        }
-      };
-      const unselectCodeLines = () => {
-        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
-        elementsIds.forEach((elId) => {
-          const div = window.document.getElementById(elId);
-          if (div) {
-            div.remove();
-          }
-        });
-        selectedAnnoteEl = undefined;
-      };
-        // Handle positioning of the toggle
-    window.addEventListener(
-      "resize",
-      throttle(() => {
-        elRect = undefined;
-        if (selectedAnnoteEl) {
-          selectCodeLines(selectedAnnoteEl);
-        }
-      }, 10)
-    );
-    function throttle(fn, ms) {
-    let throttle = false;
-    let timer;
-      return (...args) => {
-        if(!throttle) { // first call gets through
-            fn.apply(this, args);
-            throttle = true;
-        } else { // all the others get throttled
-            if(timer) clearTimeout(timer); // cancel #2
-            timer = setTimeout(() => {
-              fn.apply(this, args);
-              timer = throttle = false;
-            }, ms);
-        }
-      };
-    }
-      // Attach click handler to the DT
-      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
-      for (const annoteDlNode of annoteDls) {
-        annoteDlNode.addEventListener('click', (event) => {
-          const clickedEl = event.target;
-          if (clickedEl !== selectedAnnoteEl) {
-            unselectCodeLines();
-            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
-            if (activeEl) {
-              activeEl.classList.remove('code-annotation-active');
-            }
-            selectCodeLines(clickedEl);
-            clickedEl.classList.add('code-annotation-active');
-          } else {
-            // Unselect the line
-            unselectCodeLines();
-            clickedEl.classList.remove('code-annotation-active');
-          }
-        });
-      }
-  const findCites = (el) => {
-    const parentEl = el.parentElement;
-    if (parentEl) {
-      const cites = parentEl.dataset.cites;
-      if (cites) {
-        return {
-          el,
-          cites: cites.split(' ')
-        };
-      } else {
-        return findCites(el.parentElement)
-      }
-    } else {
-      return undefined;
-    }
-  };
-  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-  for (var i=0; i<bibliorefs.length; i++) {
-    const ref = bibliorefs[i];
-    const citeInfo = findCites(ref);
-    if (citeInfo) {
-      tippyHover(citeInfo.el, function() {
-        var popup = window.document.createElement('div');
-        citeInfo.cites.forEach(function(cite) {
-          var citeDiv = window.document.createElement('div');
-          citeDiv.classList.add('hanging-indent');
-          citeDiv.classList.add('csl-entry');
-          var biblioDiv = window.document.getElementById('ref-' + cite);
-          if (biblioDiv) {
-            citeDiv.innerHTML = biblioDiv.innerHTML;
-          }
-          popup.appendChild(citeDiv);
-        });
-        return popup.innerHTML;
+      }, function(instance) {
       });
     }
-  }
-});
-</script>
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="../chapters/12-refactoring-strategies.html" class="pagination-link" aria-label="Refactoring Strategies">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Refactoring Strategies</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Refactoring Strategies</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="../chapters/14-scaling-complexity.html" class="pagination-link" aria-label="Scaling to Complex Projects">
-        <span class="nav-page-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Scaling to Complex Projects</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Scaling to Complex Projects</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.43">
+<meta name="generator" content="quarto-1.8.26">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Intentional Prompting: Mastering the Human-AI Development Process – 9&nbsp; Test with Data (Step 6)</title>
+<title>10&nbsp; Test with Data (Step 6) – Conversation, Not Delegation: Mastering Human-AI Development</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,8 +21,9 @@ ul.task-list li input[type="checkbox"] {
   vertical-align: middle;
 }
 /* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -33,7 +34,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -66,15 +67,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <meta name="quarto:offset" content="../">
 <link href="../chapters/10-intentional-prompting-patterns.html" rel="next">
 <link href="../chapters/08-convert-to-code.html" rel="prev">
-<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-597958c53c93a607afca12fd375c57ed.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-ea07c801963e0f738b5ea27386c64fa2.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -107,7 +110,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link rel="stylesheet" href="../styles.css">
 </head>
 
-<body class="nav-sidebar floating">
+<body class="nav-sidebar floating quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -116,7 +119,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/04-six-step-methodology.html">Methodology</a></li><li class="breadcrumb-item"><a href="../chapters/09-test-with-data.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Test with Data (Step 6)</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/04-six-step-methodology.html">Methodology</a></li><li class="breadcrumb-item"><a href="../chapters/09-test-with-data.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Test with Data (Step 6)</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -131,20 +134,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="../">Intentional Prompting: Mastering the Human-AI Development Process</a> 
+      <a href="../">Conversation, Not Delegation: Mastering Human-AI Development</a> 
         <div class="sidebar-tools-main">
     <a href="https://github.com/michael-borck/python-dev-book" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
     <div class="dropdown">
       <a href="" title="Download" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label="Download"><i class="bi bi-download"></i></a>
       <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
           <li>
-            <a class="dropdown-item sidebar-tools-main-item" href="../Intentional-Prompting--Mastering-the-Human-AI-Development-Process.pdf">
+            <a class="dropdown-item sidebar-tools-main-item" href="../Conversation,-Not-Delegation--Mastering-Human-AI-Development.pdf">
               <i class="bi bi-file-pdf pe-1"></i>
             Download PDF
             </a>
           </li>
           <li>
-            <a class="dropdown-item sidebar-tools-main-item" href="../Intentional-Prompting--Mastering-the-Human-AI-Development-Process.epub">
+            <a class="dropdown-item sidebar-tools-main-item" href="../Conversation,-Not-Delegation--Mastering-Human-AI-Development.epub">
               <i class="bi bi-journal pe-1"></i>
             Download ePub
             </a>
@@ -170,7 +173,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
- <span class="menu-text">Foundations</span></a>
+ <span class="menu-text">The Philosophy</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -178,20 +181,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapters/01-introduction.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../chapters/02-ai-revolution.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">The AI Revolution in Programming</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../chapters/03-intentional-prompting-principles.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Principles of Intentional Prompting</span></span></a>
+  <a href="../chapters/00-philosophy.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Conversation, Not Delegation</span></span></a>
   </div>
 </li>
       </ul>
@@ -199,7 +190,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
- <span class="menu-text">Methodology</span></a>
+ <span class="menu-text">Foundations</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -207,38 +198,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapters/04-six-step-methodology.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">The Six-Step Programming Methodology</span></span></a>
+  <a href="../chapters/01-introduction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapters/05-restate-and-identify.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Restate and Identify (Steps 1-2)</span></span></a>
+  <a href="../chapters/02-ai-revolution.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">The AI Revolution in Programming</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapters/06-work-by-hand.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Work by Hand (Step 3)</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../chapters/07-pseudocode.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Pseudocode (Step 4)</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../chapters/08-convert-to-code.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Convert to Code (Step 5)</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../chapters/09-test-with-data.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Test with Data (Step 6)</span></span></a>
+  <a href="../chapters/03-intentional-prompting-principles.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Principles of Intentional Prompting</span></span></a>
   </div>
 </li>
       </ul>
@@ -246,7 +219,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
- <span class="menu-text">Patterns &amp; Practices</span></a>
+ <span class="menu-text">Methodology</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -254,26 +227,38 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapters/10-intentional-prompting-patterns.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Intentional Prompting Patterns</span></span></a>
+  <a href="../chapters/04-six-step-methodology.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">The Six-Step Programming Methodology</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapters/11-debugging-with-ai.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Debugging with AI</span></span></a>
+  <a href="../chapters/05-restate-and-identify.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Restate and Identify (Steps 1-2)</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapters/12-refactoring-strategies.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Refactoring Strategies</span></span></a>
+  <a href="../chapters/06-work-by-hand.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Work by Hand (Step 3)</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapters/13-case-studies.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Case Studies</span></span></a>
+  <a href="../chapters/07-pseudocode.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Pseudocode (Step 4)</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/08-convert-to-code.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Convert to Code (Step 5)</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/09-test-with-data.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Test with Data (Step 6)</span></span></a>
   </div>
 </li>
       </ul>
@@ -281,7 +266,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
- <span class="menu-text">Advanced Topics</span></a>
+ <span class="menu-text">Patterns &amp; Practices</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -289,20 +274,55 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../chapters/10-intentional-prompting-patterns.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Intentional Prompting Patterns</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/11-debugging-with-ai.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Debugging with AI</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/12-refactoring-strategies.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Refactoring Strategies</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/13-case-studies.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Case Studies</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+ <span class="menu-text">Advanced Topics</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../chapters/14-scaling-complexity.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Scaling to Complex Projects</span></span></a>
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Scaling to Complex Projects</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/15-teaching-learning.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Teaching and Learning</span></span></a>
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Teaching and Learning</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/16-future-directions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Future Directions</span></span></a>
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Future Directions</span></span></a>
   </div>
 </li>
       </ul>
@@ -315,13 +335,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true">
  <span class="menu-text">Appendices</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../appendices/prompt-templates.html" class="sidebar-item-text sidebar-link">
@@ -358,39 +378,39 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#comprehensive-testing-strategies" id="toc-comprehensive-testing-strategies" class="nav-link active" data-scroll-target="#comprehensive-testing-strategies"><span class="header-section-number">9.1</span> Comprehensive Testing Strategies</a>
+  <li><a href="#comprehensive-testing-strategies" id="toc-comprehensive-testing-strategies" class="nav-link active" data-scroll-target="#comprehensive-testing-strategies"><span class="header-section-number">10.1</span> Comprehensive Testing Strategies</a>
   <ul class="collapse">
-  <li><a href="#the-importance-of-thorough-testing" id="toc-the-importance-of-thorough-testing" class="nav-link" data-scroll-target="#the-importance-of-thorough-testing"><span class="header-section-number">9.1.1</span> The Importance of Thorough Testing</a></li>
-  <li><a href="#types-of-test-cases" id="toc-types-of-test-cases" class="nav-link" data-scroll-target="#types-of-test-cases"><span class="header-section-number">9.1.2</span> Types of Test Cases</a></li>
+  <li><a href="#the-importance-of-thorough-testing" id="toc-the-importance-of-thorough-testing" class="nav-link" data-scroll-target="#the-importance-of-thorough-testing"><span class="header-section-number">10.1.1</span> The Importance of Thorough Testing</a></li>
+  <li><a href="#types-of-test-cases" id="toc-types-of-test-cases" class="nav-link" data-scroll-target="#types-of-test-cases"><span class="header-section-number">10.1.2</span> Types of Test Cases</a></li>
   </ul></li>
-  <li><a href="#edge-case-identification" id="toc-edge-case-identification" class="nav-link" data-scroll-target="#edge-case-identification"><span class="header-section-number">9.2</span> Edge Case Identification</a>
+  <li><a href="#edge-case-identification" id="toc-edge-case-identification" class="nav-link" data-scroll-target="#edge-case-identification"><span class="header-section-number">10.2</span> Edge Case Identification</a>
   <ul class="collapse">
-  <li><a href="#common-edge-case-categories" id="toc-common-edge-case-categories" class="nav-link" data-scroll-target="#common-edge-case-categories"><span class="header-section-number">9.2.1</span> Common Edge Case Categories</a></li>
-  <li><a href="#using-ai-to-identify-edge-cases" id="toc-using-ai-to-identify-edge-cases" class="nav-link" data-scroll-target="#using-ai-to-identify-edge-cases"><span class="header-section-number">9.2.2</span> Using AI to Identify Edge Cases</a></li>
+  <li><a href="#common-edge-case-categories" id="toc-common-edge-case-categories" class="nav-link" data-scroll-target="#common-edge-case-categories"><span class="header-section-number">10.2.1</span> Common Edge Case Categories</a></li>
+  <li><a href="#using-ai-to-identify-edge-cases" id="toc-using-ai-to-identify-edge-cases" class="nav-link" data-scroll-target="#using-ai-to-identify-edge-cases"><span class="header-section-number">10.2.2</span> Using AI to Identify Edge Cases</a></li>
   </ul></li>
-  <li><a href="#ai-assisted-test-generation" id="toc-ai-assisted-test-generation" class="nav-link" data-scroll-target="#ai-assisted-test-generation"><span class="header-section-number">9.3</span> AI-Assisted Test Generation</a>
+  <li><a href="#ai-assisted-test-generation" id="toc-ai-assisted-test-generation" class="nav-link" data-scroll-target="#ai-assisted-test-generation"><span class="header-section-number">10.3</span> AI-Assisted Test Generation</a>
   <ul class="collapse">
-  <li><a href="#generating-test-cases" id="toc-generating-test-cases" class="nav-link" data-scroll-target="#generating-test-cases"><span class="header-section-number">9.3.1</span> Generating Test Cases</a></li>
-  <li><a href="#generating-test-code" id="toc-generating-test-code" class="nav-link" data-scroll-target="#generating-test-code"><span class="header-section-number">9.3.2</span> Generating Test Code</a></li>
+  <li><a href="#generating-test-cases" id="toc-generating-test-cases" class="nav-link" data-scroll-target="#generating-test-cases"><span class="header-section-number">10.3.1</span> Generating Test Cases</a></li>
+  <li><a href="#generating-test-code" id="toc-generating-test-code" class="nav-link" data-scroll-target="#generating-test-code"><span class="header-section-number">10.3.2</span> Generating Test Code</a></li>
   </ul></li>
-  <li><a href="#learning-from-test-failures" id="toc-learning-from-test-failures" class="nav-link" data-scroll-target="#learning-from-test-failures"><span class="header-section-number">9.4</span> Learning from Test Failures</a>
+  <li><a href="#learning-from-test-failures" id="toc-learning-from-test-failures" class="nav-link" data-scroll-target="#learning-from-test-failures"><span class="header-section-number">10.4</span> Learning from Test Failures</a>
   <ul class="collapse">
-  <li><a href="#debugging-with-ai-assistance" id="toc-debugging-with-ai-assistance" class="nav-link" data-scroll-target="#debugging-with-ai-assistance"><span class="header-section-number">9.4.1</span> Debugging with AI Assistance</a></li>
-  <li><a href="#test-execution-and-results" id="toc-test-execution-and-results" class="nav-link" data-scroll-target="#test-execution-and-results"><span class="header-section-number">9.4.2</span> Test Execution and Results</a></li>
-  <li><a href="#fixing-issues-based-on-test-results" id="toc-fixing-issues-based-on-test-results" class="nav-link" data-scroll-target="#fixing-issues-based-on-test-results"><span class="header-section-number">9.4.3</span> Fixing Issues Based on Test Results</a></li>
-  <li><a href="#rerunning-tests" id="toc-rerunning-tests" class="nav-link" data-scroll-target="#rerunning-tests"><span class="header-section-number">9.4.4</span> Rerunning Tests</a></li>
+  <li><a href="#debugging-with-ai-assistance" id="toc-debugging-with-ai-assistance" class="nav-link" data-scroll-target="#debugging-with-ai-assistance"><span class="header-section-number">10.4.1</span> Debugging with AI Assistance</a></li>
+  <li><a href="#test-execution-and-results" id="toc-test-execution-and-results" class="nav-link" data-scroll-target="#test-execution-and-results"><span class="header-section-number">10.4.2</span> Test Execution and Results</a></li>
+  <li><a href="#fixing-issues-based-on-test-results" id="toc-fixing-issues-based-on-test-results" class="nav-link" data-scroll-target="#fixing-issues-based-on-test-results"><span class="header-section-number">10.4.3</span> Fixing Issues Based on Test Results</a></li>
+  <li><a href="#rerunning-tests" id="toc-rerunning-tests" class="nav-link" data-scroll-target="#rerunning-tests"><span class="header-section-number">10.4.4</span> Rerunning Tests</a></li>
   </ul></li>
-  <li><a href="#key-takeaways" id="toc-key-takeaways" class="nav-link" data-scroll-target="#key-takeaways"><span class="header-section-number">9.5</span> Key Takeaways</a></li>
-  <li><a href="#moving-forward" id="toc-moving-forward" class="nav-link" data-scroll-target="#moving-forward"><span class="header-section-number">9.6</span> Moving Forward</a></li>
+  <li><a href="#key-takeaways" id="toc-key-takeaways" class="nav-link" data-scroll-target="#key-takeaways"><span class="header-section-number">10.5</span> Key Takeaways</a></li>
+  <li><a href="#moving-forward" id="toc-moving-forward" class="nav-link" data-scroll-target="#moving-forward"><span class="header-section-number">10.6</span> Moving Forward</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/michael-borck/python-dev-book/edit/main/chapters/09-test-with-data.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/michael-borck/python-dev-book/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/04-six-step-methodology.html">Methodology</a></li><li class="breadcrumb-item"><a href="../chapters/09-test-with-data.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Test with Data (Step 6)</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/04-six-step-methodology.html">Methodology</a></li><li class="breadcrumb-item"><a href="../chapters/09-test-with-data.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Test with Data (Step 6)</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Test with Data (Step 6)</span></h1>
+<h1 class="title"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Test with Data (Step 6)</span></h1>
 </div>
 
 
@@ -408,10 +428,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <p>The final step in our methodology—testing with a variety of data—is where we verify that our solution works correctly in all scenarios. This critical step ensures that our implementation meets the requirements and handles edge cases properly.</p>
-<section id="comprehensive-testing-strategies" class="level2" data-number="9.1">
-<h2 data-number="9.1" class="anchored" data-anchor-id="comprehensive-testing-strategies"><span class="header-section-number">9.1</span> Comprehensive Testing Strategies</h2>
-<section id="the-importance-of-thorough-testing" class="level3" data-number="9.1.1">
-<h3 data-number="9.1.1" class="anchored" data-anchor-id="the-importance-of-thorough-testing"><span class="header-section-number">9.1.1</span> The Importance of Thorough Testing</h3>
+<section id="comprehensive-testing-strategies" class="level2" data-number="10.1">
+<h2 data-number="10.1" class="anchored" data-anchor-id="comprehensive-testing-strategies"><span class="header-section-number">10.1</span> Comprehensive Testing Strategies</h2>
+<section id="the-importance-of-thorough-testing" class="level3" data-number="10.1.1">
+<h3 data-number="10.1.1" class="anchored" data-anchor-id="the-importance-of-thorough-testing"><span class="header-section-number">10.1.1</span> The Importance of Thorough Testing</h3>
 <p>Testing isn’t just about confirming that your code works—it’s about discovering where and how it might fail. Thorough testing:</p>
 <ol type="1">
 <li><strong>Validates correctness</strong> - Ensures the solution produces the expected results</li>
@@ -422,72 +442,72 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ol>
 <p>Even with AI assistance in implementation, testing remains primarily a human responsibility. The most effective developers use a structured approach to testing rather than ad hoc verification.</p>
 </section>
-<section id="types-of-test-cases" class="level3" data-number="9.1.2">
-<h3 data-number="9.1.2" class="anchored" data-anchor-id="types-of-test-cases"><span class="header-section-number">9.1.2</span> Types of Test Cases</h3>
+<section id="types-of-test-cases" class="level3" data-number="10.1.2">
+<h3 data-number="10.1.2" class="anchored" data-anchor-id="types-of-test-cases"><span class="header-section-number">10.1.2</span> Types of Test Cases</h3>
 <p>A comprehensive testing strategy includes several types of test cases:</p>
-<section id="functional-tests" class="level4" data-number="9.1.2.1">
-<h4 data-number="9.1.2.1" class="anchored" data-anchor-id="functional-tests"><span class="header-section-number">9.1.2.1</span> Functional Tests</h4>
+<section id="functional-tests" class="level4" data-number="10.1.2.1">
+<h4 data-number="10.1.2.1" class="anchored" data-anchor-id="functional-tests"><span class="header-section-number">10.1.2.1</span> Functional Tests</h4>
 <p>These verify that the code produces the correct output for standard inputs:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Basic functionality tests</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Basic functionality tests</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> longest_palindromic_substring(<span class="st">"babad"</span>) <span class="kw">in</span> [<span class="st">"bab"</span>, <span class="st">"aba"</span>]</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> longest_palindromic_substring(<span class="st">"cbbd"</span>) <span class="op">==</span> <span class="st">"bb"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> longest_palindromic_substring(<span class="st">"cbbd"</span>) <span class="op">==</span> <span class="st">"bb"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="edge-case-tests" class="level4" data-number="9.1.2.2">
-<h4 data-number="9.1.2.2" class="anchored" data-anchor-id="edge-case-tests"><span class="header-section-number">9.1.2.2</span> Edge Case Tests</h4>
+<section id="edge-case-tests" class="level4" data-number="10.1.2.2">
+<h4 data-number="10.1.2.2" class="anchored" data-anchor-id="edge-case-tests"><span class="header-section-number">10.1.2.2</span> Edge Case Tests</h4>
 <p>These check how the code handles boundary conditions and unusual inputs:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Edge case tests</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Edge case tests</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> longest_palindromic_substring(<span class="st">""</span>) <span class="op">==</span> <span class="st">""</span>  <span class="co"># Empty string</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> longest_palindromic_substring(<span class="st">"a"</span>) <span class="op">==</span> <span class="st">"a"</span>  <span class="co"># Single character</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> longest_palindromic_substring(<span class="st">"aa"</span>) <span class="op">==</span> <span class="st">"aa"</span>  <span class="co"># Two identical characters</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> longest_palindromic_substring(<span class="st">"aa"</span>) <span class="op">==</span> <span class="st">"aa"</span>  <span class="co"># Two identical characters</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="stress-tests" class="level4" data-number="9.1.2.3">
-<h4 data-number="9.1.2.3" class="anchored" data-anchor-id="stress-tests"><span class="header-section-number">9.1.2.3</span> Stress Tests</h4>
+<section id="stress-tests" class="level4" data-number="10.1.2.3">
+<h4 data-number="10.1.2.3" class="anchored" data-anchor-id="stress-tests"><span class="header-section-number">10.1.2.3</span> Stress Tests</h4>
 <p>These evaluate behavior with large or complex inputs:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Stress test</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Stress test</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>long_input <span class="op">=</span> <span class="st">"a"</span> <span class="op">*</span> <span class="dv">1000</span> <span class="op">+</span> <span class="st">"b"</span> <span class="op">+</span> <span class="st">"a"</span> <span class="op">*</span> <span class="dv">1000</span>  <span class="co"># Long palindrome</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> <span class="bu">len</span>(longest_palindromic_substring(long_input)) <span class="op">==</span> <span class="dv">2001</span></span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>random_input <span class="op">=</span> <span class="st">""</span>.join(random.choice(<span class="st">"abcdef"</span>) <span class="cf">for</span> _ <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1000</span>))</span>
 <span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co"># No assertion, just checking it doesn't crash or timeout</span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> longest_palindromic_substring(random_input)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> longest_palindromic_substring(random_input)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="performance-tests" class="level4" data-number="9.1.2.4">
-<h4 data-number="9.1.2.4" class="anchored" data-anchor-id="performance-tests"><span class="header-section-number">9.1.2.4</span> Performance Tests</h4>
+<section id="performance-tests" class="level4" data-number="10.1.2.4">
+<h4 data-number="10.1.2.4" class="anchored" data-anchor-id="performance-tests"><span class="header-section-number">10.1.2.4</span> Performance Tests</h4>
 <p>These measure execution time and resource usage:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Performance test</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Performance test</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> time</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>start_time <span class="op">=</span> time.time()</span>
 <span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>longest_palindromic_substring(long_input)</span>
 <span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>end_time <span class="op">=</span> time.time()</span>
 <span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> end_time <span class="op">-</span> start_time <span class="op">&lt;</span> <span class="fl">1.0</span>  <span class="co"># Should complete in under 1 second</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> end_time <span class="op">-</span> start_time <span class="op">&lt;</span> <span class="fl">1.0</span>  <span class="co"># Should complete in under 1 second</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="regression-tests" class="level4" data-number="9.1.2.5">
-<h4 data-number="9.1.2.5" class="anchored" data-anchor-id="regression-tests"><span class="header-section-number">9.1.2.5</span> Regression Tests</h4>
+<section id="regression-tests" class="level4" data-number="10.1.2.5">
+<h4 data-number="10.1.2.5" class="anchored" data-anchor-id="regression-tests"><span class="header-section-number">10.1.2.5</span> Regression Tests</h4>
 <p>These ensure that fixes for reported issues don’t break existing functionality:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Regression test for a specific reported issue</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Regression test for a specific reported issue</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Issue: Function was returning incorrect results for strings with repeated characters</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> longest_palindromic_substring(<span class="st">"aabaa"</span>) <span class="op">==</span> <span class="st">"aabaa"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> longest_palindromic_substring(<span class="st">"aabaa"</span>) <span class="op">==</span> <span class="st">"aabaa"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 </section>
 </section>
-<section id="edge-case-identification" class="level2" data-number="9.2">
-<h2 data-number="9.2" class="anchored" data-anchor-id="edge-case-identification"><span class="header-section-number">9.2</span> Edge Case Identification</h2>
+<section id="edge-case-identification" class="level2" data-number="10.2">
+<h2 data-number="10.2" class="anchored" data-anchor-id="edge-case-identification"><span class="header-section-number">10.2</span> Edge Case Identification</h2>
 <p>Identifying all relevant edge cases is a crucial aspect of thorough testing.</p>
-<section id="common-edge-case-categories" class="level3" data-number="9.2.1">
-<h3 data-number="9.2.1" class="anchored" data-anchor-id="common-edge-case-categories"><span class="header-section-number">9.2.1</span> Common Edge Case Categories</h3>
+<section id="common-edge-case-categories" class="level3" data-number="10.2.1">
+<h3 data-number="10.2.1" class="anchored" data-anchor-id="common-edge-case-categories"><span class="header-section-number">10.2.1</span> Common Edge Case Categories</h3>
 <p>Different problems have different edge cases, but these categories are frequently relevant:</p>
-<section id="input-size-edge-cases" class="level4" data-number="9.2.1.1">
-<h4 data-number="9.2.1.1" class="anchored" data-anchor-id="input-size-edge-cases"><span class="header-section-number">9.2.1.1</span> Input Size Edge Cases</h4>
+<section id="input-size-edge-cases" class="level4" data-number="10.2.1.1">
+<h4 data-number="10.2.1.1" class="anchored" data-anchor-id="input-size-edge-cases"><span class="header-section-number">10.2.1.1</span> Input Size Edge Cases</h4>
 <ul>
 <li>Empty inputs (e.g., empty strings, empty arrays)</li>
 <li>Minimal inputs (e.g., single-character strings, single-element arrays)</li>
 <li>Very large inputs (testing performance and boundary limits)</li>
 </ul>
 </section>
-<section id="value-edge-cases" class="level4" data-number="9.2.1.2">
-<h4 data-number="9.2.1.2" class="anchored" data-anchor-id="value-edge-cases"><span class="header-section-number">9.2.1.2</span> Value Edge Cases</h4>
+<section id="value-edge-cases" class="level4" data-number="10.2.1.2">
+<h4 data-number="10.2.1.2" class="anchored" data-anchor-id="value-edge-cases"><span class="header-section-number">10.2.1.2</span> Value Edge Cases</h4>
 <ul>
 <li>Zero values</li>
 <li>Negative values</li>
@@ -495,8 +515,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Special values (e.g., NaN, infinity in floating-point operations)</li>
 </ul>
 </section>
-<section id="format-edge-cases" class="level4" data-number="9.2.1.3">
-<h4 data-number="9.2.1.3" class="anchored" data-anchor-id="format-edge-cases"><span class="header-section-number">9.2.1.3</span> Format Edge Cases</h4>
+<section id="format-edge-cases" class="level4" data-number="10.2.1.3">
+<h4 data-number="10.2.1.3" class="anchored" data-anchor-id="format-edge-cases"><span class="header-section-number">10.2.1.3</span> Format Edge Cases</h4>
 <ul>
 <li>Valid but unusual formats</li>
 <li>Malformed inputs</li>
@@ -504,50 +524,50 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Localization issues (e.g., different decimal separators)</li>
 </ul>
 </section>
-<section id="boundary-edge-cases" class="level4" data-number="9.2.1.4">
-<h4 data-number="9.2.1.4" class="anchored" data-anchor-id="boundary-edge-cases"><span class="header-section-number">9.2.1.4</span> Boundary Edge Cases</h4>
+<section id="boundary-edge-cases" class="level4" data-number="10.2.1.4">
+<h4 data-number="10.2.1.4" class="anchored" data-anchor-id="boundary-edge-cases"><span class="header-section-number">10.2.1.4</span> Boundary Edge Cases</h4>
 <ul>
 <li>First/last elements of collections</li>
 <li>Values at the exact boundary of allowed ranges</li>
 <li>Off-by-one scenarios</li>
 </ul>
 </section>
-<section id="algorithm-specific-edge-cases" class="level4" data-number="9.2.1.5">
-<h4 data-number="9.2.1.5" class="anchored" data-anchor-id="algorithm-specific-edge-cases"><span class="header-section-number">9.2.1.5</span> Algorithm-Specific Edge Cases</h4>
+<section id="algorithm-specific-edge-cases" class="level4" data-number="10.2.1.5">
+<h4 data-number="10.2.1.5" class="anchored" data-anchor-id="algorithm-specific-edge-cases"><span class="header-section-number">10.2.1.5</span> Algorithm-Specific Edge Cases</h4>
 <p>For our palindrome example: - No palindromes longer than 1 character - Entire string is a palindrome - Multiple palindromes of the same maximum length - Palindromes at the start or end of the string - Even vs.&nbsp;odd-length palindromes</p>
 </section>
 </section>
-<section id="using-ai-to-identify-edge-cases" class="level3" data-number="9.2.2">
-<h3 data-number="9.2.2" class="anchored" data-anchor-id="using-ai-to-identify-edge-cases"><span class="header-section-number">9.2.2</span> Using AI to Identify Edge Cases</h3>
+<section id="using-ai-to-identify-edge-cases" class="level3" data-number="10.2.2">
+<h3 data-number="10.2.2" class="anchored" data-anchor-id="using-ai-to-identify-edge-cases"><span class="header-section-number">10.2.2</span> Using AI to Identify Edge Cases</h3>
 <p>AI assistants can help identify edge cases you might not have considered:</p>
 <p><strong>Human prompt:</strong></p>
 <pre><code>I've implemented a function to find the longest palindromic substring in a string. What edge cases should I test to ensure it works correctly in all scenarios?</code></pre>
 <p><strong>AI response:</strong> &gt; Here’s a comprehensive list of edge cases you should test for your longest palindromic substring function: &gt; &gt; ### Basic Edge Cases &gt; &gt; 1. <strong>Empty string</strong> - Should return empty string &gt; 2. <strong>Single character</strong> - Should return that character &gt; 3. <strong>Two identical characters</strong> - Should return both characters &gt; 4. <strong>Two different characters</strong> - Should return the first character &gt; &gt; ### Palindrome Pattern Edge Cases &gt; &gt; 5. <strong>No palindromes longer than 1 character</strong> - “abc” should return “a” (or “b” or “c”) &gt; 6. <strong>Odd-length palindromes only</strong> - “aba” should return “aba” &gt; 7. <strong>Even-length palindromes only</strong> - “abba” should return “abba” &gt; 8. <strong>Mix of odd and even palindromes</strong> - “abbac” should return “abba” &gt; 9. <strong>Palindrome at the beginning</strong> - “abbax” should return “abba” &gt; 10. <strong>Palindrome at the end</strong> - “xabba” should return “abba” &gt; 11. <strong>Palindrome in the middle</strong> - “xabbay” should return “abba” &gt; 12. <strong>Entire string is a palindrome</strong> - “racecar” should return “racecar” &gt; &gt; ### Multiple Palindromes Edge Cases &gt; &gt; 13. <strong>Multiple palindromes of different lengths</strong> - “aaaabcbaaaaa” should return “aaaaa” &gt; 14. <strong>Multiple palindromes of same maximum length</strong> - “aabaa” and “baab” in “aabaabaab” (should return either) &gt; 15. <strong>Overlapping palindromes</strong> - “aaaa” has multiple overlapping palindromes &gt; &gt; ### Character Edge Cases &gt; &gt; 16. <strong>Case sensitivity</strong> - “Madam” is not a palindrome if case-sensitive &gt; 17. <strong>Special characters</strong> - “a#a” should return “a#a” &gt; 18. <strong>Numbers and mixed content</strong> - “12321” or “a123a” &gt; 19. <strong>Unicode characters</strong> - Test with non-ASCII characters like “租赁” &gt; &gt; ### Performance Edge Cases &gt; &gt; 20. <strong>Very long strings</strong> - Test with strings of thousands of characters &gt; 21. <strong>Long palindrome within long string</strong> - e.g., 1000 ‘a’s + ’b’ + 1000 ’a’s &gt; 22. <strong>Repeated characters</strong> - “aaaaaaaaaa” (helps test for optimization issues) &gt; &gt; A well-tested function should handle all these cases correctly and efficiently.</p>
 </section>
 </section>
-<section id="ai-assisted-test-generation" class="level2" data-number="9.3">
-<h2 data-number="9.3" class="anchored" data-anchor-id="ai-assisted-test-generation"><span class="header-section-number">9.3</span> AI-Assisted Test Generation</h2>
+<section id="ai-assisted-test-generation" class="level2" data-number="10.3">
+<h2 data-number="10.3" class="anchored" data-anchor-id="ai-assisted-test-generation"><span class="header-section-number">10.3</span> AI-Assisted Test Generation</h2>
 <p>AI can be particularly helpful in generating both test cases and test code.</p>
-<section id="generating-test-cases" class="level3" data-number="9.3.1">
-<h3 data-number="9.3.1" class="anchored" data-anchor-id="generating-test-cases"><span class="header-section-number">9.3.1</span> Generating Test Cases</h3>
+<section id="generating-test-cases" class="level3" data-number="10.3.1">
+<h3 data-number="10.3.1" class="anchored" data-anchor-id="generating-test-cases"><span class="header-section-number">10.3.1</span> Generating Test Cases</h3>
 <p>Ask AI to generate diverse test inputs:</p>
 <p><strong>Human prompt:</strong></p>
 <pre><code>Could you generate 10 diverse test cases for the longest palindromic substring function? For each test case, provide the input string and the expected output.</code></pre>
 <p><strong>AI response:</strong> &gt; Here are 10 diverse test cases for the longest palindromic substring function: &gt; &gt; | Test Case | Input String | Expected Output | Description | &gt; |———–|————-|—————-|————-| &gt; | 1 | “” | “” | Empty string | &gt; | 2 | “a” | “a” | Single character | &gt; | 3 | “abcd” | “a” | No palindromes longer than 1 (any single character is valid) | &gt; | 4 | “babad” | “bab” or “aba” | Multiple valid answers of same length | &gt; | 5 | “cbbd” | “bb” | Even-length palindrome | &gt; | 6 | “racecar” | “racecar” | Entire string is a palindrome | &gt; | 7 | “aacabdkacaa” | “aca” | Multiple palindromes, should find longest | &gt; | 8 | “aaaaa” | “aaaaa” | Repeated characters | &gt; | 9 | “civilservice” | “civic” | Palindrome at beginning | &gt; | 10 | “abcdeedcba” | “abcdeedcba” | Even-length palindrome (entire string) | &gt; &gt; These test cases cover empty strings, single characters, no long palindromes, multiple valid answers, even and odd-length palindromes, whole-string palindromes, multiple palindromes of different lengths, repeated characters, and palindromes at different positions in the string.</p>
 </section>
-<section id="generating-test-code" class="level3" data-number="9.3.2">
-<h3 data-number="9.3.2" class="anchored" data-anchor-id="generating-test-code"><span class="header-section-number">9.3.2</span> Generating Test Code</h3>
+<section id="generating-test-code" class="level3" data-number="10.3.2">
+<h3 data-number="10.3.2" class="anchored" data-anchor-id="generating-test-code"><span class="header-section-number">10.3.2</span> Generating Test Code</h3>
 <p>AI can also help generate the actual test code:</p>
 <p><strong>Human prompt:</strong></p>
 <pre><code>Could you create a Python unit test class using the unittest framework for testing the longest_palindromic_substring function with the test cases you suggested?</code></pre>
 <p><strong>AI response:</strong> &gt; Here’s a comprehensive unit test class using Python’s <code>unittest</code> framework to test the longest palindromic substring function with the test cases I suggested: &gt; &gt; <code>python &gt; import unittest &gt;  &gt; # Import your function &gt; from palindrome import longest_palindromic_substring &gt;  &gt; class TestLongestPalindromicSubstring(unittest.TestCase): &gt;      &gt;     def test_empty_string(self): &gt;         """Test with an empty string.""" &gt;         self.assertEqual(longest_palindromic_substring(""), "") &gt;      &gt;     def test_single_character(self): &gt;         """Test with a single character.""" &gt;         self.assertEqual(longest_palindromic_substring("a"), "a") &gt;      &gt;     def test_no_long_palindromes(self): &gt;         """Test with a string that has no palindromes longer than 1 character.""" &gt;         result = longest_palindromic_substring("abcd") &gt;         # Any single character is a valid answer &gt;         self.assertTrue(result in ["a", "b", "c", "d"]) &gt;         self.assertEqual(len(result), 1) &gt;      &gt;     def test_multiple_valid_answers(self): &gt;         """Test with a string that has multiple valid answers of the same length.""" &gt;         result = longest_palindromic_substring("babad") &gt;         self.assertTrue(result in ["bab", "aba"]) &gt;         self.assertEqual(len(result), 3) &gt;      &gt;     def test_even_length_palindrome(self): &gt;         """Test with a string containing an even-length palindrome.""" &gt;         self.assertEqual(longest_palindromic_substring("cbbd"), "bb") &gt;      &gt;     def test_entire_string_is_palindrome(self): &gt;         """Test with a string that is entirely a palindrome.""" &gt;         self.assertEqual(longest_palindromic_substring("racecar"), "racecar") &gt;      &gt;     def test_multiple_palindromes(self): &gt;         """Test with a string containing multiple palindromes of different lengths.""" &gt;         self.assertEqual(longest_palindromic_substring("aacabdkacaa"), "aca") &gt;      &gt;     def test_repeated_characters(self): &gt;         """Test with a string of repeated characters.""" &gt;         self.assertEqual(longest_palindromic_substring("aaaaa"), "aaaaa") &gt;      &gt;     def test_palindrome_at_beginning(self): &gt;         """Test with a palindrome at the beginning of the string.""" &gt;         self.assertEqual(longest_palindromic_substring("civilservice"), "civic") &gt;      &gt;     def test_even_length_entire_string(self): &gt;         """Test with an even-length palindrome that is the entire string.""" &gt;         self.assertEqual(longest_palindromic_substring("abcdeedcba"), "abcdeedcba") &gt;      &gt;     def test_performance_with_long_string(self): &gt;         """Test performance with a very long string containing a long palindrome.""" &gt;         long_input = "a" * 1000 + "b" + "a" * 1000 &gt;         result = longest_palindromic_substring(long_input) &gt;         self.assertEqual(len(result), 2001) &gt;         self.assertEqual(result, long_input) &gt;  &gt; if __name__ == '__main__': &gt;     unittest.main() &gt;</code> &gt; &gt; This test class includes: &gt; &gt; 1. Tests for all the cases I mentioned earlier &gt; 2. Clear test method names that describe what’s being tested &gt; 3. Docstrings explaining each test &gt; 4. Appropriate assertions for each case &gt; 5. A performance test with a large input &gt; &gt; To use this, save it as <code>test_palindrome.py</code> and make sure your implementation is in a file named <code>palindrome.py</code> with the function <code>longest_palindromic_substring</code>. Then run it with: &gt; &gt; <code>&gt; python -m unittest test_palindrome.py &gt;</code> &gt; &gt; If you’re using a different file structure or function name, you’ll need to adjust the import statement accordingly.</p>
 </section>
 </section>
-<section id="learning-from-test-failures" class="level2" data-number="9.4">
-<h2 data-number="9.4" class="anchored" data-anchor-id="learning-from-test-failures"><span class="header-section-number">9.4</span> Learning from Test Failures</h2>
+<section id="learning-from-test-failures" class="level2" data-number="10.4">
+<h2 data-number="10.4" class="anchored" data-anchor-id="learning-from-test-failures"><span class="header-section-number">10.4</span> Learning from Test Failures</h2>
 <p>Test failures provide valuable learning opportunities that can improve both your current solution and your general understanding.</p>
-<section id="debugging-with-ai-assistance" class="level3" data-number="9.4.1">
-<h3 data-number="9.4.1" class="anchored" data-anchor-id="debugging-with-ai-assistance"><span class="header-section-number">9.4.1</span> Debugging with AI Assistance</h3>
+<section id="debugging-with-ai-assistance" class="level3" data-number="10.4.1">
+<h3 data-number="10.4.1" class="anchored" data-anchor-id="debugging-with-ai-assistance"><span class="header-section-number">10.4.1</span> Debugging with AI Assistance</h3>
 <p>When tests fail, AI can help analyze the failure:</p>
 <p><strong>Human prompt:</strong></p>
 <pre><code>My test case for "aacabdkacaa" is failing. The expected output is "aca" but my function returns "aa". Here's my implementation:
@@ -728,8 +748,8 @@ class TestLongestPalindromicSubstring(unittest.TestCase):
 if __name__ == "__main__":
     unittest.main()</code></pre>
 </section>
-<section id="test-execution-and-results" class="level3" data-number="9.4.2">
-<h3 data-number="9.4.2" class="anchored" data-anchor-id="test-execution-and-results"><span class="header-section-number">9.4.2</span> Test Execution and Results</h3>
+<section id="test-execution-and-results" class="level3" data-number="10.4.2">
+<h3 data-number="10.4.2" class="anchored" data-anchor-id="test-execution-and-results"><span class="header-section-number">10.4.2</span> Test Execution and Results</h3>
 <p>Running our tests might reveal issues we hadn’t anticipated:</p>
 <pre><code>.F...F
 ======================================================================
@@ -747,10 +767,10 @@ Test performance with large inputs.
 AssertionError: 999 != 1001
 ...</code></pre>
 </section>
-<section id="fixing-issues-based-on-test-results" class="level3" data-number="9.4.3">
-<h3 data-number="9.4.3" class="anchored" data-anchor-id="fixing-issues-based-on-test-results"><span class="header-section-number">9.4.3</span> Fixing Issues Based on Test Results</h3>
+<section id="fixing-issues-based-on-test-results" class="level3" data-number="10.4.3">
+<h3 data-number="10.4.3" class="anchored" data-anchor-id="fixing-issues-based-on-test-results"><span class="header-section-number">10.4.3</span> Fixing Issues Based on Test Results</h3>
 <p>Analyzing the failures and updating our implementation:</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> longest_palindromic_substring(s):</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> longest_palindromic_substring(s):</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="co">    Find the longest palindromic substring in a given string.</span></span>
 <span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="co">    </span></span>
@@ -793,10 +813,10 @@ AssertionError: 999 != 1001
 <span id="cb12-41"><a href="#cb12-41" aria-hidden="true" tabindex="-1"></a>                start <span class="op">=</span> even_start</span>
 <span id="cb12-42"><a href="#cb12-42" aria-hidden="true" tabindex="-1"></a>                max_length <span class="op">=</span> even_length</span>
 <span id="cb12-43"><a href="#cb12-43" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb12-44"><a href="#cb12-44" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> s[start:start <span class="op">+</span> max_length]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb12-44"><a href="#cb12-44" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> s[start:start <span class="op">+</span> max_length]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="rerunning-tests" class="level3" data-number="9.4.4">
-<h3 data-number="9.4.4" class="anchored" data-anchor-id="rerunning-tests"><span class="header-section-number">9.4.4</span> Rerunning Tests</h3>
+<section id="rerunning-tests" class="level3" data-number="10.4.4">
+<h3 data-number="10.4.4" class="anchored" data-anchor-id="rerunning-tests"><span class="header-section-number">10.4.4</span> Rerunning Tests</h3>
 <p>After fixing the issues, we run the tests again to verify the solution:</p>
 <pre><code>......
 ----------------------------------------------------------------------
@@ -805,8 +825,8 @@ Ran 6 tests in 0.123s
 OK</code></pre>
 </section>
 </section>
-<section id="key-takeaways" class="level2" data-number="9.5">
-<h2 data-number="9.5" class="anchored" data-anchor-id="key-takeaways"><span class="header-section-number">9.5</span> Key Takeaways</h2>
+<section id="key-takeaways" class="level2" data-number="10.5">
+<h2 data-number="10.5" class="anchored" data-anchor-id="key-takeaways"><span class="header-section-number">10.5</span> Key Takeaways</h2>
 <ul>
 <li>Thorough testing is essential, even with AI-assisted implementation</li>
 <li>A comprehensive testing strategy includes functional tests, edge cases, stress tests, performance tests, and regression tests</li>
@@ -815,8 +835,8 @@ OK</code></pre>
 <li>The combination of human oversight and AI assistance leads to more robust solutions</li>
 </ul>
 </section>
-<section id="moving-forward" class="level2" data-number="9.6">
-<h2 data-number="9.6" class="anchored" data-anchor-id="moving-forward"><span class="header-section-number">9.6</span> Moving Forward</h2>
+<section id="moving-forward" class="level2" data-number="10.6">
+<h2 data-number="10.6" class="anchored" data-anchor-id="moving-forward"><span class="header-section-number">10.6</span> Moving Forward</h2>
 <p>With our solution thoroughly tested, we’ve completed the six-step methodology. This approach has helped us develop a correct and robust solution while maintaining human understanding and control throughout the process.</p>
 <p>In the next section of the book, we’ll explore specific patterns and practices for intentional prompting, beginning with Chapter 10’s exploration of intentional prompting patterns—techniques for guiding AI through complex programming tasks.</p>
 
@@ -825,239 +845,243 @@ OK</code></pre>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
-window.document.addEventListener("DOMContentLoaded", function (event) {
-  const toggleBodyColorMode = (bsSheetEl) => {
-    const mode = bsSheetEl.getAttribute("data-mode");
-    const bodyEl = window.document.querySelector("body");
-    if (mode === "dark") {
-      bodyEl.classList.add("quarto-dark");
-      bodyEl.classList.remove("quarto-light");
-    } else {
-      bodyEl.classList.add("quarto-light");
-      bodyEl.classList.remove("quarto-dark");
-    }
-  }
-  const toggleBodyColorPrimary = () => {
-    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
-    if (bsSheetEl) {
-      toggleBodyColorMode(bsSheetEl);
-    }
-  }
-  toggleBodyColorPrimary();  
-  const icon = "";
-  const anchorJS = new window.AnchorJS();
-  anchorJS.options = {
-    placement: 'right',
-    icon: icon
-  };
-  anchorJS.add('.anchored');
-  const isCodeAnnotation = (el) => {
-    for (const clz of el.classList) {
-      if (clz.startsWith('code-annotation-')) {                     
-        return true;
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
       }
+      return false;
     }
-    return false;
-  }
-  const onCopySuccess = function(e) {
-    // button target
-    const button = e.trigger;
-    // don't keep focus
-    button.blur();
-    // flash "checked"
-    button.classList.add('code-copy-button-checked');
-    var currentTitle = button.getAttribute("title");
-    button.setAttribute("title", "Copied!");
-    let tooltip;
-    if (window.bootstrap) {
-      button.setAttribute("data-bs-toggle", "tooltip");
-      button.setAttribute("data-bs-placement", "left");
-      button.setAttribute("data-bs-title", "Copied!");
-      tooltip = new bootstrap.Tooltip(button, 
-        { trigger: "manual", 
-          customClass: "code-copy-button-tooltip",
-          offset: [0, -8]});
-      tooltip.show();    
-    }
-    setTimeout(function() {
-      if (tooltip) {
-        tooltip.hide();
-        button.removeAttribute("data-bs-title");
-        button.removeAttribute("data-bs-toggle");
-        button.removeAttribute("data-bs-placement");
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
       }
-      button.setAttribute("title", currentTitle);
-      button.classList.remove('code-copy-button-checked');
-    }, 1000);
-    // clear code selection
-    e.clearSelection();
-  }
-  const getTextToCopy = function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
       for (const childEl of codeEl.children) {
         if (isCodeAnnotation(childEl)) {
           childEl.remove();
         }
       }
       return codeEl.innerText;
-  }
-  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-    text: getTextToCopy
-  });
-  clipboard.on('success', onCopySuccess);
-  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
-    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-      text: getTextToCopy,
-      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
     });
-    clipboardModal.on('success', onCopySuccess);
-  }
-    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-    var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp('/' + window.location.host + '/');
-    var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
     }
-    // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
-    for (var i=0; i<links.length; i++) {
-      const link = links[i];
-      if (!isInternal(link.href)) {
-        // undo the damage that might have been done by quarto-nav.js in the case of
-        // links that we want to consider external
-        if (link.dataset.originalHref !== undefined) {
-          link.href = link.dataset.originalHref;
-        }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
-    }
-  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
-    const config = {
-      allowHTML: true,
-      maxWidth: 500,
-      delay: 100,
-      arrow: false,
-      appendTo: function(el) {
-          return el.parentElement;
-      },
-      interactive: true,
-      interactiveBorder: 10,
-      theme: 'quarto',
-      placement: 'bottom-start',
-    };
-    if (contentFn) {
-      config.content = contentFn;
-    }
-    if (onTriggerFn) {
-      config.onTrigger = onTriggerFn;
-    }
-    if (onUntriggerFn) {
-      config.onUntrigger = onUntriggerFn;
-    }
-    window.tippy(el, config); 
-  }
-  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
-  for (var i=0; i<noterefs.length; i++) {
-    const ref = noterefs[i];
-    tippyHover(ref, function() {
-      // use id or data attribute instead here
-      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
-      try { href = new URL(href).hash; } catch {}
-      const id = href.replace(/^#\/?/, "");
-      const note = window.document.getElementById(id);
-      if (note) {
-        return note.innerHTML;
-      } else {
-        return "";
-      }
-    });
-  }
-  const xrefs = window.document.querySelectorAll('a.quarto-xref');
-  const processXRef = (id, note) => {
-    // Strip column container classes
-    const stripColumnClz = (el) => {
-      el.classList.remove("page-full", "page-columns");
-      if (el.children) {
-        for (const child of el.children) {
-          stripColumnClz(child);
-        }
-      }
-    }
-    stripColumnClz(note)
-    if (id === null || id.startsWith('sec-')) {
-      // Special case sections, only their first couple elements
-      const container = document.createElement("div");
-      if (note.children && note.children.length > 2) {
-        container.appendChild(note.children[0].cloneNode(true));
-        for (let i = 1; i < note.children.length; i++) {
-          const child = note.children[i];
-          if (child.tagName === "P" && child.innerText === "") {
-            continue;
-          } else {
-            container.appendChild(child.cloneNode(true));
-            break;
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
           }
         }
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(container);
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
         }
-        return container.innerHTML
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
       } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
         if (window.Quarto?.typesetMath) {
           window.Quarto.typesetMath(note);
         }
-        return note.innerHTML;
-      }
-    } else {
-      // Remove any anchor links if they are present
-      const anchorLink = note.querySelector('a.anchorjs-link');
-      if (anchorLink) {
-        anchorLink.remove();
-      }
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(note);
-      }
-      // TODO in 1.5, we should make sure this works without a callout special case
-      if (note.classList.contains("callout")) {
-        return note.outerHTML;
-      } else {
-        return note.innerHTML;
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
       }
     }
-  }
-  for (var i=0; i<xrefs.length; i++) {
-    const xref = xrefs[i];
-    tippyHover(xref, undefined, function(instance) {
-      instance.disable();
-      let url = xref.getAttribute('href');
-      let hash = undefined; 
-      if (url.startsWith('#')) {
-        hash = url;
-      } else {
-        try { hash = new URL(url).hash; } catch {}
-      }
-      if (hash) {
-        const id = hash.replace(/^#\/?/, "");
-        const note = window.document.getElementById(id);
-        if (note !== null) {
-          try {
-            const html = processXRef(id, note.cloneNode(true));
-            instance.setContent(html);
-          } finally {
-            instance.enable();
-            instance.show();
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
           }
         } else {
-          // See if we can fetch this
-          fetch(url.split('#')[0])
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
           .then(res => res.text())
           .then(html => {
             const parser = new DOMParser();
             const htmlDoc = parser.parseFromString(html, "text/html");
-            const note = htmlDoc.getElementById(id);
+            const note = htmlDoc.querySelector('main.content');
             if (note !== null) {
-              const html = processXRef(id, note);
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
               instance.setContent(html);
             } 
           }).finally(() => {
@@ -1065,194 +1089,170 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             instance.show();
           });
         }
-      } else {
-        // See if we can fetch a full url (with no hash to target)
-        // This is a special case and we should probably do some content thinning / targeting
-        fetch(url)
-        .then(res => res.text())
-        .then(html => {
-          const parser = new DOMParser();
-          const htmlDoc = parser.parseFromString(html, "text/html");
-          const note = htmlDoc.querySelector('main.content');
-          if (note !== null) {
-            // This should only happen for chapter cross references
-            // (since there is no id in the URL)
-            // remove the first header
-            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
-              note.children[0].remove();
-            }
-            const html = processXRef(null, note);
-            instance.setContent(html);
-          } 
-        }).finally(() => {
-          instance.enable();
-          instance.show();
-        });
-      }
-    }, function(instance) {
-    });
-  }
-      let selectedAnnoteEl;
-      const selectorForAnnotation = ( cell, annotation) => {
-        let cellAttr = 'data-code-cell="' + cell + '"';
-        let lineAttr = 'data-code-annotation="' +  annotation + '"';
-        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
-        return selector;
-      }
-      const selectCodeLines = (annoteEl) => {
-        const doc = window.document;
-        const targetCell = annoteEl.getAttribute("data-target-cell");
-        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
-        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
-        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
-        const lineIds = lines.map((line) => {
-          return targetCell + "-" + line;
-        })
-        let top = null;
-        let height = null;
-        let parent = null;
-        if (lineIds.length > 0) {
-            //compute the position of the single el (top and bottom and make a div)
-            const el = window.document.getElementById(lineIds[0]);
-            top = el.offsetTop;
-            height = el.offsetHeight;
-            parent = el.parentElement.parentElement;
-          if (lineIds.length > 1) {
-            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-            height = bottom - top;
-          }
-          if (top !== null && height !== null && parent !== null) {
-            // cook up a div (if necessary) and position it 
-            let div = window.document.getElementById("code-annotation-line-highlight");
-            if (div === null) {
-              div = window.document.createElement("div");
-              div.setAttribute("id", "code-annotation-line-highlight");
-              div.style.position = 'absolute';
-              parent.appendChild(div);
-            }
-            div.style.top = top - 2 + "px";
-            div.style.height = height + 4 + "px";
-            div.style.left = 0;
-            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-            if (gutterDiv === null) {
-              gutterDiv = window.document.createElement("div");
-              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-              gutterDiv.style.position = 'absolute';
-              const codeCell = window.document.getElementById(targetCell);
-              const gutter = codeCell.querySelector('.code-annotation-gutter');
-              gutter.appendChild(gutterDiv);
-            }
-            gutterDiv.style.top = top - 2 + "px";
-            gutterDiv.style.height = height + 4 + "px";
-          }
-          selectedAnnoteEl = annoteEl;
-        }
-      };
-      const unselectCodeLines = () => {
-        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
-        elementsIds.forEach((elId) => {
-          const div = window.document.getElementById(elId);
-          if (div) {
-            div.remove();
-          }
-        });
-        selectedAnnoteEl = undefined;
-      };
-        // Handle positioning of the toggle
-    window.addEventListener(
-      "resize",
-      throttle(() => {
-        elRect = undefined;
-        if (selectedAnnoteEl) {
-          selectCodeLines(selectedAnnoteEl);
-        }
-      }, 10)
-    );
-    function throttle(fn, ms) {
-    let throttle = false;
-    let timer;
-      return (...args) => {
-        if(!throttle) { // first call gets through
-            fn.apply(this, args);
-            throttle = true;
-        } else { // all the others get throttled
-            if(timer) clearTimeout(timer); // cancel #2
-            timer = setTimeout(() => {
-              fn.apply(this, args);
-              timer = throttle = false;
-            }, ms);
-        }
-      };
-    }
-      // Attach click handler to the DT
-      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
-      for (const annoteDlNode of annoteDls) {
-        annoteDlNode.addEventListener('click', (event) => {
-          const clickedEl = event.target;
-          if (clickedEl !== selectedAnnoteEl) {
-            unselectCodeLines();
-            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
-            if (activeEl) {
-              activeEl.classList.remove('code-annotation-active');
-            }
-            selectCodeLines(clickedEl);
-            clickedEl.classList.add('code-annotation-active');
-          } else {
-            // Unselect the line
-            unselectCodeLines();
-            clickedEl.classList.remove('code-annotation-active');
-          }
-        });
-      }
-  const findCites = (el) => {
-    const parentEl = el.parentElement;
-    if (parentEl) {
-      const cites = parentEl.dataset.cites;
-      if (cites) {
-        return {
-          el,
-          cites: cites.split(' ')
-        };
-      } else {
-        return findCites(el.parentElement)
-      }
-    } else {
-      return undefined;
-    }
-  };
-  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-  for (var i=0; i<bibliorefs.length; i++) {
-    const ref = bibliorefs[i];
-    const citeInfo = findCites(ref);
-    if (citeInfo) {
-      tippyHover(citeInfo.el, function() {
-        var popup = window.document.createElement('div');
-        citeInfo.cites.forEach(function(cite) {
-          var citeDiv = window.document.createElement('div');
-          citeDiv.classList.add('hanging-indent');
-          citeDiv.classList.add('csl-entry');
-          var biblioDiv = window.document.getElementById('ref-' + cite);
-          if (biblioDiv) {
-            citeDiv.innerHTML = biblioDiv.innerHTML;
-          }
-          popup.appendChild(citeDiv);
-        });
-        return popup.innerHTML;
+      }, function(instance) {
       });
     }
-  }
-});
-</script>
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="../chapters/08-convert-to-code.html" class="pagination-link" aria-label="Convert to Code (Step 5)">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Convert to Code (Step 5)</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Convert to Code (Step 5)</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="../chapters/10-intentional-prompting-patterns.html" class="pagination-link" aria-label="Intentional Prompting Patterns">
-        <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Intentional Prompting Patterns</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Intentional Prompting Patterns</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
