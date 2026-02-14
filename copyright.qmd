@@ -1,0 +1,43 @@
+# Copyright {.unnumbered .unlisted}
+
+::: {.content-visible when-format="pdf"}
+
+\thispagestyle{empty}
+
+:::
+
+**Conversation, Not Delegation: Mastering Human-AI Development**
+
+Copyright 2026 Michael Borck. All rights reserved.
+
+No part of this publication may be reproduced, distributed, or transmitted in any form or by any means, including photocopying, recording, or other electronic or mechanical methods, without the prior written permission of the author, except in the case of brief quotations embodied in critical reviews and certain other noncommercial uses permitted by copyright law.
+
+**First Edition, 2026**
+
+While every precaution has been taken in the preparation of this book, the author assumes no responsibility for errors or omissions, or for damages resulting from the use of information contained herein.
+
+---
+
+**Cover Art**
+Created using Midjourney AI, with prompts crafted by the author depicting the themes of human-AI collaboration in software development.
+
+**Production Notes**
+This book was written in Markdown using Quarto. The text is set in system fonts optimized for screen and print reading. Code examples use a monospace font for clarity.
+
+Editorial assistance provided by Claude (Anthropic). The author reviewed and approved all content.
+
+---
+
+**Online Edition**
+A free online version of this book is available at:
+https://michaelborck-books.github.io/conversation-not-delegation
+
+---
+
+michael@borck.me
+
+::: {.content-visible when-format="pdf"}
+
+\newpage
+
+:::

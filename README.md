@@ -30,7 +30,7 @@ This book is part of a comprehensive series for mastering modern software develo
 ### Python Track
 - **[Think Python, Direct AI](https://michaelborck-books.github.io/think-python-direct-ai)**: Computational Thinking for Beginners
 - **[Code Python, Consult AI](https://michaelborck-books.github.io/code-python-consult-ai)**: Python Fundamentals for the AI Era
-- **[Ship It: Python in Production](https://michaelborck-books.github.io/ship-it-python-in-production)**: Professional Tools and Workflows
+- **[Ship Python, Orchestrate AI](https://michaelborck-books.github.io/ship-it-python-in-production)**: Professional Python in the AI Era
 
 ### Web Track
 - **[Build Web, Guide AI](https://michaelborck-books.github.io/build-web-guide-ai)**: Business Web Development with AI

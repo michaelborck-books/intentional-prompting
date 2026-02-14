@@ -115,7 +115,7 @@ This book is part of a comprehensive series for mastering modern software develo
 
 - [Think Python, Direct AI: Computational Thinking for Beginners](https://michaelborck-books.github.io/think-python-direct-ai) - Perfect for absolute beginners
 - [Code Python, Consult AI: Python Fundamentals for the AI Era](https://michaelborck-books.github.io/code-python-consult-ai) - Core Python knowledge
-- [Ship It: Python in Production](https://michaelborck-books.github.io/ship-it-python-in-production) - Professional tools and workflows
+- [Ship Python, Orchestrate AI](https://michaelborck-books.github.io/ship-it-python-in-production) - Professional Python in the AI Era
 
 **Web Track**
 
