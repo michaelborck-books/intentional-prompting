@@ -25,15 +25,15 @@ Throughout the book, examples are provided in both programming and business cont
 This book is part of a comprehensive series for mastering modern software development in the AI era:
 
 ### Foundational Methodology
-- **[Conversation, Not Delegation](https://michaelborck-books.github.io/conversation-not-delegation)** (this book): Mastering Human-AI Development
+- **[Conversation, Not Delegation](https://michael-borck.github.io/conversation-not-delegation)** (this book): Mastering Human-AI Development
 
 ### Python Track
-- **[Think Python, Direct AI](https://michaelborck-books.github.io/think-python-direct-ai)**: Computational Thinking for Beginners
-- **[Code Python, Consult AI](https://michaelborck-books.github.io/code-python-consult-ai)**: Python Fundamentals for the AI Era
-- **[Ship Python, Orchestrate AI](https://michaelborck-books.github.io/ship-it-python-in-production)**: Professional Python in the AI Era
+- **[Think Python, Direct AI](https://michael-borck.github.io/think-python-direct-ai)**: Computational Thinking for Beginners
+- **[Code Python, Consult AI](https://michael-borck.github.io/code-python-consult-ai)**: Python Fundamentals for the AI Era
+- **[Ship Python, Orchestrate AI](https://michael-borck.github.io/ship-it-python-in-production)**: Professional Python in the AI Era
 
 ### Web Track
-- **[Build Web, Guide AI](https://michaelborck-books.github.io/build-web-guide-ai)**: Business Web Development with AI
+- **[Build Web, Guide AI](https://michael-borck.github.io/build-web-guide-ai)**: Business Web Development with AI
 
 ## Development
 

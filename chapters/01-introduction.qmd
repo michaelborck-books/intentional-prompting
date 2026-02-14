@@ -109,16 +109,16 @@ This book is part of a comprehensive series for mastering modern software develo
 
 **Foundational Methodology**
 
-- [Conversation, Not Delegation: Mastering Human-AI Development](https://michaelborck-books.github.io/conversation-not-delegation) (this book)
+- [Conversation, Not Delegation: Mastering Human-AI Development](https://michael-borck.github.io/conversation-not-delegation) (this book)
 
 **Python Track**
 
-- [Think Python, Direct AI: Computational Thinking for Beginners](https://michaelborck-books.github.io/think-python-direct-ai) - Perfect for absolute beginners
-- [Code Python, Consult AI: Python Fundamentals for the AI Era](https://michaelborck-books.github.io/code-python-consult-ai) - Core Python knowledge
-- [Ship Python, Orchestrate AI](https://michaelborck-books.github.io/ship-it-python-in-production) - Professional Python in the AI Era
+- [Think Python, Direct AI: Computational Thinking for Beginners](https://michael-borck.github.io/think-python-direct-ai) - Perfect for absolute beginners
+- [Code Python, Consult AI: Python Fundamentals for the AI Era](https://michael-borck.github.io/code-python-consult-ai) - Core Python knowledge
+- [Ship Python, Orchestrate AI](https://michael-borck.github.io/ship-it-python-in-production) - Professional Python in the AI Era
 
 **Web Track**
 
-- [Build Web, Guide AI: Business Web Development with AI](https://michaelborck-books.github.io/build-web-guide-ai) - HTML, CSS, JavaScript, WordPress, React
+- [Build Web, Guide AI: Business Web Development with AI](https://michael-borck.github.io/build-web-guide-ai) - HTML, CSS, JavaScript, WordPress, React
 
 In the following chapters, we'll explore the principles of intentional prompting in depth, examine the six-step methodology with practical examples, and develop patterns for effective collaboration between human developers and AI assistants.

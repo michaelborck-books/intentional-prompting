@@ -30,7 +30,7 @@ Editorial assistance provided by Claude (Anthropic). The author reviewed and app
 
 **Online Edition**
 A free online version of this book is available at:
-https://michaelborck-books.github.io/conversation-not-delegation
+https://michael-borck.github.io/conversation-not-delegation
 
 ---
 
