@@ -25,7 +25,7 @@ AI assistants are becoming increasingly aware of their operational context:
 
 - **Project-wide understanding** beyond individual files
 - **Development history awareness** including past decisions and their rationale
-- **Developer preference modeling** that adapts to individual coding styles
+- **Developer preference modelling** that adapts to individual coding styles
 - **Team convention adherence** that ensures consistency across contributors
 
 For intentional prompting, this means prompting strategies will need to focus more on high-level goals and constraints, while the AI handles more of the implementation details.
@@ -39,7 +39,7 @@ AI systems are gradually moving toward greater autonomy in coding tasks, leading
 - **Self-directed exploration** of solution spaces
 - **Automated testing and verification** of generated code
 - **Self-debugging and refinement** of initial solutions
-- **Proactive suggestion** of improvements and optimizations
+- **Proactive suggestion** of improvements and optimisations
 
 This increased autonomy will shift intentional prompting toward a supervisory role, where human developers focus on problem definition, architectural decisions, and quality assurance rather than implementation details.
 
@@ -103,7 +103,7 @@ Intentional prompting in this paradigm emphasizes clear articulation of requirem
 #### Quality-Oriented Development
 
 - **Focus on correctness criteria** rather than implementation
-- **Property-based specifications** that define behavior boundaries
+- **Property-based specifications** that define behaviour boundaries
 - **Automated verification against properties** rather than manual testing
 - **Formal methods** becoming more accessible through AI interpretation
 
@@ -126,7 +126,7 @@ Intentional prompting practices will need to evolve to leverage these new langua
 
 - **Continuous AI collaboration** throughout the development workflow
 - **Predictive development** that anticipates next steps
-- **Automated refactoring and optimization** based on semantic understanding
+- **Automated refactoring and optimisation** based on semantic understanding
 - **Intelligent knowledge integration** from documentation and community resources
 
 These environments will require new skills in guiding AI assistance effectively throughout the development lifecycle.
@@ -143,7 +143,7 @@ As AI capabilities advance, the most valuable developer skills will shift:
 2. **Problem formulation** - Precisely specifying what needs to be solved
 3. **Solution evaluation** - Critically assessing generated solutions
 4. **Adaptation and integration** - Combining AI-generated components effectively
-5. **Domain modeling** - Translating real-world complexity into computational terms
+5. **Domain modelling** - Translating real-world complexity into computational terms
 
 Intentional prompting principles provide a foundation for developing these skills, with increasing emphasis on architecture and evaluation.
 
@@ -159,11 +159,11 @@ To remain effective as AI capabilities evolve:
 
 ### Organizational Adaptation
 
-Organizations will need to adapt their development processes:
+organisations will need to adapt their development processes:
 
 #### Evolving Team Structures
 
-- **AI specialists** who optimize AI collaboration across teams
+- **AI specialists** who optimise AI collaboration across teams
 - **Prompt engineers** who develop effective prompting strategies
 - **Integration architects** who ensure cohesive solutions
 - **Quality assurance evolution** toward specification verification
@@ -307,7 +307,7 @@ The most important skill for the future will be adaptability. By grounding yours
 - AI capabilities will continue to evolve, with increased contextual understanding, multimodal interactions, and autonomy
 - Programming paradigms are shifting from code writing to code curation and verification
 - Developer skills are evolving toward architecture, specification, and solution evaluation
-- Organizations need to adapt team structures and workflows for effective AI collaboration
+- organisations need to adapt team structures and workflows for effective AI collaboration
 - Maintaining the human element requires focus on our unique capabilities and ethical considerations
 - Intentional prompting principles provide a foundation for navigating these changes effectively
 
@@ -328,16 +328,16 @@ The fundamental principles of intentional prompting that we've explored—mainta
 
 #### In Knowledge Work
 
-- **Research**: Employing AI to analyze data and literature while humans guide inquiry and interpret significance
+- **Research**: Employing AI to analyse data and literature while humans guide inquiry and interpret significance
 - **Law**: Using AI for precedent research and document preparation while humans handle judgment and argumentation
 - **Medicine**: Applying AI for analysis and pattern recognition while physicians maintain diagnostic responsibility
-- **Education**: Utilizing AI to customize learning materials while educators focus on motivation and conceptual guidance
+- **Education**: utilising AI to customise learning materials while educators focus on motivation and conceptual guidance
 
 #### In Business and Management
 
-- **Strategic Planning**: Using AI to analyze trends and options while humans make value-based decisions
+- **Strategic Planning**: Using AI to analyse trends and options while humans make value-based decisions
 - **Project Management**: Employing AI for scheduling and resource allocation while humans handle stakeholder relationships
-- **Marketing**: Utilizing AI for data analysis and content generation while humans direct brand voice and strategy
+- **Marketing**: utilising AI for data analysis and content generation while humans direct brand voice and strategy
 - **Customer Service**: Using AI for routine interactions while humans handle complex or sensitive situations
 
 ### The Five Principles in Any Domain
@@ -359,7 +359,7 @@ As AI capabilities continue to evolve, these principles will only become more im
 - **Enhanced contextual awareness** of projects, goals, and constraints
 - **Increased autonomy** for well-defined tasks
 
-However, the need for intentional human direction will remain essential. The most successful individuals and organizations will be those who develop effective practices for intentional collaboration with increasingly capable AI systems while maintaining human purpose, creativity, and ethical judgment.
+However, the need for intentional human direction will remain essential. The most successful individuals and organisations will be those who develop effective practices for intentional collaboration with increasingly capable AI systems while maintaining human purpose, creativity, and ethical judgment.
 
 ## Conclusion
 
@@ -369,10 +369,10 @@ The six-step methodology and intentional prompting techniques presented in this 
 
 Importantly, the methodology addresses many common objections to using LLMs in programming. For those concerned about the ambiguity of natural language, intentional prompting provides structured frameworks and progressive disambiguation techniques that bridge natural language and formal code. For those worried about the non-deterministic nature of LLMs, the methodology establishes clear evaluation criteria and testing practices that ensure reliability despite variability in outputs. And for those skeptical of AI's impact on learning and skill development, intentional prompting's focus on understanding over copying ensures that developers continue to build expertise rather than becoming dependent on AI.
 
-The power of intentional prompting comes from recognizing that LLMs have inherited human problem-solving patterns through their training data. Our methodology doesn't fight against this trait but leverages it by providing procedural frameworks that activate latent knowledge in both the human and the AI. This collaborative approach represents a middle ground between uncritical acceptance and outright rejection of AI assistance—a balanced path that maximizes benefits while minimizing risks.
+The power of intentional prompting comes from recognising that LLMs have inherited human problem-solving patterns through their training data. Our methodology doesn't fight against this trait but leverages it by providing procedural frameworks that activate latent knowledge in both the human and the AI. This collaborative approach represents a middle ground between uncritical acceptance and outright rejection of AI assistance—a balanced path that maximizes benefits while minimising risks.
 
 As we move toward increasingly autonomous agentic programming systems, intentional prompting becomes not less but more essential. These systems excel at approximation and pattern matching but struggle with precision. They demonstrate competence with small-scale tasks while faltering with larger ones. They reveal an incomplete understanding of both physical and business realities. All these limitations highlight why human oversight through structured methodologies remains necessary.
 
-The six-step methodology provides a framework not just for individual programmers but for organizations implementing AI oversight. It offers clear intervention points where human judgment and domain knowledge can guide AI agents toward optimal solutions. By maintaining this human-in-the-loop approach, organizations can harness the efficiency of AI automation while mitigating its risks through informed, intentional human direction.
+The six-step methodology provides a framework not just for individual programmers but for organisations implementing AI oversight. It offers clear intervention points where human judgment and domain knowledge can guide AI agents toward optimal solutions. By maintaining this human-in-the-loop approach, organisations can harness the efficiency of AI automation while mitigating its risks through informed, intentional human direction.
 
 While we've focused primarily on programming, the principles of intentional collaboration with AI will extend across all domains of human creativity and problem-solving. By developing these skills now, you're preparing not just for current AI tools, but for the next generation of human-AI partnership in programming and beyond.

@@ -2,7 +2,7 @@
 
 ## The Art of Guiding AI
 
-Effective collaboration with AI assistants requires more than just asking for solutions—it demands a thoughtful approach to crafting prompts that guide the AI toward helpful, educational responses. This chapter explores key patterns for intentional prompting that maximize the learning and development value of AI interactions.
+Effective collaboration with AI assistants requires more than just asking for solutions—it demands a thoughtful approach to crafting prompts that guide the AI toward helpful, educational responses. This chapter explores key patterns for intentional prompting that maximise the learning and development value of AI interactions.
 
 ![Intentional Prompting Patterns](../images/intentional-prompting-patterns.png)
 
@@ -14,7 +14,7 @@ Prompt engineering has emerged as a critical field in AI interaction, focusing o
 
 It's important to understand the relationship between prompt engineering and intentional prompting:
 
-**Prompt engineering** is primarily concerned with getting optimal outputs from AI systems. It focuses on crafting the right words, examples, and instructions to elicit high-quality responses from language models. Prompt engineers develop expertise in understanding model behaviors, leveraging context windows effectively, and using specialized techniques to guide AI outputs.
+**Prompt engineering** is primarily concerned with getting optimal outputs from AI systems. It focuses on crafting the right words, examples, and instructions to elicit high-quality responses from language models. Prompt engineers develop expertise in understanding model behaviours, leveraging context windows effectively, and using specialized techniques to guide AI outputs.
 
 **Intentional prompting** incorporates prompt engineering techniques but embeds them within a comprehensive methodology for approaching programming tasks. While prompt engineering asks "How can I get the best output from this AI?", intentional prompting asks "How can I use this AI as part of a thoughtful development process that maintains my understanding and control?"
 
@@ -22,7 +22,7 @@ The distinction becomes clearer when considering how each approach would handle 
 
 | Aspect | Prompt Engineering Approach | Intentional Prompting Approach |
 |--------|---------------------------|------------------------------|
-| **Initial Task Analysis** | Optimize prompt for detailed requirements | Follow Steps 1-2: Restate problem and identify inputs/outputs |
+| **Initial Task Analysis** | optimise prompt for detailed requirements | Follow Steps 1-2: Restate problem and identify inputs/outputs |
 | **Problem Understanding** | Focus on conveying requirements clearly to AI | Follow Step 3: Work through examples by hand to build understanding |
 | **Solution Design** | Craft prompts to generate complete solutions | Follow Step 4: Create pseudocode before implementation |
 | **Code Generation** | Refine prompts until satisfactory code is produced | Follow Step 5: Use AI to implement pseudocode while maintaining understanding |
@@ -87,7 +87,7 @@ Role-based prompting assigns a specific professional or character role to the AI
 
 **Example:**
 ```
-As an experienced software architect, analyze this function and suggest improvements for scalability and performance.
+As an experienced software architect, analyse this function and suggest improvements for scalability and performance.
 ```
 
 This technique helps orient the AI toward specific terminology, frameworks, and priorities relevant to the assigned role.
@@ -100,7 +100,7 @@ Foundation prompts establish the baseline requirements for a programming task. I
 
 **Examples:**
 ```
-"I need to write a Python program that analyzes student grades and calculates statistics."
+"I need to write a Python program that analyses student grades and calculates statistics."
 
 "Can you help me design a function that validates user input according to these requirements..."
 
@@ -258,11 +258,11 @@ Template-guided prompting provides a structural framework that the AI should fol
 
 **Example:**
 ```
-Analyze this function using the following template:
+analyse this function using the following template:
 1. Time complexity: 
 2. Space complexity:
 3. Edge cases not handled:
-4. Potential optimizations:
+4. Potential optimisations:
 5. Clean code suggestions:
 ```
 
@@ -279,7 +279,7 @@ Prompt engineering provides the tactical tools for effective AI interaction, whi
 | Prompt Engineering Provides | Intentional Prompting Provides |
 |----------------------------|--------------------------------|
 | Techniques for precise AI instructions | Framework for maintaining human agency |
-| Methods for optimizing AI responses | Structure for educational development |
+| Methods for optimising AI responses | Structure for educational development |
 | Domain-specific prompting strategies | Process that builds understanding |
 | Input formatting best practices | Context for when/how to apply techniques |
 
@@ -334,7 +334,7 @@ Across all these applications, intentional prompting embraces AI as a thoughtful
 1. **Human-led workflows**: The human sets goals, defines parameters, and makes the final decisions
 2. **Critical evaluation**: Thoughtfully evaluating AI suggestions based on expertise and context
 3. **Iterative collaboration**: Engaging in a refinement process where AI suggestions improve through feedback
-4. **Domain-appropriate trust**: Recognizing where AI excels versus where human judgment is essential
+4. **Domain-appropriate trust**: recognising where AI excels versus where human judgment is essential
 5. **Skill complementarity**: Using AI for appropriate tasks while keeping human focus on creative and strategic aspects
 
 By applying these principles across any methodology or domain, intentional prompting creates a collaborative relationship that leverages both human and AI strengths while overcoming their respective limitations.
@@ -386,7 +386,7 @@ def get_weather(location):
 
 ### Analysis of the Initial Code
 
-The developer analyzes the initial code and identifies several issues:
+The developer analyses the initial code and identifies several issues:
 
 1. No error handling - will crash if the API is down or returns an error
 2. No input validation for the location parameter

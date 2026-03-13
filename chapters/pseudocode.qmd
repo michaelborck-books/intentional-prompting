@@ -9,7 +9,7 @@ The fourth step in our methodology—writing pseudocode—bridges the conceptual
 Effective pseudocode strikes a balance between abstraction and detail:
 
 - **Clear and readable** - understandable by both humans and AI
-- **Structured** - uses indentation and organization to show control flow
+- **Structured** - uses indentation and organisation to show control flow
 - **Language-agnostic** - avoids specific programming language syntax
 - **Focused on logic** - emphasizes algorithmic thinking over implementation details
 - **Complete** - addresses all requirements and edge cases
@@ -93,9 +93,9 @@ One of the most significant challenges when working with LLMs is the inherent am
 
 As Dijkstra noted decades ago, "The virtue of formal texts is that their manipulations, in order to be legitimate, need to satisfy only a few simple rules; they are... an amazingly effective tool for ruling out all sorts of nonsense that, when we use our native tongues, are almost impossible to avoid." While pseudocode isn't fully formal, it moves us considerably in that direction.
 
-### SudoLang: Pseudocode Optimized for LLMs
+### SudoLang: Pseudocode optimised for LLMs
 
-SudoLang represents an evolution of pseudocode specifically designed for LLM interaction. Created by Eric Elliott, it provides a structured syntax that bridges the gap between natural language and formal programming languages, optimized for human-AI collaboration.
+SudoLang represents an evolution of pseudocode specifically designed for LLM interaction. Created by Eric Elliott, it provides a structured syntax that bridges the gap between natural language and formal programming languages, optimised for human-AI collaboration.
 
 Key features of SudoLang include:
 
@@ -206,7 +206,7 @@ Once you have initial pseudocode, use AI to help refine it by asking targeted qu
 This pseudocode looks good. Two questions:
 
 1. Should we check for even-length palindromes between the last character and out of bounds?
-2. Is there any way to optimize this further, perhaps by avoiding redundant checks?
+2. Is there any way to optimise this further, perhaps by avoiding redundant checks?
 ```
 
 **AI response:**
@@ -216,7 +216,7 @@ This pseudocode looks good. Two questions:
 >    
 >    In the current pseudocode, we check for even-length palindromes between positions i and i+1 for i ranging from 0 to length-1. When i is length-1 (the last character), we'd check between the last character and one past the end of the string, which would immediately fail the boundary check in expandAroundCenter().
 >    
->    This isn't harmful, but we could optimize by changing the loop for even-length palindromes to stop at length-2:
+>    This isn't harmful, but we could optimise by changing the loop for even-length palindromes to stop at length-2:
 >    
 >    ```
 >    // Odd length palindromes
@@ -244,9 +244,9 @@ This pseudocode looks good. Two questions:
 >    END FOR
 >    ```
 > 
-> 2. Regarding further optimization:
+> 2. Regarding further optimisation:
 >    
->    Yes, there are a few potential optimizations:
+>    Yes, there are a few potential optimisations:
 >    
 >    a) Early termination: If we find a palindrome of length N, then we only need to check centers that could potentially produce longer palindromes. If we're at position i and there are fewer than N/2 characters on either side, we can skip that center.
 >    
@@ -254,7 +254,7 @@ This pseudocode looks good. Two questions:
 >    
 >    c) For very long strings, Manacher's algorithm gives a linear-time solution instead of quadratic, but it's significantly more complex.
 >    
->    Here's an optimization for the early termination case:
+>    Here's an optimisation for the early termination case:
 >    
 >    ```
 >    FOR i = 0 TO length of string - 1
@@ -272,7 +272,7 @@ This pseudocode looks good. Two questions:
 >    END FOR
 >    ```
 >    
->    However, these optimizations add complexity. For most practical cases, the original pseudocode is clear and efficient enough.
+>    However, these optimisations add complexity. For most practical cases, the original pseudocode is clear and efficient enough.
 
 ### Comparing Alternative Approaches
 
@@ -338,7 +338,7 @@ Are there fundamentally different approaches to finding the longest palindromic 
 > 
 > 2. **Manacher's Algorithm**
 >    
->    This is an optimized approach that runs in O(n) time:
+>    This is an optimised approach that runs in O(n) time:
 >    
 >    ```
 >    FUNCTION manachers_algorithm(string)

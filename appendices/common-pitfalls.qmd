@@ -178,7 +178,7 @@ When working with AI coding assistants, certain patterns of challenges tend to e
 
 - Understand how your AI assistant was trained and what data it uses
 - Review AI-generated code for potential intellectual property issues
-- Follow your organization's guidelines for AI use
+- Follow your organisation's guidelines for AI use
 - Consider the ethical implications of automated decision-making in your code
 
 #### Documentation and Transparency
@@ -310,7 +310,7 @@ Can you help me with the schema design and backend implementation first?
 #### Clarify the Distinction
 
 - Remember that prompt engineering is a set of techniques while intentional prompting is a complete methodology
-- Recognize that prompt engineering focuses on getting optimal outputs while intentional prompting focuses on the human development process
+- recognise that prompt engineering focuses on getting optimal outputs while intentional prompting focuses on the human development process
 - Understand that prompt engineering is a component of intentional prompting, not a replacement for it
 
 #### Balance Output and Process
@@ -334,7 +334,7 @@ Can you help me with the schema design and backend implementation first?
 - **Always verify AI-generated solutions** through testing and manual review
 - **Maintain system-level perspective** when implementing individual components
 - **Address ethical and legal concerns proactively** through documentation and transparent processes
-- **Learn from failures** by analyzing and improving your prompting approach
+- **Learn from failures** by analysing and improving your prompting approach
 - **Distinguish between prompt engineering techniques and the intentional prompting methodology**
 
-By recognizing and addressing these common pitfalls, you can maximize the benefits of AI assistance while avoiding its potential drawbacks.
+By recognising and addressing these common pitfalls, you can maximise the benefits of AI assistance while avoiding its potential drawbacks.

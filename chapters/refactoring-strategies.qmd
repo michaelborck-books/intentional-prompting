@@ -1,17 +1,17 @@
 # Refactoring Strategies
 
-Refactoring—improving code structure without changing its external behavior—is a critical skill for maintaining healthy, adaptable software. AI assistants can be powerful allies in identifying refactoring opportunities and implementing improvements. This chapter explores intentional approaches to refactoring with AI assistance.
+Refactoring—improving code structure without changing its external behaviour—is a critical skill for maintaining healthy, adaptable software. AI assistants can be powerful allies in identifying refactoring opportunities and implementing improvements. This chapter explores intentional approaches to refactoring with AI assistance.
 
 ## When and Why to Refactor
 
-### Recognizing Refactoring Opportunities
+### recognising Refactoring Opportunities
 
 Refactoring is most valuable in specific situations:
 
 1. **Code smells** - Patterns in code that indicate deeper problems
 2. **Technical debt** - Accumulated design or implementation shortcuts
 3. **Changing requirements** - Evolving needs that strain existing designs
-4. **Performance bottlenecks** - Areas where optimization is needed
+4. **Performance bottlenecks** - Areas where optimisation is needed
 5. **Duplication** - Repeated code that could be consolidated
 6. **Complexity** - Overly complicated logic that's difficult to understand
 
@@ -81,11 +81,11 @@ What specific metrics or outcomes should I highlight?
 
 ### Identifying Refactoring Targets
 
-AI can analyze code to identify specific improvement opportunities:
+AI can analyse code to identify specific improvement opportunities:
 
 **Example prompt:**
 ```
-Could you analyze this function and suggest potential refactoring improvements? 
+Could you analyse this function and suggest potential refactoring improvements? 
 Focus on maintainability, readability, and adherence to best practices.
 
 ```java
@@ -235,7 +235,7 @@ AI might suggest:
 
 ## Maintaining Functionality During Refactoring
 
-One of the most critical aspects of refactoring is preserving existing behavior.
+One of the most critical aspects of refactoring is preserving existing behaviour.
 
 ### Test-Driven Refactoring
 
@@ -250,7 +250,7 @@ def process_payment(order_id, card_details, amount):
     # Implementation details...
 ```
 
-What types of tests should I write before refactoring, and how should I structure the refactoring process to minimize risk?
+What types of tests should I write before refactoring, and how should I structure the refactoring process to minimise risk?
 ```
 
 ### Incremental Refactoring Approaches
@@ -393,7 +393,7 @@ This discount calculation function has become difficult to understand and mainta
 >
 > 1. **Improved readability**: The main function is now much shorter and clearer
 > 2. **Separation of concerns**: Different discount calculations are separated
-> 3. **Configurability**: Discount rules are organized in a data structure that could easily be moved to a configuration file
+> 3. **Configurability**: Discount rules are organised in a data structure that could easily be moved to a configuration file
 > 4. **Maintainability**: Adding new customer types or rules is more straightforward
 > 5. **Testability**: Each function can be tested independently
 >
@@ -551,7 +551,7 @@ This UserService class has significant duplication in its methods. How would you
 - Measure the impact of refactoring with both quantitative and qualitative metrics
 - Preserve functionality during refactoring through comprehensive testing
 - Common refactoring patterns like extracting methods and simplifying conditionals can be effectively implemented with AI assistance
-- Incremental, test-driven approaches minimize risk during refactoring
+- Incremental, test-driven approaches minimise risk during refactoring
 
 ## Moving Forward
 

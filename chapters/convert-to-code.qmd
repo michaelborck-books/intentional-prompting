@@ -8,10 +8,10 @@ The fifth step of our methodology—converting pseudocode to actual code—is wh
 
 Converting pseudocode to code should be a methodical process:
 
-1. **Start with structure** - Convert the overall organization and function definitions
+1. **Start with structure** - Convert the overall organisation and function definitions
 2. **Fill in the logic** - Implement the core algorithms and control flow
 3. **Add error handling** - Incorporate validation and exception handling
-4. **Optimize** - Refine the implementation for efficiency and readability
+4. **optimise** - Refine the implementation for efficiency and readability
 5. **Document** - Add appropriate comments and documentation
 
 This incremental approach ensures that you maintain control of the implementation while still leveraging AI for efficiency.
@@ -394,9 +394,9 @@ def longest_palindromic_substring(s):
     # Rest of implementation...
 ```
 
-### Performance Optimization
+### Performance optimisation
 
-Look for opportunities to optimize performance without sacrificing readability:
+Look for opportunities to optimise performance without sacrificing readability:
 
 ```python
 # Original implementation

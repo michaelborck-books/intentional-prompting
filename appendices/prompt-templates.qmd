@@ -106,7 +106,7 @@ My code is running slower than expected:
 [paste code]
 
 1. Can you identify any performance bottlenecks?
-2. How could I optimize this code?
+2. How could I optimise this code?
 3. Are there any built-in functions or libraries that would help?
 ```
 

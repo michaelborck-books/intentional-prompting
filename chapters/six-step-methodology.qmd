@@ -56,7 +56,7 @@ These principles can be integrated into various development methodologies:
 - **Test-Driven Development**: Enhance the TDD cycle by adding explicit problem restatement and planning before writing tests
 - **Domain-Driven Design**: Incorporate intentional prompting to help define the ubiquitous language and domain models
 
-#### Customizing for Your Context
+#### customising for Your Context
 
 When adapting these concepts to your situation, consider:
 
@@ -385,7 +385,7 @@ Can you review this code for correctness and suggest any improvements?
 > 
 > 4. Your code handles the empty string case correctly.
 > 
-> The implementation is clean and efficient. The only possible optimization would be implementing Manacher's algorithm for linear time complexity, but that's typically unnecessary unless you're dealing with extremely large strings.
+> The implementation is clean and efficient. The only possible optimisation would be implementing Manacher's algorithm for linear time complexity, but that's typically unnecessary unless you're dealing with extremely large strings.
 
 #### Step 6: Test with Data
 

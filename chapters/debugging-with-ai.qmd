@@ -69,7 +69,7 @@ It correctly finds 5 in [1, 3, 5, 7, 9], but when I search for 7 in [1, 3, 5, 7,
 Runtime errors occur during program execution and cause the program to terminate unexpectedly. These include exceptions, segmentation faults, and other crashes.
 
 AI assistants can:
-- Analyze error messages and stack traces
+- analyse error messages and stack traces
 - Identify common causes for specific exceptions
 - Suggest defensive programming techniques to prevent crashes
 
@@ -115,7 +115,7 @@ def find_duplicates(values):
     return duplicates
 ```
 
-How can I optimize this to handle lists with thousands of items efficiently?
+How can I optimise this to handle lists with thousands of items efficiently?
 ```
 
 ## Prompt Templates for Debugging
@@ -145,7 +145,7 @@ From this code:
 When your code runs but doesn't behave as expected:
 
 ```
-My code should [describe expected behavior], but instead it [describe actual behavior]:
+My code should [describe expected behaviour], but instead it [describe actual behaviour]:
 
 ```[language]
 [paste the code]
@@ -176,7 +176,7 @@ I'd like to see the value of each variable at each step to understand where my l
 
 ### Performance Debugging Template
 
-For optimizing slow code:
+For optimising slow code:
 
 ```
 This function works correctly but becomes slow with larger inputs:
@@ -187,7 +187,7 @@ This function works correctly but becomes slow with larger inputs:
 
 1. What is the time complexity of this function?
 2. Where are the performance bottlenecks?
-3. How can I optimize it while maintaining the same functionality?
+3. How can I optimise it while maintaining the same functionality?
 ```
 
 ## Effective Debugging Workflows
@@ -253,7 +253,7 @@ Debugging by comparing working and non-working code:
 2. **Incremental changes**:
    ```
    If I change my code from A to B incrementally, at what point does it break?
-   I'll start by changing X and see if that affects the behavior.
+   I'll start by changing X and see if that affects the behaviour.
    ```
 
 3. **Reference implementation**:
@@ -397,7 +397,7 @@ What could be the root cause, and how can I fix it?
 
 ### Debugging AI-Generated Code
 
-A common scenario is debugging code that AI has generated but contains subtle errors. This situation provides excellent learning opportunities by requiring you to critically analyze and fix issues.
+A common scenario is debugging code that AI has generated but contains subtle errors. This situation provides excellent learning opportunities by requiring you to critically analyse and fix issues.
 
 **Example: Debugging a Gradebook Program**
 
@@ -655,7 +655,7 @@ And I'm still seeing some incorrect sorts in the output. Could there be an issue
 **AI response:**
 > Based on your updated information, the bubble sort implementation itself appears to be working correctly. The issue might be in how it's being called or how the data is being processed within your larger application.
 > 
-> Let's analyze the `process_data` function:
+> Let's analyse the `process_data` function:
 > 
 > ```python
 > def process_data(data_sets):

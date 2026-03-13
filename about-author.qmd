@@ -21,6 +21,10 @@ When not writing about AI collaboration, Michael works on practical applications
 
 **Other Books in This Series**
 
+*Foundational Methodology:*
+
+- *Conversation, Not Delegation: Your Expertise + AI's Breadth = Amplified Thinking*
+
 *Python Track:*
 
 - *Think Python, Direct AI: Computational Thinking for Beginners*
@@ -30,3 +34,7 @@ When not writing about AI collaboration, Michael works on practical applications
 *Web Track:*
 
 - *Build Web, Guide AI: Business Web Development with AI*
+
+*For Educators:*
+
+- *Partner, Don't Police: AI in the Business Classroom*

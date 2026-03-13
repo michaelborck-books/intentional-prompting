@@ -20,11 +20,11 @@ This step is especially important in the age of AI coding assistants. When AI ca
 
 There are two fundamentally different ways to solve programming problems:
 
-**Pattern matching** involves recognizing a problem as similar to something you've seen before and applying a known solution template. This approach is quick but shallow—it doesn't build transferable understanding.
+**Pattern matching** involves recognising a problem as similar to something you've seen before and applying a known solution template. This approach is quick but shallow—it doesn't build transferable understanding.
 
-**Mental modeling** involves constructing a detailed understanding of the problem dynamics and working through how a solution would operate step by step. This approach builds deeper understanding that transfers to novel problems.
+**Mental modelling** involves constructing a detailed understanding of the problem dynamics and working through how a solution would operate step by step. This approach builds deeper understanding that transfers to novel problems.
 
-AI excels at pattern matching but struggles with novel problems that require creative mental models. By working problems by hand, you develop the mental modeling skills that complement AI's pattern-matching strengths.
+AI excels at pattern matching but struggles with novel problems that require creative mental models. By working problems by hand, you develop the mental modelling skills that complement AI's pattern-matching strengths.
 
 ## Tracing Algorithms Step by Step
 
@@ -38,7 +38,7 @@ Tracing an algorithm involves simulating its execution with concrete inputs, tra
 4. Note intermediate values at key points
 5. Verify the final output matches expectations
 
-This process mirrors what a debugger does but happens in your mind or on paper, building a deeper understanding of the algorithm's behavior.
+This process mirrors what a debugger does but happens in your mind or on paper, building a deeper understanding of the algorithm's behaviour.
 
 ### Visualization Techniques
 

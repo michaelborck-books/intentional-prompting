@@ -102,7 +102,7 @@ The most productive relationship with AI coding assistants is a partnership mode
 - Memory of syntax and APIs
 - Help with tedious or repetitive tasks
 
-This partnership model focuses on complementary strengths rather than replacement. It recognizes that the combination of human creativity and judgment with AI capabilities creates possibilities that neither could achieve alone.
+This partnership model focuses on complementary strengths rather than replacement. It recognises that the combination of human creativity and judgment with AI capabilities creates possibilities that neither could achieve alone.
 
 ## Emerging Approaches to AI-Assisted Development
 
@@ -134,13 +134,13 @@ This approach emphasizes:
 3. **Critical Evaluation**: Carefully reviewing AI-generated code for correctness, efficiency, and security
 4. **Learning-Focused Collaboration**: Using AI to enhance understanding rather than bypass it
 
-Intentional prompting recognizes AI's value but prioritizes the developer's control and comprehension of the final solution.
+Intentional prompting recognises AI's value but prioritizes the developer's control and comprehension of the final solution.
 
 ### Collaborative Integration: Finding the Middle Ground
 
-Between vibe coding's emphasis on speed and intentional prompting's focus on process lies a spectrum of approaches that organizations are adopting:
+Between vibe coding's emphasis on speed and intentional prompting's focus on process lies a spectrum of approaches that organisations are adopting:
 
-1. **Permissive Acceptance**: Maximizing efficiency by broadly accepting AI outputs with minimal oversight
+1. **Permissive Acceptance**: maximising efficiency by broadly accepting AI outputs with minimal oversight
 2. **Dismissive Rejection**: Maintaining traditional development methods with limited AI assistance
 3. **Collaborative Integration**: Establishing defined processes where humans and AI work together with clear boundaries
 
@@ -158,4 +158,4 @@ As AI coding assistants continue to evolve, we can expect:
 
 These advancements will not eliminate the need for skilled developers, but will continue to transform how we approach programming tasks and what skills are most valuable.
 
-In the next chapter, we'll explore the core principles of intentional prompting—the mindset and practices that enable you to maintain agency and maximize learning while leveraging AI assistance.
+In the next chapter, we'll explore the core principles of intentional prompting—the mindset and practices that enable you to maintain agency and maximise learning while leveraging AI assistance.

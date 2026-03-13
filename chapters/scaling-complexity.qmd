@@ -8,7 +8,7 @@ So far, we've primarily focused on applying intentional prompting techniques to 
 
 As projects grow in size and complexity, several challenges emerge:
 
-1. **Architecture becomes more important** - The high-level organization of code has a greater impact on maintainability
+1. **Architecture becomes more important** - The high-level organisation of code has a greater impact on maintainability
 2. **Component interactions** introduce new failure modes and dependencies
 3. **Consistency across the codebase** becomes harder to maintain
 4. **Knowledge distribution** among team members becomes uneven
@@ -23,7 +23,7 @@ For larger projects, architectural planning becomes an essential first step. AI 
 **Human prompt:**
 ```
 I'm designing a microservices architecture for an e-commerce platform. The main functions include:
-- Product catalog
+- Product catalogue
 - User accounts
 - Cart management
 - Order processing
@@ -40,7 +40,7 @@ What would be a sensible way to divide these into microservices? What are the ke
 > ### Proposed Microservice Architecture
 > 
 > 1. **Product Service**
->    - Product catalog and management
+>    - Product catalogue and management
 >    - Categories and taxonomies
 >    - Product search and filtering capabilities
 >    - Inventory and stock information
@@ -79,7 +79,7 @@ What would be a sensible way to divide these into microservices? What are the ke
 >    - Data collection and processing
 >    - Reporting and dashboards
 >    - Business intelligence
->    - Customer behavior analysis
+>    - Customer behaviour analysis
 > 
 > ### Key Considerations
 > 
@@ -144,7 +144,7 @@ This approach ensures that each component is well-defined and properly integrate
 
 ### Context Limitations
 
-A key challenge when using AI with large codebases is providing sufficient context. Most AI assistants have limitations on how much code they can analyze at once.
+A key challenge when using AI with large codebases is providing sufficient context. Most AI assistants have limitations on how much code they can analyse at once.
 
 **Strategies for managing context limitations:**
 
@@ -744,7 +744,7 @@ What collaboration patterns or team practices would help us maintain a shared un
 > - **Approach**: Regular deep-dives into specific components
 > - **Format**: 30-45 minute sessions with code walkthroughs, followed by Q&A
 > - **Frequency**: Weekly or bi-weekly, rotating through components
-> - **Documentation**: Record sessions and summarize key points in a knowledge base
+> - **Documentation**: Record sessions and summarise key points in a knowledge base
 > 
 > ### 4. Pair Programming Rotations
 > - **Approach**: Scheduled pair programming sessions across component boundaries
@@ -796,7 +796,7 @@ What collaboration patterns or team practices would help us maintain a shared un
 > 
 > ## Tooling and Infrastructure
 > 
-> ### 11. Centralized Documentation Portal
+> ### 11. centralised Documentation Portal
 > - **Approach**: Single entry point for all system documentation
 > - **Content**: Component guides, architecture diagrams, ADRs, API docs
 > - **Maintenance**: Part of definition of done for features

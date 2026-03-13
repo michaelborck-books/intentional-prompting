@@ -8,7 +8,7 @@ In this chapter, we'll explore comprehensive case studies that demonstrate inten
 
 ### The Problem
 
-A research team needs to analyze a large dataset of customer transactions to identify purchasing patterns. They have a CSV file with millions of records containing transaction data including:
+A research team needs to analyse a large dataset of customer transactions to identify purchasing patterns. They have a CSV file with millions of records containing transaction data including:
 
 - Transaction ID
 - Customer ID
@@ -21,7 +21,7 @@ A research team needs to analyze a large dataset of customer transactions to ide
 The team needs to:
 1. Clean and preprocess the data
 2. Identify the most frequently purchased product combinations
-3. Analyze how purchasing patterns change over time
+3. analyse how purchasing patterns change over time
 4. Visualize the results
 
 ### The Intentional Prompting Approach
@@ -37,7 +37,7 @@ We have a large CSV file (millions of rows) with transaction data including tran
 We need to:
 1. Clean the data (handle missing values, standardize formats)
 2. Find frequently purchased product combinations
-3. Analyze how purchasing patterns change over time
+3. analyse how purchasing patterns change over time
 4. Create visualizations of the results
 
 Is this understanding correct, and are there any important aspects I've missed?
@@ -48,7 +48,7 @@ Is this understanding correct, and are there any important aspects I've missed?
 > 
 > 1. **Data volume handling**: With millions of rows, you'll need efficient processing techniques that can handle large datasets. This might involve streaming processing, chunking the data, or using distributed computing frameworks.
 > 
-> 2. **Performance considerations**: Some operations like finding product combinations might be computationally expensive. You might need optimization strategies.
+> 2. **Performance considerations**: Some operations like finding product combinations might be computationally expensive. You might need optimisation strategies.
 > 
 > 3. **Data privacy**: Transaction data may contain sensitive information. You might need to anonymize or handle the data according to relevant privacy regulations.
 > 
@@ -168,7 +168,7 @@ This approach works for pairs, but for larger combinations, we might need associ
 ```
 
 **AI response:**
-> Your manual approach for finding product combinations is sound! You've correctly identified the key steps for analyzing product pairs. Here are some important considerations and extensions:
+> Your manual approach for finding product combinations is sound! You've correctly identified the key steps for analysing product pairs. Here are some important considerations and extensions:
 > 
 > **Validations and extensions:**
 > 
@@ -180,7 +180,7 @@ This approach works for pairs, but for larger combinations, we might need associ
 >    - Lift (how much more likely Y is purchased when X is purchased, compared to normal)
 > 
 > 3. **Performance for large datasets**: The naive approach of generating all combinations can be computationally expensive for transactions with many items. For the full dataset:
->    - Consider using optimized libraries like MLxtend or efficient implementations of Apriori
+>    - Consider using optimised libraries like MLxtend or efficient implementations of Apriori
 >    - You might need to set a minimum support threshold to filter out rare combinations early
 > 
 > 4. **Handling duplicates**: If a customer buys multiple items in the same category in one transaction (e.g., two electronics items), your current approach correctly treats "electronics" as appearing once in that transaction.
@@ -276,7 +276,7 @@ FUNCTION main(input_file, output_dir):
     product_combinations = find_product_combinations(cleaned_data)
     SAVE_CSV(TOP_N(product_combinations, 20), output_dir + "/top_combinations.csv")
     
-    # Analyze time patterns
+    # analyse time patterns
     monthly_trends, hourly_patterns = analyze_time_patterns(cleaned_data)
     SAVE_CSV(monthly_trends, output_dir + "/monthly_trends.csv")
     
@@ -307,7 +307,7 @@ Does this pseudocode cover all the necessary steps for our data analysis pipelin
 >     RETURN cleaned_data
 > ```
 > 
-> 2. **Optimized product combination generation**: The current approach might be inefficient for transactions with many products:
+> 2. **optimised product combination generation**: The current approach might be inefficient for transactions with many products:
 > ```
 > # Add a maximum combination size parameter
 > FUNCTION find_product_combinations(data, min_support=0.001, max_combination_size=2):
@@ -467,11 +467,11 @@ def clean_data(file_path, chunk_size=100000):
     return cleaned_data
 ```
 
-Is this implementation correct and efficient? Are there any issues or optimizations I should consider?
+Is this implementation correct and efficient? Are there any issues or optimisations I should consider?
 ```
 
 **AI response:**
-> Your implementation is solid and follows good practices for processing large datasets! Here are some thoughts and potential optimizations:
+> Your implementation is solid and follows good practices for processing large datasets! Here are some thoughts and potential optimisations:
 > 
 > **Strengths:**
 > 
@@ -482,7 +482,7 @@ Is this implementation correct and efficient? Are there any issues or optimizati
 > 
 > **Potential improvements:**
 > 
-> 1. **Memory optimization for very large datasets:**
+> 1. **Memory optimisation for very large datasets:**
 > 
 > ```python
 > def find_product_combinations(data, min_support=0.001, max_len=3):
@@ -521,7 +521,7 @@ Is this implementation correct and efficient? Are there any issues or optimizati
 >         raise
 > ```
 > 
-> 3. **Performance optimization for Apriori on sparse data:**
+> 3. **Performance optimisation for Apriori on sparse data:**
 > 
 > ```python
 > # If your dataset has many distinct products but each transaction has few,
@@ -676,7 +676,7 @@ What issues might we encounter when scaling to the full dataset, and how should 
 > 1. **Memory Consumption**
 >    - **Issue**: The TransactionEncoder creates a one-hot encoded matrix which can be extremely memory-intensive for datasets with millions of transactions and many unique products.
 >    - **Solution**: 
->      - Process in batches based on time periods (e.g., analyze one month at a time)
+>      - Process in batches based on time periods (e.g., analyse one month at a time)
 >      - Use sampling techniques for initial analysis
 >      - Implement a more memory-efficient version of Apriori or consider alternatives like FP-Growth
 >      - Use sparse matrix representations where possible
@@ -704,7 +704,7 @@ What issues might we encounter when scaling to the full dataset, and how should 
 >      - Create data quality dashboards to monitor issues
 > 
 > 5. **Time-Based Changes**
->    - **Issue**: Product associations may change over time, and analyzing everything together might obscure patterns.
+>    - **Issue**: Product associations may change over time, and analysing everything together might obscure patterns.
 >    - **Solution**:
 >      - Implement time-window analysis
 >      - Compare associations across different time periods
@@ -736,14 +736,14 @@ What issues might we encounter when scaling to the full dataset, and how should 
 >     for size in sample_sizes:
 >         if size > stats['total_rows']: 
 >             continue
->         print(f"Analyzing sample of {size} transactions...")
+>         print(f"analysing sample of {size} transactions...")
 >         sample = get_stratified_sample(file_path, size)
 >         # Run analysis on progressively larger samples
 >         results = find_product_combinations(sample)
 >         save_results(results, f"{output_dir}/sample_{size}_results.csv")
 >     
->     # 4. Full analysis with optimized parameters
->     print("Running full analysis with optimized parameters...")
+>     # 4. Full analysis with optimised parameters
+>     print("Running full analysis with optimised parameters...")
 >     # Use parameters learned from sample analysis
 >     full_results = process_in_time_windows(file_path)
 >     
@@ -760,7 +760,7 @@ This case study demonstrates several key intentional prompting principles:
 2. **Detailed input/output specification** clarified the exact needs of the pipeline
 3. **Manual exploration** of a small data sample provided crucial insights into the required algorithms
 4. **Pseudocode development** allowed for structural planning before implementation
-5. **Implementation with AI assistance** incorporated best practices and optimizations
+5. **Implementation with AI assistance** incorporated best practices and optimisations
 6. **Testing with synthetic data** verified the approach before scaling to the full dataset
 
 The intentional prompting methodology led to a solution that was:
@@ -775,7 +775,7 @@ The intentional prompting methodology led to a solution that was:
 
 A developer needs to build a weather dashboard application in Python. The application should:
 
-1. Utilize a weather data module to retrieve current and forecast information
+1. utilise a weather data module to retrieve current and forecast information
 2. Process and display weather data in a user-friendly interface
 3. Allow users to search for different locations
 4. Provide visualizations of weather trends
@@ -1191,7 +1191,7 @@ From these case studies, we can extract several important lessons about intentio
    - Manual exploration uncovers edge cases that might otherwise be missed
 
 3. **AI assistance enhances human capability**
-   - AI helps identify potential issues and optimizations
+   - AI helps identify potential issues and optimisations
    - The human developer maintains control over the approach and design decisions
 
 4. **Testing is essential**

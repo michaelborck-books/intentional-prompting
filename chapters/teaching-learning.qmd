@@ -23,7 +23,7 @@ This shift doesn't mean abandoning the fundamentals—rather, it means teaching 
 Educators now have additional responsibilities:
 
 1. **Teaching effective prompting** alongside programming concepts
-2. **Modeling critical evaluation** of AI-generated solutions
+2. **modelling critical evaluation** of AI-generated solutions
 3. **Emphasizing conceptual understanding** over implementation details
 4. **Preparing students** for a future where AI collaboration is the norm
 5. **Creating assessment methods** that work in an AI-assisted environment
@@ -179,7 +179,7 @@ tree, and a balanced tree.
 Requirements:
 1. Guide the AI to implement each data structure
 2. Create a test suite to measure performance characteristics
-3. Analyze the strengths and weaknesses of each approach
+3. analyse the strengths and weaknesses of each approach
 4. Select the most appropriate structure for the given requirements
 5. Justify your selection with empirical evidence
 ```
@@ -232,7 +232,7 @@ Have students demonstrate conceptual understanding separate from code production
 Test understanding through targeted modification tasks:
 
 - **Adding a new feature to existing code**
-- **Optimizing for a different constraint**
+- **optimising for a different constraint**
 - **Adapting the solution to a different context**
 - **Fixing intentionally introduced bugs**
 
@@ -278,7 +278,7 @@ Foster an environment that supports learning with AI:
 2. **Establish clear guidelines** for appropriate AI collaboration
 3. **Share success stories** of effective AI use
 4. **Normalize discussions** about AI limitations and frustrations
-5. **Recognize prompting expertise** as a valuable skill
+5. **recognise prompting expertise** as a valuable skill
 
 ## Case Studies in Educational Settings
 
@@ -413,7 +413,7 @@ The intentional, documentation-first approach helped students maintain control o
 
 ## Practical Guide for Students
 
-### Maximizing Learning with AI Assistance
+### maximising Learning with AI Assistance
 
 **Develop an Intentional Learning Mindset**
 - Focus on understanding concepts, not just completing assignments

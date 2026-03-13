@@ -27,7 +27,7 @@ This book is designed for:
 
 You don't need to be an expert programmer to benefit from this book, but basic familiarity with programming concepts will help you get the most out of the examples and exercises.
 
-## How This Book Is Organized
+## How This Book Is organised
 
 The book is divided into four parts:
 

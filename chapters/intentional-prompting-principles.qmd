@@ -73,7 +73,7 @@ To illustrate the differences in these approaches, the following table compares 
 | **Code Review** | Thorough review with critical evaluation | Minimal review, focus on functionality over quality |
 | **Debugging Approach** | Systematic investigation based on understanding | Trial-and-error, asking AI to fix issues |
 | **Learning Outcome** | Progressive skill development and deeper understanding | Potentially limited technical growth, focus on prompt crafting |
-| **Code Quality** | Optimized for readability, maintainability, efficiency | Prioritizes working functionality over optimality |
+| **Code Quality** | optimised for readability, maintainability, efficiency | Prioritizes working functionality over optimality |
 | **Ideal Use Cases** | Complex systems, educational contexts, enterprise software | Rapid prototyping, MVPs, personal projects, non-critical applications |
 | **Knowledge Transfer** | Facilitates team understanding and knowledge sharing | May create knowledge silos where only original developer understands prompting approach |
 | **Maintenance** | Designed for long-term maintenance and evolution | May present challenges for future maintenance or extension |
@@ -223,7 +223,7 @@ You understand code when you can:
 - Explain how it works to someone else
 - Modify it confidently to handle new requirements
 - Identify potential edge cases it might not handle
-- Recognize its performance characteristics and limitations
+- recognise its performance characteristics and limitations
 - Connect it to broader programming concepts and patterns
 
 ### Strategies for Building Understanding
@@ -303,7 +303,7 @@ Intentional prompting includes ethical considerations about the use of AI in the
 ### Attribution and Transparency
 
 - Be transparent about AI contributions to your code
-- Understand your organization's policies about AI-assisted development
+- Understand your organisation's policies about AI-assisted development
 - Consider adding attribution comments for significant AI contributions
 - Maintain clear documentation of human design decisions
 
@@ -346,7 +346,7 @@ The intentional prompting methodology directly addresses Dijkstra's concerns by 
 
 ### The Non-Deterministic Nature of LLMs
 
-Another significant concern involves the non-deterministic behavior of LLMs—the fact that they can produce different outputs even when given the same input. This unpredictability raises legitimate questions about reliability, especially in mission-critical applications.
+Another significant concern involves the non-deterministic behaviour of LLMs—the fact that they can produce different outputs even when given the same input. This unpredictability raises legitimate questions about reliability, especially in mission-critical applications.
 
 Research has documented significant variations in LLM performance across multiple runs, with accuracy varying up to 15% and gaps between best and worst performance reaching as high as 70%. This variability stems from:
 

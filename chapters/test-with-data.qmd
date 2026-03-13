@@ -11,7 +11,7 @@ Testing isn't just about confirming that your code works—it's about discoverin
 1. **Validates correctness** - Ensures the solution produces the expected results
 2. **Reveals edge case issues** - Identifies problems with unusual inputs
 3. **Provides confidence** - Gives you assurance that the solution is robust
-4. **Documents behavior** - Shows how the code responds to different inputs
+4. **Documents behaviour** - Shows how the code responds to different inputs
 5. **Prevents regressions** - Helps maintain correctness as code evolves
 
 Even with AI assistance in implementation, testing remains primarily a human responsibility. The most effective developers use a structured approach to testing rather than ad hoc verification.
@@ -43,7 +43,7 @@ assert longest_palindromic_substring("aa") == "aa"  # Two identical characters
 
 #### Stress Tests
 
-These evaluate behavior with large or complex inputs:
+These evaluate behaviour with large or complex inputs:
 
 ```python
 # Stress test
@@ -170,7 +170,7 @@ I've implemented a function to find the longest palindromic substring in a strin
 > 
 > 20. **Very long strings** - Test with strings of thousands of characters
 > 21. **Long palindrome within long string** - e.g., 1000 'a's + 'b' + 1000 'a's
-> 22. **Repeated characters** - "aaaaaaaaaa" (helps test for optimization issues)
+> 22. **Repeated characters** - "aaaaaaaaaa" (helps test for optimisation issues)
 > 
 > A well-tested function should handle all these cases correctly and efficiently.
 
@@ -303,7 +303,7 @@ Test failures provide valuable learning opportunities that can improve both your
 
 ### Debugging with AI Assistance
 
-When tests fail, AI can help analyze the failure:
+When tests fail, AI can help analyse the failure:
 
 **Human prompt:**
 ```
@@ -513,7 +513,7 @@ AssertionError: 999 != 1001
 
 ### Fixing Issues Based on Test Results
 
-Analyzing the failures and updating our implementation:
+analysing the failures and updating our implementation:
 
 ```python
 def longest_palindromic_substring(s):

@@ -21,13 +21,13 @@ Intentional prompting is a deliberate approach to programming that leverages AI 
 3. Using AI as a tool for learning and exploration rather than just output
 4. Maintaining the human developer as the architect and decision-maker
 
-This approach recognizes that the most powerful development workflow combines human creativity, judgment, and domain knowledge with AI's ability to handle routine coding tasks, suggest implementations, and provide contextual information.
+This approach recognises that the most powerful development workflow combines human creativity, judgment, and domain knowledge with AI's ability to handle routine coding tasks, suggest implementations, and provide contextual information.
 
 ### Intentional Prompting vs. Prompt Engineering
 
 It's important to distinguish intentional prompting from the related but distinct field of prompt engineering:
 
-**Prompt Engineering** focuses primarily on crafting effective instructions for AI systems to produce desired outputs. It encompasses techniques like zero-shot and few-shot prompting, chain-of-thought prompting, and role-based prompting. The emphasis is on optimizing the prompt itself to get the best possible output from the AI.
+**Prompt Engineering** focuses primarily on crafting effective instructions for AI systems to produce desired outputs. It encompasses techniques like zero-shot and few-shot prompting, chain-of-thought prompting, and role-based prompting. The emphasis is on optimising the prompt itself to get the best possible output from the AI.
 
 **Intentional Prompting** builds upon prompt engineering but differs in several key ways:
 
