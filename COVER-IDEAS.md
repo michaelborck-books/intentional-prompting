@@ -49,7 +49,7 @@ All 5 books share:
 
 | Book | Sketch Concept |
 |------|----------------|
-| **Conversation, Not Delegation** | Human + robot talking, speech bubbles connecting |
+| **Converse Python, Partner AI** | Human + robot talking, speech bubbles connecting |
 | **Think Python, Direct AI** | Human + robot, robot holding/showing a snake |
 | **Code Python, Consult AI** | Human pointing at code on a board, robot watching |
 | **Ship Python, Orchestrate AI** | Human + robot high-fiving, rocket doodle nearby |

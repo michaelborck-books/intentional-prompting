@@ -1,10 +1,10 @@
-# Conversation, Not Delegation: Mastering Human-AI Development
+# Converse Python, Partner AI
 
 <!-- BADGES:START -->
 [![ai](https://img.shields.io/badge/-ai-ff6f00?style=flat-square)](https://github.com/topics/ai) [![css](https://img.shields.io/badge/-css-1572b6?style=flat-square)](https://github.com/topics/css) [![human-ai-interaction](https://img.shields.io/badge/-human--ai--interaction-blue?style=flat-square)](https://github.com/topics/human-ai-interaction) [![markdown](https://img.shields.io/badge/-markdown-blue?style=flat-square)](https://github.com/topics/markdown) [![programming-techniques](https://img.shields.io/badge/-programming--techniques-blue?style=flat-square)](https://github.com/topics/programming-techniques) [![quarto](https://img.shields.io/badge/-quarto-blue?style=flat-square)](https://github.com/topics/quarto) [![software-development](https://img.shields.io/badge/-software--development-blue?style=flat-square)](https://github.com/topics/software-development) [![tex](https://img.shields.io/badge/-tex-blue?style=flat-square)](https://github.com/topics/tex) [![book](https://img.shields.io/badge/-book-795548?style=flat-square)](https://github.com/topics/book) [![ai-partnership](https://img.shields.io/badge/-ai--partnership-blue?style=flat-square)](https://github.com/topics/ai-partnership)
 <!-- BADGES:END -->
 
-A book about working effectively with AI—treating it as a thinking partner, not a task executor.
+The Python Edition — Intentional AI collaboration for programmers
 
 ## About this Book
 
@@ -29,7 +29,7 @@ Throughout the book, examples are provided in both programming and business cont
 This book is part of a comprehensive series for mastering modern software development in the AI era:
 
 ### Foundational Methodology
-- **[Conversation, Not Delegation](https://michael-borck.github.io/conversation-not-delegation)** (this book): Mastering Human-AI Development
+- **[Converse Python, Partner AI](https://michael-borck.github.io/converse-python-partner-ai)** (this book): The Python Edition — Intentional AI collaboration for programmers
 
 ### Python Track
 - **[Think Python, Direct AI](https://michael-borck.github.io/think-python-direct-ai)**: Computational Thinking for Beginners

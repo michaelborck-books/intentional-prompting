@@ -3,7 +3,7 @@ project:
   output-dir: _book
 
 book:
-  title: "Conversation, Not Delegation: Mastering Human-AI Development"
+  title: "Converse Python, Partner AI: The Python Edition"
   author: "Michael Borck"
   date: "last-modified"
   chapters:
@@ -45,7 +45,7 @@ book:
     - appendices/glossary.qmd
   
   downloads: [pdf, epub]
-  repo-url: https://github.com/michael-borck/conversation-not-delegation
+  repo-url: https://github.com/michael-borck/converse-python-partner-ai
   repo-actions: [edit, issue]
 
 format:
@@ -76,7 +76,7 @@ format:
 
 website:
   favicon: assets/favicon.png
-  repo-url: https://github.com/michael-borck/conversation-not-delegation
+  repo-url: https://github.com/michael-borck/converse-python-partner-ai
   repo-actions: [edit, issue]
   open-graph: true
 

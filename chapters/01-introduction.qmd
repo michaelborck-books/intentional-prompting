@@ -109,7 +109,7 @@ This book is part of a comprehensive series for mastering modern software develo
 
 **Foundational Methodology**
 
-- [Conversation, Not Delegation: Mastering Human-AI Development](https://michael-borck.github.io/conversation-not-delegation) (this book)
+- [Converse Python, Partner AI: The Python Edition](https://michael-borck.github.io/converse-python-partner-ai) (this book)
 
 **Python Track**
 
